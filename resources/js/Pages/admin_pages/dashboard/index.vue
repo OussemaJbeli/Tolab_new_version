@@ -50,11 +50,11 @@
                     <ChartComponent_donate class="barchart2" :chart-data="chartData_donate" :chart-options="chartOptions_donate"></ChartComponent_donate>
                 </div>
             </div>
-            <div class="historique_statistique frame_original pt-10 pb-4">
+            <div class="historique_statistique frame_original pt-10 pb-4 overflow-x-scroll">
                 <div class="w-100 mt-2 mb-4 flex flex-row items-center justify-between">
                     <span class="h3">قائمة اساتذة الصف  1</span>
                 </div>
-                <DataTable class="display">
+                <DataTable class="display DataTable2">
                     <thead>
                         <tr class="text-center font-bold bg-gray-600">
                             <th class="pb-4 pt-6 px-6 text-start">الإسم</th>

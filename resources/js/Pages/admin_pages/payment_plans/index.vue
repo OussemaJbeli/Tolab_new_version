@@ -13,7 +13,7 @@
                 <p class="h3">
                     <span>قائمة الطلاب</span>
                 </p>
-                <DataTable class="display">
+                <DataTable class="display DataTable1">
                     <thead>
                         <tr class="text-center font-bold bg-gray-600">
                             <th class="pb-4 pt-6 px-6 text-end">الإسم</th>

@@ -262,7 +262,7 @@ export default {
                 this.add_videos=true;
         },
         add_playlist_db(){
-            this.add_videos_values.post(`playlist_AUTH/${this.$page.props.auth.chanel.id}/create`, {
+            this.add_videos_values.post(`/playlist_AUTH/${this.$page.props.auth.chanel.id}/create`, {
                 onSuccess: () => {
                     this.add_videos = false;
                     this.add_videos_values.reset();
@@ -281,7 +281,7 @@ export default {
                 ];
         },
         edite_playlist_db(){
-            this.edite_playlist_values.post(`playlist_AUTH/${this.edite_playlist_values.id_playlist}/edit`, {
+            this.edite_playlist_values.post(`/playlist_AUTH/${this.edite_playlist_values.id_playlist}/edit`, {
                 onSuccess: () => {
                     this.edite_playlist = false;
                     this.edite_playlist_values.reset();
@@ -301,7 +301,7 @@ export default {
                 ];
         },
         add_videos_playlist_db(){
-            this.add_videos_playlist_values.post(`playlist_AUTH/${this.add_videos_playlist_values.id_playlist}/add_videos`, {
+            this.add_videos_playlist_values.post(`/playlist_AUTH/${this.add_videos_playlist_values.id_playlist}/add_videos`, {
                 onSuccess: () => {
                     this.add_videos_playlist = false;
                     this.add_videos_playlist_values.reset();

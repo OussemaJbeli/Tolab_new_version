@@ -9,43 +9,45 @@
         </template>
         <div class="contain_admin">
             <!-- student -->
-            <div class="historique_statistique frame_original pt-10 pb-4">
+            <div class="historique_statistique frame_original pt-10 pb-4 ">
                 <p class="h3">
                     <span>قائمة الطلاب</span>
                 </p>
-                <DataTable class="display">
-                    <thead>
-                        <tr class="text-center font-bold bg-gray-600">
-                            <th class="pb-4 pt-6 px-6 text-start">الإسم</th>
-                            <th class="pb-4 pt-6 px-6 text-start">البريد الالكتروني</th>
-                            <th class="pb-4 pt-6 px-6 text-start">المستوى الدراسي</th>
-                            <th class="pb-4 pt-6 px-6 text-start">الاشتراك</th>
-                            <th class="pb-4 pt-6 px-6 text-start">حذف</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-right">
-                        <tr v-for="student in users_student" class="hover:bg-gray-900">
-                            <td class="pb-4 pt-6 px-6 border-t text-start text-white">
-                                {{ student.name }}
-                            </td>
-                            <td class="pb-4 pt-6 px-6 border-t text-start text-white">
-                                {{ student.email }}
-                            </td>
-                            <td class="pb-4 pt-6 px-6 border-t text-start text-white">
-                                {{ student.etudient_level }}
-                            </td>
-                            <td class="pb-4 pt-6 px-6 border-t text-start text-white">
-                                <span v-if="student.payment">مشترك</span>
-                                <span v-else>غير مشترك</span>
-                            </td>
-                            <td class="pb-4 pt-6 px-6 border-t text-start text-white ">
-                                <Link :href="`/admin_taleb/users/${student.id}/destroy`" class="text-white">
-                                    <i class="fa-solid fa-trash text-red-500"></i> حذف
-                                </Link>
-                            </td>
-                        </tr>
-                    </tbody>
-                </DataTable>
+                <div class="overflow-x-scroll">
+                    <DataTable class="display DataTable1">
+                        <thead>
+                            <tr class="text-center font-bold bg-gray-600 ">
+                                <th class="pb-4 pt-6 px-6 text-start">الإسم</th>
+                                <th class="pb-4 pt-6 px-6 text-start">البريد الالكتروني</th>
+                                <th class="pb-4 pt-6 px-6 text-start">المستوى الدراسي</th>
+                                <th class="pb-4 pt-6 px-6 text-start">الاشتراك</th>
+                                <th class="pb-4 pt-6 px-6 text-start">حذف</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-right">
+                            <tr v-for="student in users_student" class="hover:bg-gray-900">
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white">
+                                    {{ student.name }}
+                                </td>
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white">
+                                    {{ student.email }}
+                                </td>
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white">
+                                    {{ student.etudient_level }}
+                                </td>
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white">
+                                    <span v-if="student.payment">مشترك</span>
+                                    <span v-else>غير مشترك</span>
+                                </td>
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white ">
+                                    <Link :href="`/admin_taleb/users/${student.id}/destroy`" class="text-white">
+                                        <i class="fa-solid fa-trash text-red-500"></i> حذف
+                                    </Link>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </DataTable>
+                </div>
             </div>
             <!-- master -->
             <div class="historique_statistique frame_original pt-10 pb-4">
@@ -55,7 +57,8 @@
                         <i class="fa-solid fa-user-plus"></i> انشاء حساب
                     </button>
                 </div>
-                <DataTable class="display">
+                <div class="overflow-x-scroll">
+                    <DataTable class="display DataTable1">
                     <thead>
                         <tr class="text-center font-bold bg-gray-600">
                             <th class="pb-4 pt-6 px-6 text-start">الإسم</th>
@@ -95,16 +98,18 @@
                         </tr>
                     </tbody>
                 </DataTable>
+                </div>
             </div>
             <!-- admin -->
             <div class="historique_statistique frame_original pt-10 pb-4">
                 <div class="w-100 mt-2 mb-4 flex flex-row items-center justify-between">
-                    <span class="h3">قائمة مديري المنصة</span>
+                    <span class="h3">قائمة المديرين </span>
                     <button class="button button_acount"  @click="add_admin_frame_fun()">
                         <i class="fa-solid fa-user-plus"></i> انشاء حساب
                     </button>
                 </div>
-                <DataTable class="display">
+                <div class="overflow-x-scroll">
+                    <DataTable class="display DataTable1">
                     <thead>
                         <tr class="text-center font-bold bg-gray-600">
                             <th class="pb-4 pt-6 px-6 text-start items-start">الإسم</th>
@@ -140,6 +145,7 @@
                         </tr>
                     </tbody>
                 </DataTable>
+                </div>
             </div>
             <!-- popup change admin rools -->
             <div class="limit_frame" v-if="change_user_frame">

@@ -22,10 +22,9 @@ class rapportsadminController extends Controller
         $latestMessages = Support::select(
             'supports.*', 
             'users.name as username',
-            'chanels.name_chanel as coments_chanels_name', 
-            'chanels.logo_path_chanel as coments_chanels_logo_path',
-            'chanels.id as coments_chanels_id',)
-        ->leftJoin('chanels', 'chanels.id_user', '=', 'supports.id_user')
+            'users.etudient as etudient',
+            'users.Master as Master',
+            'users.super_user as super_user',)
         ->join('users', 'users.id', '=', 'supports.id_user')
         ->whereIn('supports.id', function ($query) {
             $query->select(DB::raw('MAX(id)'))

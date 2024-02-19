@@ -16,16 +16,16 @@
                             <p>عدد القنوات : {{ chanelNum }}</p>
                             <p>عدد المشتركين : {{ subscribesNum }}</p>
                             <p>عدد المشاهدات : {{ vuewsNum }}</p>
-                            <p>عدد الفيديوهات : {{ videosNum }}</p>
+                            <p>عدد الفيديوهات : {{ videosTotal }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="historique_statistique frame_original mt-20">
-                    <div class="master_table_info p-4">
+                    <div class="master_table_info p-4 overflow-x-scroll">
                         <div class="w-100 mt-2 mb-4 flex flex-row items-center justify-between">
                             <span class="h3 text-black">قائمة القنوات</span>
                         </div>
-                        <DataTable class="display">
+                        <DataTable class="display min-w-full DataTable1">
                             <thead>
                                 <tr class="text-center font-bold bg-green-900">
                                     <th class="pb-4 pt-6 px-6 text-end">القنوات </th>
@@ -40,12 +40,10 @@
                             <tbody class="text-right">
                                 <tr v-for="channel in chanel_tab" class="hover:bg-yellow-400 bg-green-300">
                                     <td class="pb-4 pt-6 px-6 border-t text-end text-white">
-                                        <div>
-                                            <Link class="subchanel_icon" :href="`/chanel_AUTH/${channel.id}`">
-                                                <img :src="'/'+channel.logo_path_chanel"  class="rounded-circle my-2 ml-3" width="30">
-                                                <span class="card-text text-black">{{channel.name_chanel}}</span>
-                                            </Link>
-                                        </div>
+                                        <Link class="subchanel_icon" :href="`/my_chanel_AUTH/${channel.id}`">
+                                            <img :src="'/'+channel.logo_path_chanel"  class="rounded-circle my-2 ml-3" width="30">
+                                            <span class="card-text text-black">{{channel.name_chanel}}</span>
+                                        </Link>
                                     </td>
                                     <td class="pb-4 pt-6 px-6 border-t text-end text-black">
                                         {{ channel.study_level }}
@@ -102,7 +100,7 @@ export default {
     },
     props: {
         // general
-        videosNum: Object,
+        videosTotal: Object,
         subscribesNum: Object,
         vuewsNum: Object,
         chanelNum: Object,

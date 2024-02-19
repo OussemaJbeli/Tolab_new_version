@@ -75,7 +75,7 @@ class my_chanelController extends Controller
         $chanelNum = chanels::where('id_user', Auth::user()->id) 
         ->count();
 
-        $videosNum = Videos::where('id_user', Auth::user()->id)
+        $videosTotal = Videos::where('id_user', Auth::user()->id)
         ->count();
 
         $subscribesNum = chanels::where('id_user', Auth::user()->id)
@@ -218,7 +218,7 @@ class my_chanelController extends Controller
 
         return Inertia::render('auth_pages/master_dashboard/index',[
             //total info
-            'videosNum' => $videosNum,
+            'videosTotal' => $videosTotal,
             'subscribesNum' => $subscribesNum,
             'vuewsNum'=> $vuewsNum,
             'chanelNum' => $chanelNum,

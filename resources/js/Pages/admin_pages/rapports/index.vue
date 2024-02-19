@@ -8,14 +8,15 @@
             </h2>
         </template>
         <div class="contain_admin">
-            <div class="historique_statistique frame_original">
+            <div class="historique_statistique frame_original overflow-x-scroll">
                 <p class="title">
                     <span>قائمة القنوات</span>
                 </p>
-                <DataTable class="display">
+                <DataTable class="display DataTable1">
                     <thead>
                         <tr class="text-center font-bold bg-gray-600">
-                            <th class="pb-4 pt-6 px-6 text-end">الحساب </th>
+                            <th class="pb-4 pt-6 px-6 text-end">الحساب</th>
+                            <th class="pb-4 pt-6 px-6 text-end">نوع الحساب</th>
                             <th class="pb-4 pt-6 px-6 text-end">الرسالة</th>
                             <th class="pb-4 pt-6 px-6 text-end">الحالة</th>
                             <th class="pb-4 pt-6 px-6 text-end">تاريخ</th>
@@ -27,6 +28,11 @@
                         <tr v-for="rapports in rapport" class="hover:bg-gray-900">
                             <td class="pb-4 pt-6 px-6 border-t text-end text-white max-w-xs">
                                 <span>{{ rapports.username }}</span>
+                            </td>
+                            <td class="pb-4 pt-6 px-6 border-t text-end text-white max-w-xs">
+                                <span v-if="rapports.etudient">طالب</span>
+                                <span v-if="rapports.Master">استاذ</span>
+                                <span v-if="rapports.super_user">مسؤول</span>
                             </td>
                             <td class="pb-4 pt-6 px-6 border-t text-end text-white max-w-xs">
                                 <span class="max-w-56">

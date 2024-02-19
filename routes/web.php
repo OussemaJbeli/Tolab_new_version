@@ -111,10 +111,15 @@ Route::get('hot_AUTH', [hotController::class, 'index'])
     ->name('my_videos_AUTH.uploadmain')
     ->middleware('auth');
 
-    //wotsh video
+    //watsh video
     Route::get('show_video/{id_video}', [showVidoeController::class, 'index'])
-    ->name('show_video.show')
-    ->middleware('auth');
+        ->name('show_video.show')
+        ->middleware('auth');
+
+    //watsh video master
+    Route::get('show_video_master/{id_video}/', [showVidoeController::class, 'index_master'])
+        ->name('show_video.show')
+        ->middleware('auth');
 
     //striks
     Route::get('show_video/striks/{id_video}/striks_main', [videosController::class, 'striks_main_video'])
@@ -187,13 +192,14 @@ Route::get('hot_AUTH', [hotController::class, 'index'])
     ->middleware('auth');
 
     //creat coment
-    Route::get('show_video/Coments_AUTH/{id_videos}/create', [CommentsController::class, 'store'])
+    Route::get('Coments_AUTH/{id_videos}/create', [CommentsController::class, 'store'])
     ->name('Coments_AUTH.create')
     ->middleware('auth');
 
-    Route::get('show_video/Coments_AUTH/{id_coments}/createSub', [CommentsController::class, 'storeSub'])
+    Route::get('Coments_AUTH/{id_coments}/createSub', [CommentsController::class, 'storeSub'])
     ->name('Coments_AUTH.createSub')
     ->middleware('auth');
+
 
 //**other */
     Route::get('chanel_AUTH/{id_chanel}', [chanelController::class, 'index'])

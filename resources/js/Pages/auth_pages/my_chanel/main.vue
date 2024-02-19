@@ -25,10 +25,10 @@
                                     </Link>
                                 </div>
                                 <div class="card-block">
-                                    <Link :href="`/show_video/${main_video.id}`">
+                                    <Link :href="`/show_video_master/${main_video.id}`">
                                         <h4 class="card-title">{{main_video.name }}</h4>
                                     </Link>
-                                    <Link :href="`/show_video/${main_video.id}`">
+                                    <Link :href="`/show_video_master/${main_video.id}`">
                                         <p class="card-text">{{ main_video.discription }}</p>
                                     </Link>
                                     <small class="text-muted">
@@ -70,7 +70,7 @@
                                 <div class="col-sm-6 col-md-4 col-lg-3 video_panel mt-10" v-for="(video,index) in videos">
                                     <div class="card mp-4 p-1">
                                         <div class="card-icon">
-                                            <Link class="img_panel_video" :href="`/show_video/${video.id}`">
+                                            <Link class="img_panel_video" :href="`/show_video_master/${video.id}`">
                                                 <img :src="'/'+video.img_path" class="card-img-top" alt="card image">
                                                 <time>{{video.video_duration}}</time>
                                                 <i class="fas fa-play fa-2x"></i>

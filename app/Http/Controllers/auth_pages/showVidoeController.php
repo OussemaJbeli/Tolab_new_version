@@ -196,6 +196,160 @@ class showVidoeController extends Controller
             'chanel_subscribe' => $chanel_subscribe,
         ]);
     }
+    public function index_master(string $id)
+    {
+        $id_chanel = session('selected_channel_id', null);
+        $vue_video = new Views();
+        $vue_video->id_video = $id;
+        $vue_video->save();
+
+        $target_video = Videos::where('videos.id', $id)
+            ->join('chanels as video_chanels','video_chanels.id','=','videos.id_chanel')
+            ->leftJoin('like_videos', 'like_videos.id_video', '=', 'videos.id')  
+            ->leftJoin('subscribes', 'subscribes.id_chanel', '=', 'video_chanels.id')  
+            ->select(
+                'videos.*', 
+                'video_chanels.id as video_chanels_id', 
+                'video_chanels.name_chanel as video_chanels_name', 
+                'video_chanels.logo_path_chanel as video_chanels_logo_path',
+                DB::raw('COALESCE(count(like_videos.id), 0) as count'),
+                DB::raw('COALESCE(count(subscribes.id_chanel), 0) as count_subscribe')
+            )
+            ->groupBy('videos.id', 'video_chanels_id','video_chanels_name' , 'video_chanels_logo_path')
+            ->first();
+
+        $target_video_vues = Videos::where('videos.id', $id)  
+            ->leftJoin('views', 'views.id_video', '=', 'videos.id') 
+            ->select(
+                DB::raw('COALESCE(count(views.id), 0) as vuews_video'),
+            )
+            ->first();
+
+        //
+        $record = Videos::find($id); // Replace $id with the actual ID of your record
+        $currentTime = Carbon::now();
+        $minutesDifference = $record->created_at->diffInMinutes($currentTime);
+        $date_count_target_video = $this->date_count_function($minutesDifference);
+
+        //
+        $videos = Videos::select(
+                'videos.*',
+                'video_chanels.id as video_chanels_id',
+                'video_chanels.name_chanel as video_chanels_name', 
+                'video_chanels.logo_path_chanel as video_chanels_logo_path',
+                DB::raw('COALESCE(count(views.id), 0) as vuews_video')
+            )
+            ->where('public','عامة')
+            ->where('videos.id','!=',$id)
+            ->where('videos.id_chanel','!=',$id_chanel)
+            ->join('chanels as video_chanels','video_chanels.id','=','videos.id_chanel')
+            ->leftJoin('subscribes', 'subscribes.id_chanel', '=', 'video_chanels.id') 
+            ->leftJoin('views', 'views.id_video', '=', 'videos.id')  
+            ->groupBy('videos.id','video_chanels.id', 'video_chanels.name_chanel' , 'video_chanels.logo_path_chanel')
+            ->orderByRaw('RAND()')
+            ->get();  
+        
+            foreach ($videos as $video) {
+                $video_duration = $video->duration; 
+                $video->video_duration = $this->convertDuration($video_duration);
+            }
+
+            $comentsNewst = Coments::join('users as coments_user', 'coments_user.id', '=', 'coments.id_user')
+            ->leftJoin('chanels', 'chanels.id_user', '=', 'coments.id_user')
+            ->leftJoin('like_comments', 'like_comments.id_coment', '=', 'coments.id')  
+            ->where('chanels.id', $id_chanel)
+            ->where('coments.id_video', $id)
+            ->select(
+                'coments.*', 
+                'chanels.name_chanel as coments_chanels_name', 
+                'chanels.logo_path_chanel as coments_chanels_logo_path',
+                'chanels.id as coments_chanels_id',
+                'coments_user.name as coments_user_name',
+                DB::raw('COALESCE(count(like_comments.id), 0) as count')
+            )
+            ->groupBy('coments.id','coments_chanels_id','coments_user.name', 'chanels.name_chanel', 'chanels.logo_path_chanel')
+            ->orderBy('coments.created_at', 'desc')
+            ->get();
+    
+            foreach ($comentsNewst as $video) {
+                $minutesDifference = $video->created_at->diffInMinutes(now()); 
+                $video->date_count = $this->date_count_function($minutesDifference);
+                $video_duration = $video->duration; 
+                $video->video_duration = $this->convertDuration($video_duration);
+            }
+
+            $comentsLikes = Coments::where('coments.id_video', $id)
+            ->join('users as coments_user', 'coments_user.id', '=', 'coments.id_user')
+            ->leftJoin('chanels', 'chanels.id_user', '=', 'coments.id_user')
+            ->leftJoin('like_comments', 'like_comments.id_coment', '=', 'coments.id')    
+            ->select(
+                'coments.*', 
+                'chanels.name_chanel as coments_chanels_name', 
+                'chanels.logo_path_chanel as coments_chanels_logo_path',
+                'chanels.id as coments_chanels_id',
+                'coments_user.name as coments_user_name',
+                DB::raw('COALESCE(count(like_comments.id), 0) as count')
+            )
+            ->groupBy('coments.id','coments_chanels_id','coments_user.name', 'chanels.name_chanel', 'chanels.logo_path_chanel')
+            ->orderBy('count', 'desc')
+            ->get();
+    
+            foreach ($comentsLikes as $video) {
+                $minutesDifference = $video->created_at->diffInMinutes(now()); 
+                $video->date_count = $this->date_count_function($minutesDifference);
+                $video_duration = $video->duration; 
+                $video->video_duration = $this->convertDuration($video_duration);
+            }
+
+        $Subcoments = Sub_coments::where('coments.id_video', $id)
+            ->select(
+            'sub_coments.*', 
+            'chanels.name_chanel as coments_chanels_name', 
+            'chanels.id as coments_chanels_id', 
+            'chanels.logo_path_chanel as coments_chanels_logo_path',
+            'coments_user.name as coments_user_name',
+            DB::raw('COALESCE(count(Like_comment_subs.id), 0) as count')
+            )
+            ->join('users as coments_user', 'coments_user.id', '=', 'sub_coments.id_user_sub_coment')
+            ->join('coments', 'coments.id', '=', 'sub_coments.id_coment')
+            ->leftJoin('chanels', 'chanels.id_user', '=', 'sub_coments.id_user_sub_coment')
+            ->leftJoin('Like_comment_subs', 'Like_comment_subs.id_Subcoment', '=', 'Sub_coments.id')  
+            ->where('chanels.id', $id_chanel)  
+            ->groupBy('sub_coments.id','coments_chanels_id', 'coments_user.name', 'chanels.name_chanel', 'chanels.logo_path_chanel')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+            foreach ($Subcoments as $video) {
+                $minutesDifference = $video->created_at->diffInMinutes(now()); 
+                $video->date_count = $this->date_count_function($minutesDifference);
+                $video_duration = $video->duration; 
+                $video->video_duration = $this->convertDuration($video_duration);
+            }
+
+            $coments_count = Coments::where('id_video',$id)
+            ->select(DB::raw('count(*) as count'))
+            ->first();
+
+            $Subcoments_count = Sub_coments::select('id_coment', DB::raw('count(*) as count'))
+            ->groupBy('id_coment')
+            ->get();
+
+        $like_video_count = Like_video::where('id_video', $id)
+            ->count();
+
+        return Inertia::render('auth_pages/watch_master',[
+            'target_video_vues' => $target_video_vues,
+            'target_video' => $target_video,
+            'videos' => $videos,
+            'comentsNewst' => $comentsNewst,
+            'comentsLikes' => $comentsLikes,
+            'coments_count' => $coments_count,
+            'Subcoments' => $Subcoments,
+            'Subcoments_count' => $Subcoments_count,
+            'like_video_count' => $like_video_count,
+            'time_test'=> $date_count_target_video,
+        ]);
+    }
     public function indexGest(string $id)//
     {
         $vue_video = new Views();

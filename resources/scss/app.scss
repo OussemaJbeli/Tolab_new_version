@@ -31,7 +31,7 @@ body{
     height: 50px;
 }
 .main_over_all{
-    height: calc( 100vh - 50px);
+    height: calc( 100vh - 56px);
     overflow: hidden auto;
 }
 .button_add{
@@ -69,7 +69,12 @@ body{
 .button_delete{
     background-color: #d60f0f;
 }
-
+.DataTable1{
+    min-width: 900px
+}
+.DataTable2{
+    min-width: 600px
+}
 // }
 ///////pages style from old
 @import "css_old/bootstrap-rtl.css";

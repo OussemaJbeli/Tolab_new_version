@@ -39,7 +39,7 @@
                                             اضف رابط
                                             <i class="fa-solid fa-plus"></i>
                                         </button>
-                                        <button class="button_add button_delete"  v-if="$page.props.auth.chanel && $page.props.auth.links" @click="remove_links_function">
+                                        <button class="button_add button_delete mr-2 mb-2"  v-if="$page.props.auth.chanel && $page.props.auth.links" @click="remove_links_function">
                                             حذف رابط
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
@@ -61,31 +61,31 @@
                     </div>
                 </div>
                 <div>
-                    <div class="row" v-if="$page.props.auth.chanel">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light4 mx-auto w-100 px-0 py-2">                 
-                            <ul class="navbar-nav mx-auto d-block pl-0 ul_of_chanel_links">
-                                <li class="nav-item nav-item1">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/my_chanel_AUTH/${$page.props.auth.chanel.id}`" >
+                    <div class="row chanel_nav_links" v-if="$page.props.auth.chanel">
+                        <nav>                 
+                            <ul class="ul_of_chanel_links">
+                                <li class="nav-item">
+                                    <Link :href="`/my_chanel_AUTH/${$page.props.auth.chanel.id}`" >
                                         الصفحة الرئيسية
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/my_videos_AUTH/${$page.props.auth.chanel.id}`">
+                                    <Link :href="`/my_videos_AUTH/${$page.props.auth.chanel.id}`">
                                         فديوهاتي
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/playlist_AUTH/${$page.props.auth.chanel.id}`">
+                                    <Link :href="`/playlist_AUTH/${$page.props.auth.chanel.id}`">
                                         قوائم التشغيل
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/my_subscribs_AUTH/${$page.props.auth.chanel.id}`">
+                                    <Link :href="`/my_subscribs_AUTH/${$page.props.auth.chanel.id}`">
                                         قائمة المشتركين
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/my_about_AUTH/${$page.props.auth.chanel.id}`">
+                                    <Link :href="`/my_about_AUTH/${$page.props.auth.chanel.id}`">
                                         حول
                                     </Link>
                                 </li>

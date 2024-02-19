@@ -44,26 +44,26 @@
                 </div>
                 <div>
                     <!-- test1 -->
-                    <div class="row">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light4 mx-auto w-100 px-0 py-2">                 
-                            <ul class="navbar-nav mx-auto d-block pl-0 ul_of_chanel_links">
+                    <div class="row chanel_nav_links">
+                        <nav>                 
+                            <ul class="ul_of_chanel_links">
                                 <li class="nav-item nav-item1">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/chanel_AUTH/${myCookieArray.id}`">
+                                    <Link :href="`/chanel_AUTH/${myCookieArray.id}`">
                                         الصفحة الرئيسية
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/other_videos_AUTH/${myCookieArray.id}`">
+                                    <Link :href="`/other_videos_AUTH/${myCookieArray.id}`">
                                         الفديوهات
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/other_playlist_AUTH/${myCookieArray.id}`">
+                                    <Link :href="`/other_playlist_AUTH/${myCookieArray.id}`">
                                         قوائم التشغيل
                                     </Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="list-group-item list-group-item-action border-0" :href="`/other_about_AUTH/${myCookieArray.id}`">
+                                    <Link :href="`/other_about_AUTH/${myCookieArray.id}`">
                                         حول
                                     </Link>
                                 </li>

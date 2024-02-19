@@ -73,12 +73,12 @@
         .first_part{
             width: 100%;
             height: auto;
-            padding-top: 50px;
             margin-bottom: 20px;
             display: flex;
             justify-content: center;
             align-items: end;
             background-color: var(--rich-black-fogra-29);
+            overflow: visible;
             .color1{
                 display: none;
             }

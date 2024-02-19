@@ -8,11 +8,11 @@
             </h2>
         </template>
         <div class="contain_admin">
-            <div class="historique_statistique frame_original">
+            <div class="historique_statistique frame_original  overflow-x-scroll">
                 <p class="title">
                     <span>قائمة القنوات</span>
                 </p>
-                <DataTable class="display">
+                <DataTable class="display DataTable1">
                     <thead>
                         <tr class="text-center font-bold bg-gray-600">
                             <th class="pb-4 pt-6 px-6 text-end">القنوات </th>

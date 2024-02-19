@@ -9,10 +9,9 @@
             </header>
             <div id="top-menu">
                 <div class="container-fluid overflow-visible">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3  flex justify-between ">
-                        <div class="flex items-center p-2 h-10 fixed">
-                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar">X</i>
-                            <b>
+                    <nav class="navbar-expand-lg navbar-light bg-light p-2 flex justify-between ">
+                        <div class="">
+                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar"></i>
                                 <Link class="navbar-brand" v-if="$page.props.auth.user.etudient" :href="route('home_AUTH')">
                                     طلاب
                                     <span class="tolab-icon"><i class="fa-solid fa-graduation-cap fa-lg"></i></span>
@@ -25,22 +24,21 @@
                                     طلاب
                                     <span class="tolab-icon"><i class="fa-solid fa-graduation-cap fa-lg"></i></span>
                                 </Link>
-                            </b>
                         </div>
                         <div class="navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mx-lg-auto" v-if="$page.props.auth.user.etudient">
+                                <ul class="navbar-nav mx-lg-auto">
                                     <li class="nav-item active">
-                                        <Link class="nav-link4 pl-0 px-3 ml-1 mr-3" :href="route('home_AUTH')">
+                                        <Link class="nav-link4 pl-0 px-3 ml-1 mr-3" :href="route('home_AUTH')" v-if="$page.props.auth.user.etudient">
                                             الصفحة الرئيسية
                                         </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link class="nav-link4 pl-0 px-3 ml-1 mr-3" :href="route('news_AUTH')">
+                                        <Link class="nav-link4 pl-0 px-3 ml-1 mr-3" :href="route('news_AUTH')" v-if="$page.props.auth.user.etudient">
                                             المرفوعة حديثآ
                                         </Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link class="nav-link4 pl-0 px-3 ml-1 mr-3" :href="route('hot_AUTH')">
+                                        <Link class="nav-link4 pl-0 px-3 ml-1 mr-3" :href="route('hot_AUTH')" v-if="$page.props.auth.user.etudient">
                                             الفديوهات الرائجة
                                         </Link>
                                     </li>

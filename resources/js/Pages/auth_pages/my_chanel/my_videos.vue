@@ -1,7 +1,7 @@
 <!-- ////////////////// temlate///////////// -->
 <template>
         <ChanelLayout>
-        <div class="latest-download" v-if="$page.props.auth.chanel">
+        <div class="latest-download">
                         <div class="container">
                             <div class="header_new_videos">
                                 <h4 > الفديوهات المرفوعة</h4>
@@ -14,7 +14,7 @@
                                 <div class="col-sm-6 col-md-4 col-lg-3 video_panel mt-10" v-for="(video,index) in videos">
                                     <div class="card mp-4 p-1">
                                         <div class="card-icon">
-                                            <Link class="img_panel_video" :href="`/show_video/${video.id}`">
+                                            <Link class="img_panel_video" :href="`/show_video_master/${video.id}`">
                                                 <img :src="'/'+video.img_path" class="card-img-top" alt="card image">
                                                 <time>{{video.video_duration}}</time>
                                                 <i class="fas fa-play fa-2x"></i>
@@ -53,13 +53,6 @@
                             </div>
                             <div class='paragraph' v-else>يمكمك الان رفع الفيديوهات علي القنات</div>
                         </div> 
-        </div>
-        <div v-else class="dont_have_chanel">
-                <p>قم بإنشاء قنات لتتمكن من رفع الفيديوهات عليها</p>
-                <button class="button_add" @click="add_chanel_function">
-                    إنشاء قنات
-                    <i class="fa-solid fa-plus"></i>
-                </button>
         </div>
             <!-- popup edite video -->
                 <div class="upload_videos_frame" id="loginModal" v-if="edite_videos">
@@ -299,7 +292,7 @@ export default {
         },
         add_videos_db(){
             if(this.fileSizeError){
-            this.add_videos_values.post(`my_videos_AUTH/${this.$page.props.auth.chanel.id}/upload`, {
+            this.add_videos_values.post(`/my_videos_AUTH/${this.$page.props.auth.chanel.id}/upload`, {
                 onProgress: () => {
                     this.upload_animation=true;
                 },
@@ -326,7 +319,7 @@ export default {
         },
         edite_videos_db(){
             if(this.fileSizeError){
-            this.edite_videos_values.post(`my_videos_AUTH/${this.edite_videos_values.id}/edit`, {
+            this.edite_videos_values.post(`/my_videos_AUTH/${this.edite_videos_values.id}/edit`, {
                 onProgress: () => {
                     this.upload_animation=true;
                     this.uploadProgress = Math.round((progressEvent.loaded / progressEvent.total) * 100);
