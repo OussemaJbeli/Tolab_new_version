@@ -98,21 +98,7 @@
                                                 <i class="fa-solid fa-eye mr-2"></i> <span> {{history_video.vuews_video}} مشاهدة</span>
                                                 <i class="fa-solid fa-calendar-days mr-2 ml-2"></i> <span>منذ {{ history_video.date_count }} </span>
                                             </small>
-                                            <div v-if="$page.props.auth.chanel[0]">
-                                                <div v-if="$page.props.auth.chanel[0].id == history_video.id_chanel">
-                                                    <Link :href="route('my_chanel_AUTH')" class="channel-img mt-2">
-                                                        <img :src="'/'+history_video.video_chanels_logo_path"  class="rounded-circle mr-2" width="30">
-                                                        <span class="card-text">{{history_video.video_chanels_name}}</span>
-                                                    </Link>
-                                                </div>
-                                                <div v-else>
-                                                    <Link :href="`/chanel_AUTH/${history_video.id_chanel}`" class="channel-img mt-2">
-                                                        <img :src="'/'+history_video.video_chanels_logo_path"  class="rounded-circle mr-2" width="30">
-                                                        <span class="card-text">{{history_video.video_chanels_name}}</span>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div v-else>
+                                            <div>
                                                 <Link :href="`/chanel_AUTH/${history_video.id_chanel}`" class="channel-img mt-2">
                                                     <img :src="'/'+history_video.video_chanels_logo_path"  class="rounded-circle mr-2" width="30">
                                                     <span class="card-text">{{history_video.video_chanels_name}}</span>

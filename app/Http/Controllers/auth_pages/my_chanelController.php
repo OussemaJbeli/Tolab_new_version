@@ -78,7 +78,7 @@ class my_chanelController extends Controller
         $videosTotal = Videos::where('id_user', Auth::user()->id)
         ->count();
 
-        $subscribesNum = chanels::where('id_user', Auth::user()->id)
+        $subscribesTotal = chanels::where('id_user', Auth::user()->id)
         ->join('subscribes', 'subscribes.id_chanel', '=', 'chanels.id')
         ->count();
 
@@ -219,7 +219,7 @@ class my_chanelController extends Controller
         return Inertia::render('auth_pages/master_dashboard/index',[
             //total info
             'videosTotal' => $videosTotal,
-            'subscribesNum' => $subscribesNum,
+            'subscribesTotal' => $subscribesTotal,
             'vuewsNum'=> $vuewsNum,
             'chanelNum' => $chanelNum,
             //char info
@@ -393,6 +393,7 @@ class my_chanelController extends Controller
         session(['selected_channel_id' => $id_chanel]);
 
         $subscrib_chanel = Subscribe::where('id_chanel', $id_chanel)
+        ->join('users','users.id','=','subscribes.id_subscriber')
         ->get();
 
         return Inertia::render('auth_pages/my_chanel/sub_chanels',[

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Videos;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class newsController extends Controller
@@ -17,6 +18,8 @@ class newsController extends Controller
     public function index()
     {
         $videos = Videos::join('chanels','chanels.id','=','videos.id_chanel')
+        ->join('users','users.id','=','videos.id_user')
+        ->leftJoin('views', 'views.id_video', '=', 'videos.id') 
         ->select(
             'videos.*',
             'chanels.name_chanel as chanel_name',
@@ -25,7 +28,7 @@ class newsController extends Controller
             DB::raw('COALESCE(count(views.id), 0) as vuews_video')
         )
         ->where('public','عامة')
-        ->leftJoin('views', 'views.id_video', '=', 'videos.id')  
+        ->where('chanels.study_level',Auth::user()->etudient_level)  
         ->orderBy('videos.created_at', 'desc') 
         ->groupBy('chanels.id','videos.id', 'chanels.name_chanel' , 'chanels.logo_path_chanel')
         ->get();

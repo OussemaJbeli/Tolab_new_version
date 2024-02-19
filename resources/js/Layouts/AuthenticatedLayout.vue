@@ -11,7 +11,7 @@
                 <div class="container-fluid overflow-visible">
                     <nav class="navbar-expand-lg navbar-light bg-light p-2 flex justify-between ">
                         <div class="">
-                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar"></i>
+                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar">X</i>
                                 <Link class="navbar-brand" v-if="$page.props.auth.user.etudient" :href="route('home_AUTH')">
                                     طلاب
                                     <span class="tolab-icon"><i class="fa-solid fa-graduation-cap fa-lg"></i></span>
@@ -44,7 +44,7 @@
                                     </li>
                                 </ul>
                         </div>
-                        <div class="flex flex-row ">
+                        <div class="flex flex-row">
                             <div class="form-inline m-0 p-0" v-if="$page.props.auth.user.etudient">
                                 <label :style="{ width: search_run? '100%' : '20%' }" class="label_for_search">
                                     <i class="fa-solid fa-circle-xmark" v-if="search_run" @click="start_searsh()" ></i>
@@ -153,32 +153,35 @@
                     <div class="layer_dark" @click="open_side_bar" :style="{ display: open_side_frame? 'block' : 'none' }"></div>
                 <!-- search items -->
                 <div v-if="search_run" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="home_content_frame home_content_frame_serach" tabindex="0">
-                    <div class="row">
-                        <div class="video_card col-sm-6 col-md-4 col-lg-3" v-for="video_serach in filteredItems">
-                            <div class="card p-1 mp-4">
-                                <div class="card-icon">
-                                    <Link class="image_video" :href="`/show_video/${video_serach.id}`">
-                                        <img :src="'/'+video_serach.img_path" class="card-img-top" alt="card image">
-                                        <time>9:30</time>
-                                        <i class="fas fa-play fa-2x"></i>
-                                    </Link>
-                                </div>
-                                <Link :href="`show_video/${video_serach.id}`">
-                                    <div class="card-body p-0">
-                                        <p class="card-title">{{video_serach.name}}</p>
+                    <div class="content m-4 home_content_frame">
+                    <h4 class="py-5">قائمة البحث</h4>
+                        <div class="row">
+                            <div class="video_card col-sm-6 col-md-4 col-lg-3" v-for="video_serach in filteredItems">
+                                <div class="card p-1 mp-4">
+                                    <div class="card-icon">
+                                        <Link class="image_video" :href="`/show_video/${video_serach.id}`">
+                                            <img :src="'/'+video_serach.img_path" class="card-img-top" alt="card image">
+                                            <time>9:30</time>
+                                            <i class="fas fa-play fa-2x"></i>
+                                        </Link>
                                     </div>
-                                </Link>
-                                <div class="card-footer">
-                                    <small class="text-muted">
-                                        <span class="d-block"><i class="fa-solid fa-eye"></i> <span>{{video_serach.vuews_video}} مشاهدة</span></span>
-                                        <i class="fa-solid fa-calendar-days"></i> <span>منذ {{ video_serach.date_count }} </span>
-                                    </small>
-                                </div>
-                                <div>
-                                    <Link :href="`/chanel_AUTH/${video_serach.chanel_id}`" class="channel-img flex items-center flex-row">
-                                        <img :src="'/'+video_serach.video_chanel_logo_path" class="rounded-circle my-2 ml-3 h-8 w-8">
-                                        <span class="card-text  pl-2">{{video_serach.video_chanel_name}}</span>
+                                    <Link :href="`show_video/${video_serach.id}`">
+                                        <div class="card-body p-0">
+                                            <p class="card-title">{{video_serach.name}}</p>
+                                        </div>
                                     </Link>
+                                    <div class="card-footer">
+                                        <small class="text-muted">
+                                            <span class="d-block"><i class="fa-solid fa-eye"></i> <span>{{video_serach.vuews_video}} مشاهدة</span></span>
+                                            <i class="fa-solid fa-calendar-days"></i> <span>منذ {{ video_serach.date_count }} </span>
+                                        </small>
+                                    </div>
+                                    <div>
+                                        <Link :href="`/chanel_AUTH/${video_serach.chanel_id}`" class="channel-img flex items-center flex-row">
+                                            <img :src="'/'+video_serach.video_chanel_logo_path" class="rounded-circle my-2 ml-3 h-8 w-8">
+                                            <span class="card-text  pl-2">{{video_serach.video_chanel_name}}</span>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
