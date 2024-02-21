@@ -331,4 +331,16 @@ Route::get('pyment_AUTH', [paymentController::class, 'index'])
     ->name('admin_taleb.payment_plans')
     ->middleware('auth');
 
+    Route::get('admin_taleb/payment_plans/add', [payment_plansadminController::class, 'store'])
+    ->name('admin_taleb.payment_plans_add')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/payment_plans/{id_plan}/edite', [payment_plansadminController::class, 'edit'])
+    ->name('admin_taleb.payment_plans_edite')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/payment_plans/{id_plan}/remove', [payment_plansadminController::class, 'destroy'])
+    ->name('admin_taleb.payment_plans_remove')
+    ->middleware('auth');
+
 require __DIR__.'/auth.php';

@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('education_level')->nullable();
-            $table->boolean('status')->default(false);
+            $table->boolean('status')->default(true);
             $table->text('description')->nullable();
             $table->string('Price')->nullable();
             $table->string('frequency')->nullable();
+            $table->string('frame')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
