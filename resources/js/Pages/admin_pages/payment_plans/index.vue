@@ -4,7 +4,7 @@
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight page_title">
                 <i class="fa-solid fa-user"></i>
-                /المستخدمون
+                /خطط الدفع
             </h2>
         </template>
         <div class="contain_admin">
@@ -123,7 +123,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- plane 2 -->
                         <div class="exemple">
                             <span>المثال الثاني</span>
@@ -272,7 +271,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label text-white">المستوى الدراسي</label>
+                                    <label for="name" class="col-form-label text-white"> التكرار</label>
                                     <select
                                         id="etudient_level"
                                         class="mt-1 block w-full input"
@@ -361,7 +360,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label text-white">المستوى الدراسي</label>
+                                    <label for="name" class="col-form-label text-white">التكرار</label>
                                     <select
                                         id="etudient_level"
                                         class="mt-1 block w-full input"

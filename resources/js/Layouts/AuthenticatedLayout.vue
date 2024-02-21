@@ -119,7 +119,7 @@
                                     <Link class="list-group-item list-group-item-action" :href="route('support_AUTH')">
                                         <i class="fas fa-headset mr-2 purple"></i>الدعم الفني
                                     </Link> 
-                                    <Link class="list-group-item list-group-item-action" :href="route('pyment_AUTH')">
+                                    <Link v-if="$page.props.auth.user.etudient" class="list-group-item list-group-item-action" :href="route('pyment_AUTH')">
                                         <i class="fa-solid fa-coinss mr-2 purple"></i>خطط الدفع
                                     </Link> 
                                     <Link class="list-group-item list-group-item-action" :href="route('logout')" method="post">
