@@ -15,12 +15,20 @@
 }
 .side_bare_copy{
     position: relative;
+    z-index: 1000;
     .copy_right{
         font-size: 12px;
         position: absolute;
         bottom: 100px;
         right: 5px;
     }
+}
+.layer_dark{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000002c;
+    position: fixed;
+    z-index: 20;
 }
 body{
     background-color: #f3f4f6;
@@ -125,6 +133,7 @@ body{
 @import "pages/auth_pages/support.scss";
 @import "pages/auth_pages/profile.scss";
 @import "pages/auth_pages/home.scss";
+@import "pages/auth_pages/payment.scss";
 @import "pages/login.scss";
 
 //***********admin

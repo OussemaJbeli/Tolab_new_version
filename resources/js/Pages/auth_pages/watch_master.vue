@@ -18,12 +18,12 @@
                     </div>
                     <div class="col-lg-5 show_details_respanse">
                         <div class="card-block mb-4">
-                            <a>
-                                <h4 class="card-title">{{table_target_video_count.name}}</h4>
-                            </a>
+                            <div class="flex row p-3 justify-between">
+                                <h4 class="card-title ml-10">{{table_target_video_count.name}}</h4>
+                            </div>
                             <p class="card-text overflow-hidden max-h-60 discription_show_video">{{table_target_video_count.discription}}</p>
                         </div>
-                        <small class="text-muted mr-4 ">
+                        <small class="text-muted mt-4 ">
                             <i class="fa-solid fa-eye"></i> <span> {{target_video_vues.vuews_video}} مشاهدة</span>
                             <i class="fa-solid fa-calendar-days ml-2"></i> <span>منذ {{ time_test }} </span>
                         </small>
@@ -181,6 +181,7 @@
 </template>
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import FileInput from "@/Components/FileInput.vue";
 import { Head, Link} from '@inertiajs/vue3';
 import axios from 'axios';
 </script>
@@ -227,6 +228,20 @@ export default {
             dont_have_chanel:false,
 
             user_name: null,
+
+            edite_videos:false,
+            edite_videos_values: this.$inertia.form({
+                id_video: null,
+                name: '',
+                discription: '',
+                public_states: '',
+                video_path: null,
+                img_path: null,
+                TEMPimg_path: null,
+                TEMPvideo_path: null,
+            }),
+            upload_animation: false,
+            fileSizeError: true,
 
         }
     },
@@ -331,7 +346,33 @@ export default {
                 case 'newest':
                     this.table_comment_count = this.comentsNewst;break;
             }
-        }
+        },
+        edite_videos_function(id,name,disc,public_state,video_path,img_path){
+            this.edite_videos?
+                this.edite_videos=false:
+                [
+                    this.edite_videos=true,
+                    this.edite_videos_values.id = id,
+                    this.edite_videos_values.name =name,
+                    this.edite_videos_values.discription =disc,
+                    this.edite_videos_values.public_states =public_state,
+                    this.edite_videos_values.TEMPvideo_path =video_path,
+                    this.edite_videos_values.TEMPimg_path = img_path,
+                ];
+        },
+        //edite
+
+        handleFileChange(event) {
+            const file = event.target.files[0];
+            const maxSize = 100 * 1024 * 1024;
+
+            if (file && file.size > maxSize) {
+                this.fileSizeError = false;
+            } else {
+                this.fileSizeError = true;
+            }
+        },
+
     },
 }
 </script>

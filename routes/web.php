@@ -22,6 +22,7 @@ use App\Http\Controllers\auth_pages\showVidoeController;
 use App\Http\Controllers\auth_pages\subscribeController;
 use App\Http\Controllers\auth_pages\supportController;
 use App\Http\Controllers\auth_pages\videosController;
+use App\Http\Controllers\auth_pages\paymentController;
 
 //gest
 use App\Http\Controllers\gest_pages\welcameController;
@@ -247,6 +248,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//payment
+Route::get('pyment_AUTH', [paymentController::class, 'index'])
+    ->name('pyment_AUTH')
+    ->middleware('auth');
 
 ////////////////admin controller
 

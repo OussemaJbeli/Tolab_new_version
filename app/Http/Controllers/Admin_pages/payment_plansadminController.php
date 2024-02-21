@@ -18,7 +18,10 @@ class payment_plansadminController extends Controller
 
     public function index()
     {
-        return Inertia::render('admin_pages/payment_plans/index');
+        $pyment = Payment::all();
+        return Inertia::render('admin_pages/payment_plans/index',[
+            'pyment'=>$pyment,
+        ]);
     }
 
     /**
