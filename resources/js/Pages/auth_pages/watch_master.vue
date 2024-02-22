@@ -4,15 +4,6 @@
         <Head title="طلاب" />
         <div class="watch-page pt-5">
         <div class="container-fluid">
-            <div v-if="copy_success" class="alert alert-success alert-dismissible fade show need_account absolute" role="alert">
-                <div>
-                    <i class="fa-regular fa-circle-check"></i>
-                        تم نسخ الرابط
-                </div>
-                <button @click="copy_success_function" type="button" data-bs-dismiss="alert" aria-label="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
             <div class="card4 border-0">
                 <div class="row px-2">
                     <div class="col-lg-7 main_video_panel">
@@ -27,23 +18,15 @@
                     </div>
                     <div class="col-lg-5 show_details_respanse">
                         <div class="card-block mb-4">
-                            <a>
-                                <h4 class="card-title">{{table_target_video_count.name}}</h4>
-                            </a>
+                            <div class="flex row p-3 justify-between">
+                                <h4 class="card-title ml-10">{{table_target_video_count.name}}</h4>
+                            </div>
                             <p class="card-text overflow-hidden max-h-60 discription_show_video">{{table_target_video_count.discription}}</p>
                         </div>
-                        <small class="text-muted mr-4 ">
+                        <small class="text-muted mt-4 ">
                             <i class="fa-solid fa-eye"></i> <span> {{target_video_vues.vuews_video}} مشاهدة</span>
                             <i class="fa-solid fa-calendar-days ml-2"></i> <span>منذ {{ time_test }} </span>
                         </small>
-                        <div class="flex direction-row justify-between ">
-                            <div class="w-100 flex flex-row items-center pt-2 pb-2">
-                                <button  @click="shareVideo(table_target_video_count.id)" class="float-right btn text-white btn-warning mt-4 mr-2">
-                                    <i class="fa-solid fa-share"></i>
-                                    مشاركة
-                                </button> 
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -198,6 +181,7 @@
 </template>
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import FileInput from "@/Components/FileInput.vue";
 import { Head, Link} from '@inertiajs/vue3';
 import axios from 'axios';
 </script>
@@ -245,6 +229,20 @@ export default {
 
             user_name: null,
 
+            edite_videos:false,
+            edite_videos_values: this.$inertia.form({
+                id_video: null,
+                name: '',
+                discription: '',
+                public_states: '',
+                video_path: null,
+                img_path: null,
+                TEMPimg_path: null,
+                TEMPvideo_path: null,
+            }),
+            upload_animation: false,
+            fileSizeError: true,
+
         }
     },
     methods: {
@@ -287,7 +285,7 @@ export default {
         },
         //like comment
         likeComment(coment_id,index) {
-            axios.get(`/Coments_AUTH/${coment_id}/add_like`)
+            axios.get(`Coments_AUTH/${coment_id}/add_like`)
                 .then(response => {
                 if (response.data.success) {
                     this.table_comment_count[index].count = response.data.likesCount;
@@ -298,7 +296,7 @@ export default {
             });
         },
         likeSUBComment(Subcoment_id,index1) {
-            axios.get(`/Coments_AUTH/${Subcoment_id}/add_Sublike`)
+            axios.get(`Coments_AUTH/${Subcoment_id}/add_Sublike`)
                 .then(response => {
                 if (response.data.success) {
                     this.table_Subcomment_count[index1].count = response.data.likesCount1;
@@ -310,7 +308,7 @@ export default {
         },
         //like video
         likeVideos(video_id) {
-            axios.get(`/my_videos_AUTH/${video_id}/add_like`)
+            axios.get(`my_videos_AUTH/${video_id}/add_like`)
                 .then(response => {
                 if (response.data.success) {
                     this.table_target_video_count.count = response.data.likesCount;
@@ -322,7 +320,7 @@ export default {
         },
         //subscribe
         Sunscribe_count(chanel_id) {
-            axios.get(`/my_videos_AUTH/${chanel_id}/add_subscribe`)
+            axios.get(`my_videos_AUTH/${chanel_id}/add_subscribe`)
                 .then(response => {
                 if (response.data.success) {
                     this.chanel_subscribe_table.count_subscribe = response.data.likesCount;
@@ -340,27 +338,6 @@ export default {
                 this.dont_have_chanel = true,
             ];
         },
-        //share
-        copy_success_function(){
-            this.copy_success?
-            this.copy_success = false:
-            this.copy_success = true;
-        },
-        shareVideo(id_video) {
-            // Construct the shareable link
-            const shareableLink = `${window.location.origin}/show_video_Gest/${id_video}`;
-            this.copyToClipboard(shareableLink);
-            this.copy_success_function();
-        },
-
-        copyToClipboard(text) {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-        },
         //comment
         filter_comment(page_name_type){
             switch (page_name_type) {
@@ -369,7 +346,33 @@ export default {
                 case 'newest':
                     this.table_comment_count = this.comentsNewst;break;
             }
-        }
+        },
+        edite_videos_function(id,name,disc,public_state,video_path,img_path){
+            this.edite_videos?
+                this.edite_videos=false:
+                [
+                    this.edite_videos=true,
+                    this.edite_videos_values.id = id,
+                    this.edite_videos_values.name =name,
+                    this.edite_videos_values.discription =disc,
+                    this.edite_videos_values.public_states =public_state,
+                    this.edite_videos_values.TEMPvideo_path =video_path,
+                    this.edite_videos_values.TEMPimg_path = img_path,
+                ];
+        },
+        //edite
+
+        handleFileChange(event) {
+            const file = event.target.files[0];
+            const maxSize = 100 * 1024 * 1024;
+
+            if (file && file.size > maxSize) {
+                this.fileSizeError = false;
+            } else {
+                this.fileSizeError = true;
+            }
+        },
+
     },
 }
 </script>

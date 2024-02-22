@@ -481,7 +481,7 @@
        <a href="#top" class="go-top" data-go-top>
           <i class="fa-solid fa-arrow-up"></i>
         </a>
-        <!-- popup login -->
+
         <div class="bluer_bg" v-if="open_login_frame">
             <div class="logo"></div>
             <div class="h2 desc1">تسجيل الدخول</div>
@@ -564,7 +564,7 @@
                 الرجوع إلى الصفحة الرئيسية
             </div>
         </div>
-        <!-- popup register -->
+
         <div class="bluer_bg" v-if="open_register_frame">
             <div class="logo"></div>
             <div class="h2 desc1">انشاء حساب جديد</div>

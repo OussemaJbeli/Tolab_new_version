@@ -92,9 +92,7 @@ time {
 }
 
 .card .fa-play {
-    position: absolute;
-    top: 43%;
-    right: 41%;
+    z-index: 3;
     color: black;
     display: none;
 }

@@ -7,6 +7,28 @@
 .show_details_respanse{
     display: flex;
     flex-direction: column;
+    .edite_delete{
+        width: 100;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: row;
+        .button{
+            width: 30px;
+            height: 30px;
+            border: 0 solid transparent;
+            border-radius: 10px;
+            background-color: #9b0505;
+            color: #fff;
+            margin-left:10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button_add{
+            background-color: rgb(18, 134, 31);
+        }
+    }
 }
 .pnael_optionel_videos{
     padding: 5px;

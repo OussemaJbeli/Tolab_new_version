@@ -46,8 +46,7 @@ class chanelController extends Controller
         }
 
         $Links = Links::where('chanels.id', $id_chanel_var)
-            ->leftJoin('users as user_likns', 'user_likns.id', '=', 'links.id_user')
-            ->leftJoin('chanels', 'chanels.id_user', '=', 'user_likns.id')
+            ->leftJoin('chanels', 'chanels.id_user', '=', 'links.id_chanel')
             ->select('links.*') 
             ->get();
 
@@ -153,8 +152,7 @@ class chanelController extends Controller
         setcookie('my_chanel', $chanel, time() + 3600, '/');
 
         $Links = Links::where('chanels.id', $id_chanel_var)
-        ->leftJoin('users as user_likns', 'user_likns.id', '=', 'links.id_user')
-        ->leftJoin('chanels', 'chanels.id_user', '=', 'user_likns.id') 
+        ->leftJoin('chanels', 'chanels.id_user', '=', 'links.id_chanel')
         ->select('links.*') 
         ->get();
 
@@ -217,8 +215,7 @@ class chanelController extends Controller
         setcookie('my_chanel', $chanel, time() + 3600, '/');
 
         $Links = Links::where('chanels.id', $id_chanel_var)
-        ->leftJoin('users as user_likns', 'user_likns.id', '=', 'links.id_user')
-        ->leftJoin('chanels', 'chanels.id_user', '=', 'user_likns.id') 
+        ->leftJoin('chanels', 'chanels.id_user', '=', 'links.id_chanel')
         ->select('links.*') 
         ->get();
 
@@ -274,8 +271,7 @@ class chanelController extends Controller
         setcookie('my_chanel', $chanel, time() + 3600, '/');
 
         $Links = Links::where('chanels.id', $id_chanel)
-        ->leftJoin('users as user_likns', 'user_likns.id', '=', 'links.id_user')
-        ->leftJoin('chanels', 'chanels.id_user', '=', 'user_likns.id') 
+        ->leftJoin('chanels', 'chanels.id_user', '=', 'links.id_chanel')
         ->select('links.*') 
         ->get();
 
@@ -368,8 +364,7 @@ class chanelController extends Controller
         setcookie('my_chanel', $chanel, time() + 3600, '/');
 
         $Links = Links::where('chanels.id', $id_chanel)
-        ->leftJoin('users as user_likns', 'user_likns.id', '=', 'links.id_user')
-        ->leftJoin('chanels', 'chanels.id_user', '=', 'user_likns.id') 
+        ->leftJoin('chanels', 'chanels.id_user', '=', 'links.id_chanel')
         ->select('links.*') 
         ->get();
 

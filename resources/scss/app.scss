@@ -15,12 +15,20 @@
 }
 .side_bare_copy{
     position: relative;
+    z-index: 1000;
     .copy_right{
         font-size: 12px;
         position: absolute;
         bottom: 100px;
         right: 5px;
     }
+}
+.layer_dark{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000002c;
+    position: fixed;
+    z-index: 20;
 }
 body{
     background-color: #f3f4f6;
@@ -75,6 +83,33 @@ body{
 .DataTable2{
     min-width: 600px
 }
+.DataTable3{
+    min-width: 500px
+}
+
+// searsh
+.label_for_search{
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    i{
+        color: var(--action_color);
+        font-size: 30px;
+    }
+    input{
+        margin-right: 10px;
+        border: 2.5px solid var(--action_color);
+        border-radius: 10px;
+        transition: 0.4s ease;
+        height: 35px;
+        outline: none;
+    }
+    [type='search']:focus{
+        border: 2.5px solid var(--action_color);
+        border-radius: 10px;
+    }
+}
 // }
 ///////pages style from old
 @import "css_old/bootstrap-rtl.css";
@@ -97,6 +132,8 @@ body{
 @import "pages/auth_pages/historique.scss";
 @import "pages/auth_pages/support.scss";
 @import "pages/auth_pages/profile.scss";
+@import "pages/auth_pages/home.scss";
+@import "pages/auth_pages/payment.scss";
 @import "pages/login.scss";
 
 //***********admin
@@ -104,6 +141,7 @@ body{
 @import "pages/admin_pages/main_frame/main_fram.scss";
 @import "pages/admin_pages/main_frame/side_bar.scss";
 @import 'pages/admin_pages/component/component.scss';
+@import 'pages/admin_pages/pages/payment.scss';
 //pages
 @import 'pages/admin_pages/pages/users.scss';
 @import 'pages/admin_pages/pages/videos.scss';

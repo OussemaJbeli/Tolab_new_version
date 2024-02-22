@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin_pages\payment_plansadminController;
 use App\Http\Controllers\Admin_pages\videosadminController;
 
 //auth
-use App\Http\Controllers\auth_pages\chanel_gest_Controller;
 use App\Http\Controllers\auth_pages\CommentsController;
 use App\Http\Controllers\auth_pages\homeController;
 use App\Http\Controllers\auth_pages\historiqueController;
@@ -23,6 +22,7 @@ use App\Http\Controllers\auth_pages\showVidoeController;
 use App\Http\Controllers\auth_pages\subscribeController;
 use App\Http\Controllers\auth_pages\supportController;
 use App\Http\Controllers\auth_pages\videosController;
+use App\Http\Controllers\auth_pages\paymentController;
 
 //gest
 use App\Http\Controllers\gest_pages\welcameController;
@@ -221,27 +221,6 @@ Route::get('hot_AUTH', [hotController::class, 'index'])
     ->name('other_subscribs_AUTH')
     ->middleware('auth');
 
-//**other gest */
-    Route::get('chanel_gest/{id_chanel}', [chanel_gest_Controller::class, 'index'])
-    ->name('chanel_gest');
-
-    //**videos */
-    Route::get('other_videos_gest/{id_chanel}', [chanel_gest_Controller::class, 'other_videos_AUTH'])
-    ->name('other_videos_gest');
-
-    //**playlist */
-    Route::get('other_playlist_gest/{id_chanel}', [chanel_gest_Controller::class, 'other_playlist_AUTH'])
-    ->name('other_playlist_gest');
-
-    //**about */
-    Route::get('other_about_gest/{id_chanel}', [chanel_gest_Controller::class, 'other_about_AUTH'])
-    ->name('other_about_gest');
-
-    //**subs */
-    Route::get('other_subscribs_gest/{id_chanel}/{id_user}', [chanel_gest_Controller::class, 'other_subscribs_AUTH'])
-    ->name('other_subscribs_gest');
-
-
 
     // 
 
@@ -269,6 +248,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//payment
+Route::get('pyment_AUTH', [paymentController::class, 'index'])
+    ->name('pyment_AUTH')
+    ->middleware('auth');
 
 ////////////////admin controller
 
@@ -346,6 +329,18 @@ Route::middleware('auth')->group(function () {
     //users
     Route::get('admin_taleb/payment_plans', [payment_plansadminController::class, 'index'])
     ->name('admin_taleb.payment_plans')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/payment_plans/add', [payment_plansadminController::class, 'store'])
+    ->name('admin_taleb.payment_plans_add')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/payment_plans/{id_plan}/edite', [payment_plansadminController::class, 'edit'])
+    ->name('admin_taleb.payment_plans_edite')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/payment_plans/{id_plan}/remove', [payment_plansadminController::class, 'destroy'])
+    ->name('admin_taleb.payment_plans_remove')
     ->middleware('auth');
 
 require __DIR__.'/auth.php';

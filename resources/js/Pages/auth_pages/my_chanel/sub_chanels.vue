@@ -7,24 +7,26 @@
                         <div class="w-100 mt-2 mb-4 flex flex-row items-center justify-between">
                             <span class="h3 text-black">قائمة المشتركين</span>
                         </div>
-                        <DataTable class="display">
-                            <thead>
-                                <tr class="text-center font-bold bg-green-900">
-                                    <th class="pb-4 pt-6 px-6 text-start text-white">الإسم</th>
-                                    <th class="pb-4 pt-6 px-6 text-start text-white">البريد الالكتروني</th>
-                                </tr>
-                            </thead>   
-                            <tbody class="text-right">
-                                <tr v-for="subscriber in subscrib_chanels" class="hover:bg-yellow-400 bg-green-300">
-                                    <td class="pb-4 pt-6 px-6 border-t text-end text-black">
-                                        {{ subscriber.name }}
-                                    </td>
-                                    <td class="pb-4 pt-6 px-6 border-t text-end text-black">
-                                        {{ subscriber.email }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </DataTable>
+                        <div class="overflow-x-scroll">
+                            <DataTable class="display DataTable3">
+                                <thead>
+                                    <tr class="text-center font-bold bg-green-900">
+                                        <th class="pb-4 pt-6 px-6 text-start text-white">الإسم</th>
+                                        <th class="pb-4 pt-6 px-6 text-start text-white">البريد الالكتروني</th>
+                                    </tr>
+                                </thead>   
+                                <tbody class="text-right">
+                                    <tr v-for="subscriber in subscrib_chanel" class="hover:bg-yellow-400 bg-green-300">
+                                        <td class="pb-4 pt-6 px-6 border-t text-end text-black">
+                                            {{ subscriber.name }}
+                                        </td>
+                                        <td class="pb-4 pt-6 px-6 border-t text-end text-black">
+                                            {{ subscriber.email }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </DataTable>
+                        </div>
                     </div>
         </div> 
         <div class="pont_subscribe" v-else>

@@ -98,21 +98,7 @@
                                                 <i class="fa-solid fa-eye mr-2"></i> <span> {{history_video.vuews_video}} مشاهدة</span>
                                                 <i class="fa-solid fa-calendar-days mr-2 ml-2"></i> <span>منذ {{ history_video.date_count }} </span>
                                             </small>
-                                            <div v-if="$page.props.auth.chanel[0]">
-                                                <div v-if="$page.props.auth.chanel[0].id == history_video.id_chanel">
-                                                    <Link :href="route('my_chanel_AUTH')" class="channel-img mt-2">
-                                                        <img :src="'/'+history_video.video_chanels_logo_path"  class="rounded-circle mr-2" width="30">
-                                                        <span class="card-text">{{history_video.video_chanels_name}}</span>
-                                                    </Link>
-                                                </div>
-                                                <div v-else>
-                                                    <Link :href="`/chanel_AUTH/${history_video.id_chanel}`" class="channel-img mt-2">
-                                                        <img :src="'/'+history_video.video_chanels_logo_path"  class="rounded-circle mr-2" width="30">
-                                                        <span class="card-text">{{history_video.video_chanels_name}}</span>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div v-else>
+                                            <div>
                                                 <Link :href="`/chanel_AUTH/${history_video.id_chanel}`" class="channel-img mt-2">
                                                     <img :src="'/'+history_video.video_chanels_logo_path"  class="rounded-circle mr-2" width="30">
                                                     <span class="card-text">{{history_video.video_chanels_name}}</span>
@@ -128,6 +114,133 @@
             </div>
         </div>
     </div>
+                    <!-- popup u chould subscribe -->
+                    <div class="should_subscribe_frame" v-if="$page.props.auth.user.etudient && !$page.props.auth.user.payment">
+                    <div class="frame">
+                        <p>
+                            يجب عليك ان تقوم بالاشتراك لفتح الدروس
+                        </p>
+                        <button>
+                                    <Link :href="route('pyment_AUTH')">
+                                        اشتراك
+                                    </Link> 
+                                    <div class="star-1">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-2">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-3">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-4">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-5">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-6">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                        </button>
+                    </div>
+                </div>
     </AuthenticatedLayout>
 </template>
 <script setup>

@@ -4,24 +4,6 @@
         <Head title="طلاب" />
         <div class="watch-page pt-5">
         <div class="container-fluid">
-            <div v-if="dont_have_chanel" class="alert alert-danger alert-dismissible fade show need_account" role="alert">
-                <div>
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    المستخدم " {{ user_name }} " لا يمتلك قنات 
-                </div>
-                <button @click="dont_have_chanel_function" type="button" data-bs-dismiss="alert" aria-label="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div v-if="copy_success" class="alert alert-success alert-dismissible fade show need_account" role="alert">
-                <div>
-                    <i class="fa-regular fa-circle-check"></i>
-                        تم نسخ الرابط
-                </div>
-                <button @click="copy_success_function" type="button" data-bs-dismiss="alert" aria-label="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
             <div class="card4 border-0">
                 <div class="row px-2">
                     <div class="col-lg-7 main_video_panel">
@@ -48,12 +30,7 @@
                                         </Link>
                                     </div>
                                 </a>
-                                <div v-if="$page.props.auth.chanel[0]">
-                                    <button v-if="table_target_video_count.video_chanels_name !== $page.props.auth.chanel[0].name_chanel" @click="Sunscribe_count(table_target_video_count.video_chanels_id)" class="float-right btn text-white btn-warning ml-4">
-                                        إشترك
-                                    </button>
-                                </div>
-                                <div v-else>
+                                <div>
                                     <button @click="Sunscribe_count(table_target_video_count.video_chanels_id)" class="float-right btn text-white btn-warning ml-4">
                                         إشترك
                                     </button>
@@ -74,10 +51,6 @@
                                 <button @click="likeVideos(table_target_video_count.id)" class="float-right btn text-white btn-warning mt-4 mr-2">
                                     <i class="fa fa-heart"></i>
                                     اعجبني {{ table_target_video_count.count }}
-                                </button> 
-                                <button  @click="shareVideo(table_target_video_count.id)" class="float-right btn text-white btn-warning mt-4 mr-2">
-                                    <i class="fa-solid fa-share"></i>
-                                    مشاركة
                                 </button> 
                                 <Link :href="`striks/${this.table_target_video_count.id}/striks_main`" class="float-right btn text-white btn-warning mt-4 mr-2">
                                     <i class="fa-solid fa-triangle-exclamation"></i>
@@ -122,19 +95,9 @@
                                             </div>
                                             <div class="dis_comment_part">
                                                 <p>
-                                                    <div v-if="$page.props.auth.chanel[0]">
-                                                        <div v-if="$page.props.auth.chanel[0].id == coment.coments_chanels_id">
-                                                            <Link class="float-right mt-3 mt-md-4" :href="route('my_chanel_AUTH')" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                            <p  @click="dont_have_chanel_function(coment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
-                                                        </div>
-                                                        <div v-else>
-                                                            <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${coment.coments_chanels_id}`" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                            <p  @click="dont_have_chanel_function(coment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
-                                                        </div>
-                                                    </div>
-                                                    <div v-else>
+                                                    <div>
                                                         <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${coment.coments_chanels_id}`" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                        <p  @click="dont_have_chanel_function(coment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
+                                                        <p class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
                                                     </div>
                                                 </p>
                                                 <div class="clearfix"></div>
@@ -166,19 +129,9 @@
                                                                             </div>
                                                                             <div class="dis_comment_part">
                                                                                 <p>
-                                                                                    <div v-if="$page.props.auth.chanel[0]">
-                                                                                        <div class="flex flex-column" v-if="$page.props.auth.chanel[0].id == Subcoment.coments_chanels_id">
-                                                                                            <Link class="float-right mt-3 mt-md-4" :href="route('my_chanel_AUTH')" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                                                            <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
-                                                                                        </div>
-                                                                                        <div class="flex flex-column" v-else>
-                                                                                            <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                                                            <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="flex flex-column" v-else>
+                                                                                    <div class="flex flex-column">
                                                                                         <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                                                        <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
+                                                                                        <p class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
                                                                                     </div>
                                                                                 </p>
                                                                                 <p>{{ Subcoment.the_sub_coment }}</p>
@@ -220,19 +173,7 @@
                                     </Link>
                                     <small class="text-muted ">
                                         <span><i class="fa-solid fa-eye mr-2"></i>{{video.vuews_video}} مشاهدة</span> 
-                                        <div v-if="$page.props.auth.chanel[0]">
-                                            <div v-if="$page.props.auth.chanel[0].id == video.id_chanel">
-                                                <Link class="channel-img" :href="route('my_chanel_AUTH')">
-                                                    <span class="card-text flex items-center"><img :src="'/'+video.video_chanels_logo_path"  class="rounded-circle my-2 ml-3 h-8 w-8 "> <span class="card-text  pl-2">{{video.video_chanels_name}}</span></span>
-                                                </Link>
-                                            </div>
-                                            <div v-else>
-                                                <Link class="channel-img" :href="`/chanel_AUTH/${video.id_chanel}`">
-                                                    <span class="card-text flex items-center"><img :src="'/'+video.video_chanels_logo_path"  class="rounded-circle my-2 ml-3 h-8 w-8"> <span class="card-text  pl-2">{{video.video_chanels_name}}</span></span>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                        <div v-else>
+                                        <div>
                                             <Link class="channel-img" :href="`/chanel_AUTH/${video.id_chanel}`">
                                                 <span class="card-text flex items-center"><img :src="'/'+video.video_chanels_logo_path" class="rounded-circle my-2 ml-3 h-8 w-8"><span class="card-text  pl-2">{{video.video_chanels_name}}</span></span>
                                             </Link>
@@ -274,6 +215,133 @@
             </div>
         </div>
     </div>
+                    <!-- popup u chould subscribe -->
+                    <div class="should_subscribe_frame" v-if="$page.props.auth.user.etudient && !$page.props.auth.user.payment">
+                    <div class="frame">
+                        <p>
+                            يجب عليك ان تقوم بالاشتراك لفتح الدروس
+                        </p>
+                        <button>
+                            <Link :href="route('pyment_AUTH')">
+                                        اشتراك
+                                    </Link> 
+                                    <div class="star-1">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-2">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-3">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-4">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-5">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="star-6">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xml:space="preserve"
+                                        version="1.1"
+                                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                        viewBox="0 0 784.11 815.53"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    >
+                                        <defs></defs>
+                                        <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                        <path
+                                            class="fil0"
+                                            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                                        ></path>
+                                        </g>
+                                    </svg>
+                                    </div>
+                        </button>
+                    </div>
+                </div>
     </AuthenticatedLayout>
 </template>
 <script setup>
@@ -321,7 +389,6 @@ export default {
             chanel_subscribe_table: this.chanel_subscribe,
 
             copy_success:false,
-            dont_have_chanel:false,
 
             user_name: null,
 
@@ -329,7 +396,7 @@ export default {
     },
     methods: {
         add_coments_db(){
-            this.add_coment_values.get(`Coments_AUTH/${this.target_video.id}/create`, {
+            this.add_coment_values.get(`/Coments_AUTH/${this.target_video.id}/create`, {
                 onSuccess: () => {
                     this.add_coment_values.reset();
                 },
@@ -345,7 +412,7 @@ export default {
                 ];
         },
         open_repender_db(){
-            this.add_Subcoment_values.get(`Coments_AUTH/${this.add_Subcoment_values.id_coment}/createSub`, {
+            this.add_Subcoment_values.get(`/Coments_AUTH/${this.add_Subcoment_values.id_coment}/createSub`, {
                 onSuccess: () => {
                     this.open_repence = false,
                     this.add_Subcoment_values.reset();
@@ -411,35 +478,6 @@ export default {
                 .catch(error => {
                 console.error('Error liking comment:', error);
             });
-        },
-        dont_have_chanel_function(user_name_target){
-            this.dont_have_chanel?
-            this.dont_have_chanel = false:
-            [
-                this.user_name = user_name_target,
-                this.dont_have_chanel = true,
-            ];
-        },
-        //share
-        copy_success_function(){
-            this.copy_success?
-            this.copy_success = false:
-            this.copy_success = true;
-        },
-        shareVideo(id_video) {
-            // Construct the shareable link
-            const shareableLink = `${window.location.origin}/show_video_Gest/${id_video}`;
-            this.copyToClipboard(shareableLink);
-            this.copy_success_function();
-        },
-
-        copyToClipboard(text) {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
         },
         //comment
         filter_comment(page_name_type){

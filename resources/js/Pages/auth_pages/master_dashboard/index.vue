@@ -14,7 +14,7 @@
                         <div class="h3">التفاصيل الكاملة للقنوات</div>
                         <div class="details">
                             <p>عدد القنوات : {{ chanelNum }}</p>
-                            <p>عدد المشتركين : {{ subscribesNum }}</p>
+                            <p>عدد المشتركين : {{ subscribesTotal }}</p>
                             <p>عدد المشاهدات : {{ vuewsNum }}</p>
                             <p>عدد الفيديوهات : {{ videosTotal }}</p>
                         </div>
@@ -101,7 +101,7 @@ export default {
     props: {
         // general
         videosTotal: Object,
-        subscribesNum: Object,
+        subscribesTotal: Object,
         vuewsNum: Object,
         chanelNum: Object,
         // tab

@@ -10,7 +10,7 @@
         <div class="contain_admin">
             <div class="historique_statistique frame_original overflow-x-scroll">
                 <p class="title">
-                    <span>قائمة القنوات</span>
+                    <span>الدعم و الابلاغات</span>
                 </p>
                 <DataTable class="display DataTable1">
                     <thead>

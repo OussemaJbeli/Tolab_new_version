@@ -102,6 +102,19 @@
 
 }
 
+@media (max-width:992px){
+    .pyment_frame_page{
+        flex-direction: column;
+        .left_part{
+            width: 100%;
+            min-width: auto;
+            height: 100%;
+        }
+        .second_part{
+            height: 0%;
+        }
+    }
+}
 @media (max-width:800px){
     .upload_videos_frame{
         .panel_chanel{
@@ -242,6 +255,23 @@
         }
     }
 
+}
+@media (max-width:650px){
+    .should_subscribe_frame{
+        .frame{
+            p{
+                width: 40vw;
+                font-size: 4vw;
+                i{
+                    font-size: 4vw;
+                    top: -50%;
+                }
+            }
+            button {
+            
+            }
+        }
+    }
 }
 @media (max-width:600px){
     .main_video_panel{

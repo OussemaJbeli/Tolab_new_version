@@ -80,7 +80,10 @@ class showVidoeController extends Controller
         $date_count_target_video = $this->date_count_function($minutesDifference);
 
         //
-        $videos = Videos::select(
+        $videos = Videos::join('chanels as video_chanels','video_chanels.id','=','videos.id_chanel')
+            ->leftJoin('subscribes', 'subscribes.id_chanel', '=', 'video_chanels.id') 
+            ->leftJoin('views', 'views.id_video', '=', 'videos.id')  
+            ->select(
                 'videos.*',
                 'video_chanels.id as video_chanels_id',
                 'video_chanels.name_chanel as video_chanels_name', 
@@ -89,9 +92,7 @@ class showVidoeController extends Controller
             )
             ->where('public','عامة')
             ->where('videos.id','!=',$id)
-            ->join('chanels as video_chanels','video_chanels.id','=','videos.id_chanel')
-            ->leftJoin('subscribes', 'subscribes.id_chanel', '=', 'video_chanels.id') 
-            ->leftJoin('views', 'views.id_video', '=', 'videos.id')  
+            ->where('video_chanels.study_level',Auth::user()->etudient_level)  
             ->groupBy('videos.id','video_chanels.id', 'video_chanels.name_chanel' , 'video_chanels.logo_path_chanel')
             ->orderByRaw('RAND()')
             ->get();  
@@ -199,9 +200,6 @@ class showVidoeController extends Controller
     public function index_master(string $id)
     {
         $id_chanel = session('selected_channel_id', null);
-        $vue_video = new Views();
-        $vue_video->id_video = $id;
-        $vue_video->save();
 
         $target_video = Videos::where('videos.id', $id)
             ->join('chanels as video_chanels','video_chanels.id','=','videos.id_chanel')

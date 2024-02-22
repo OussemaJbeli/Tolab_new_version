@@ -11,7 +11,7 @@
                 <div class="container-fluid overflow-visible">
                     <nav class="navbar-expand-lg navbar-light bg-light p-2 flex justify-between ">
                         <div class="">
-                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar"></i>
+                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar">X</i>
                                 <Link class="navbar-brand" v-if="$page.props.auth.user.etudient" :href="route('home_AUTH')">
                                     طلاب
                                     <span class="tolab-icon"><i class="fa-solid fa-graduation-cap fa-lg"></i></span>
@@ -44,8 +44,8 @@
                                     </li>
                                 </ul>
                         </div>
-                        <div class="flex flex-row ">
-                            <div class="form-inline m-0 p-0" v-if="$page.props.auth.user.etudient">
+                        <div class="flex flex-row">
+                            <div class="form-inline m-0 p-0" v-if="$page.props.auth.user.etudient && $page.props.auth.user.payment">
                                 <label :style="{ width: search_run? '100%' : '20%' }" class="label_for_search">
                                     <i class="fa-solid fa-circle-xmark" v-if="search_run" @click="start_searsh()" ></i>
                                     <i class="fa-solid fa-magnifying-glass" v-else @click="start_searsh()" ></i>
@@ -114,31 +114,14 @@
                                         <i class="fas fa-history mr-2 purple"></i>سجل المشاهدة
                                     </Link> 
                                     <Link v-if="$page.props.auth.user.etudient" class="list-group-item list-group-item-action" :href="route('subscribe_AUTH')">
-                                        <i class="fas fa-share-square mr-2 purple"></i>الاشتراكات
+                                        <i class="fas fa-share-square mr-2 purple"></i>القنوات المشترك بها
                                     </Link>                                  
                                     <Link class="list-group-item list-group-item-action" :href="route('support_AUTH')">
                                         <i class="fas fa-headset mr-2 purple"></i>الدعم الفني
                                     </Link> 
-                                    <!--  -->
-                                        <Link v-if="$page.props.auth.user.super_user" class="list-group-item list-group-item-action" :href="route('admin_taleb.dashboard')">
-                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
-                                        </Link> 
-                                        <Link v-else-if="$page.props.auth.user.videos_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.videos')">
-                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
-                                        </Link> 
-                                        <Link v-else-if="$page.props.auth.user.comments_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.comments')">
-                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
-                                        </Link> 
-                                        <Link v-else-if="$page.props.auth.user.support_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.rapports')">
-                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
-                                        </Link> 
-                                        <Link v-else-if="$page.props.auth.user.chanels_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.chanels')">
-                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
-                                        </Link> 
-                                        <Link v-else-if="$page.props.auth.user.dashboard_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.dashboard')">
-                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
-                                        </Link> 
-                                    <!--  -->
+                                    <Link v-if="$page.props.auth.user.etudient" class="list-group-item list-group-item-action" :href="route('pyment_AUTH')">
+                                        <i class="fa-solid fa-coinss mr-2 purple"></i>خطط الدفع
+                                    </Link> 
                                     <Link class="list-group-item list-group-item-action" :href="route('logout')" method="post">
                                         <i class="fa-solid fa-right-from-bracket purple mr-2"></i>تسجيل الخروج  
                                     </Link> 
@@ -153,32 +136,35 @@
                     <div class="layer_dark" @click="open_side_bar" :style="{ display: open_side_frame? 'block' : 'none' }"></div>
                 <!-- search items -->
                 <div v-if="search_run" data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="home_content_frame home_content_frame_serach" tabindex="0">
-                    <div class="row">
-                        <div class="video_card col-sm-6 col-md-4 col-lg-3" v-for="video_serach in filteredItems">
-                            <div class="card p-1 mp-4">
-                                <div class="card-icon">
-                                    <Link class="image_video" :href="`/show_video/${video_serach.id}`">
-                                        <img :src="'/'+video_serach.img_path" class="card-img-top" alt="card image">
-                                        <time>9:30</time>
-                                        <i class="fas fa-play fa-2x"></i>
-                                    </Link>
-                                </div>
-                                <Link :href="`show_video/${video_serach.id}`">
-                                    <div class="card-body p-0">
-                                        <p class="card-title">{{video_serach.name}}</p>
+                    <div class="content m-4 home_content_frame">
+                    <h4 class="py-5">قائمة البحث</h4>
+                        <div class="row">
+                            <div class="video_card col-sm-6 col-md-4 col-lg-3" v-for="video_serach in filteredItems">
+                                <div class="card p-1 mp-4">
+                                    <div class="card-icon">
+                                        <Link class="image_video" :href="`/show_video/${video_serach.id}`">
+                                            <img :src="'/'+video_serach.img_path" class="card-img-top" alt="card image">
+                                            <time>9:30</time>
+                                            <i class="fas fa-play fa-2x"></i>
+                                        </Link>
                                     </div>
-                                </Link>
-                                <div class="card-footer">
-                                    <small class="text-muted">
-                                        <span class="d-block"><i class="fa-solid fa-eye"></i> <span>{{video_serach.vuews_video}} مشاهدة</span></span>
-                                        <i class="fa-solid fa-calendar-days"></i> <span>منذ {{ video_serach.date_count }} </span>
-                                    </small>
-                                </div>
-                                <div>
-                                    <Link :href="`/chanel_AUTH/${video_serach.chanel_id}`" class="channel-img flex items-center flex-row">
-                                        <img :src="'/'+video_serach.video_chanel_logo_path" class="rounded-circle my-2 ml-3 h-8 w-8">
-                                        <span class="card-text  pl-2">{{video_serach.video_chanel_name}}</span>
+                                    <Link :href="`show_video/${video_serach.id}`">
+                                        <div class="card-body p-0">
+                                            <p class="card-title">{{video_serach.name}}</p>
+                                        </div>
                                     </Link>
+                                    <div class="card-footer">
+                                        <small class="text-muted">
+                                            <span class="d-block"><i class="fa-solid fa-eye"></i> <span>{{video_serach.vuews_video}} مشاهدة</span></span>
+                                            <i class="fa-solid fa-calendar-days"></i> <span>منذ {{ video_serach.date_count }} </span>
+                                        </small>
+                                    </div>
+                                    <div>
+                                        <Link :href="`/chanel_AUTH/${video_serach.chanel_id}`" class="channel-img flex items-center flex-row">
+                                            <img :src="'/'+video_serach.video_chanel_logo_path" class="rounded-circle my-2 ml-3 h-8 w-8">
+                                            <span class="card-text  pl-2">{{video_serach.video_chanel_name}}</span>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
