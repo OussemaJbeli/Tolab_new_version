@@ -253,6 +253,11 @@ Route::get('pyment_AUTH', [paymentController::class, 'index'])
     ->name('pyment_AUTH')
     ->middleware('auth');
 
+Route::get('pyment_AUTH/{id}/{date}/store', [paymentController::class, 'store'])
+    ->name('pyment_AUTH.store')
+    ->middleware('auth');
+
+
 ////////////////admin controller
 
     Route::get('admin_taleb/dashboard', [homeadminController::class, 'dashboard'])
@@ -314,12 +319,28 @@ Route::get('pyment_AUTH', [paymentController::class, 'index'])
     ->name('admin_taleb.add_chanel_users')
     ->middleware('auth');
 
-    Route::get('admin_taleb/users/{id_user}/add_master', [usersadminController::class, 'add_master'])
+    Route::get('admin_taleb/users/add_special_student', [usersadminController::class, 'add_special_student'])
+    ->name('admin_taleb.add_special_student')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/users/edite_special_student', [usersadminController::class, 'edite_special_student'])
+    ->name('admin_taleb.edite_special_student')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/users/add_master', [usersadminController::class, 'add_master'])
     ->name('admin_taleb.add_master')
     ->middleware('auth');
 
-    Route::get('admin_taleb/users/{id_user}/add_admin', [usersadminController::class, 'add_admin'])
+    Route::get('admin_taleb/users/add_admin', [usersadminController::class, 'add_admin'])
     ->name('admin_taleb.add_admin')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/users/{id_user}/dessubscribe', [usersadminController::class, 'dessubscribe'])
+    ->name('admin_taleb.dessubscribe')
+    ->middleware('auth');
+
+    Route::get('admin_taleb/users/{id_user}/addsubscribe', [usersadminController::class, 'addsubscribe'])
+    ->name('admin_taleb.addsubscribe')
     ->middleware('auth');
 
     Route::get('admin_taleb/users/{id_user}/destroy', [usersadminController::class, 'destroy'])

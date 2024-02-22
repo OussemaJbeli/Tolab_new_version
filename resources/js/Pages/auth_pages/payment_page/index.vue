@@ -5,8 +5,8 @@
         <div class="content pyment_frame_page">
             <div class="left_part p-4">
                 <h4>خطط الدفع</h4>
-                <div class="card_plane" v-if="payments">
-                    <div class="plan" v-for="payment in payments">
+                <div class="card_plane" v-if="payments_plan">
+                    <div class="plan" v-for="payment in payments_plan">
                         <div class="inner1" v-if="payment.frame == 'المثال الاول'">
                                     <span class="pricing">
                                     <span>
@@ -45,9 +45,9 @@
                                         </li>
                                     </ul>
                                     <div class="action">
-                                    <a class="button" href="#">
-                                    اشترك الآن
-                                    </a>
+                                        <Link :href="`/pyment_AUTH/${payment.id}/${payment.frequency}/store`" class="button" href="#">
+                                        اشترك الآن
+                                        </Link>
                                     </div>
                         </div>
                         <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -88,9 +88,9 @@
                                         </li>
                                     </ul>
                                     <div class="action">
-                                    <a class="button" href="#">
-                                    اشترك الآن
-                                    </a>
+                                        <Link :href="`pyment_AUTH/${payment.id}/${payment.frequency}/store`" class="button" href="#">
+                                        اشترك الآن
+                                        </Link>
                                     </div>
                         </div>
                         <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -131,16 +131,27 @@
                                         </li>
                                     </ul>
                                     <div class="action">
-                                    <a class="button" href="#">
-                                    اشترك الآن
-                                    </a>
+                                        <Link :href="`pyment_AUTH/${payment.id}/${payment.frequency}/store`" class="button" href="#">
+                                        اشترك الآن
+                                        </Link>
                                     </div>
                         </div>
                     </div>
                 </div>
+                <div class="card_plane flex column" v-else-if="date_end">
+                    <h3>انت مشترك! والوقت المتبقي لنفاذ الإشتراك</h3>
+                    <h2>{{ date_end }}</h2>
+                </div>
+                <div class="card_plane flex column" v-else-if="special_stident">
+                    <h3> مرحبا <span class="text-yellow-500"> {{ $page.props.auth.user.name }} </span>! انت مشترك مميز</h3>
+                </div>
                 <div class="card_plane" v-else>
                     <h3>لا يوجد خطط دفع لهذا المستوى الدراسي</h3>
                 </div>
+                
+                <!-- <p>{{ special_stident }}</p>
+                <p>{{ date_end }}</p> -->
+                <!-- <p>{{ payments_plan }}</p> -->
             </div>
             <div class="second_part">
 
@@ -160,7 +171,9 @@ export default {
         Link,
     },
     props: {
-        payments:Object,
+        payments_plan:Object,
+        date_end:Object,
+        special_stident:Object,
     },
 
     data() {

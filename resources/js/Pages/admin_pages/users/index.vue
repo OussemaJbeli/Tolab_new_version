@@ -10,9 +10,12 @@
         <div class="contain_admin">
             <!-- student -->
             <div class="historique_statistique frame_original pt-10 pb-4 ">
-                <p class="h3">
-                    <span>قائمة الطلاب</span>
-                </p>
+                <div class="w-100 mt-2 mb-4 flex flex-row items-center justify-between">
+                    <span class="h3">قائمة الطلاب</span>
+                    <button class="button button_acount"  @click="add_special_student_frame_fun()">
+                        <i class="fa-solid fa-user-plus"></i> انشاء حساب
+                    </button>
+                </div>
                 <div class="overflow-x-scroll">
                     <DataTable class="display DataTable1">
                         <thead>
@@ -21,6 +24,9 @@
                                 <th class="pb-4 pt-6 px-6 text-start">البريد الالكتروني</th>
                                 <th class="pb-4 pt-6 px-6 text-start">المستوى الدراسي</th>
                                 <th class="pb-4 pt-6 px-6 text-start">الاشتراك</th>
+                                <th class="pb-4 pt-6 px-6 text-start">تعديل</th>
+                                <th class="pb-4 pt-6 px-6 text-start">اضافة الاشتراك</th>
+                                <th class="pb-4 pt-6 px-6 text-start">سحب الاشتراك</th>
                                 <th class="pb-4 pt-6 px-6 text-start">حذف</th>
                             </tr>
                         </thead>
@@ -36,8 +42,23 @@
                                     {{ student.etudient_level }}
                                 </td>
                                 <td class="pb-4 pt-6 px-6 border-t text-start text-white">
-                                    <span v-if="student.payment">مشترك</span>
-                                    <span v-else>غير مشترك</span>
+                                    <span v-if="student.payment" class="text-green-500">مشترك</span>
+                                    <span v-else class="text-red-500">غير مشترك</span>
+                                </td>
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white">
+                                    <button @click="edite_special_student_frame_fun(student.id,student.name,student.email,student.etudient_level)">
+                                        <i class="fa-solid fa-pen-to-square text-green-500"></i> تعديل
+                                    </button>
+                                </td>
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white ">
+                                    <Link :href="`/admin_taleb/users/${student.id}/addsubscribe`" class="text-white">
+                                        <i class="fa-solid fa-plus text-green-500"></i>اضافة 
+                                    </Link>
+                                </td>
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white ">
+                                    <Link :href="`/admin_taleb/users/${student.id}/dessubscribe`" class="text-white">
+                                        <i class="fa-solid fa-minus text-red-500"></i>سحب 
+                                    </Link>
                                 </td>
                                 <td class="pb-4 pt-6 px-6 border-t text-start text-white ">
                                     <Link :href="`/admin_taleb/users/${student.id}/destroy`" class="text-white">
@@ -208,6 +229,59 @@
                     </form>
                 </div>
             </div>
+            <!-- add spacial student -->
+            <div class="limit_frame" v-if="add_special_student_frame">
+                <div class="limit_panel">
+                    <div class="header">
+                        <div class="logo"></div>
+                        <div class="exite" id="exit_popup" @click="add_special_student_frame_fun"><i class="fa-sharp fa-solid fa-circle-xmark"></i></div>
+                    </div>
+                    <form @submit.prevent="save_special_student_db" class="body_fram">
+                        <div class="small_panel">
+                            <div class="form-group">
+                                <label for="name" class="col-form-label text-white">الاسم</label>
+                                <input type="text" class="form-control" id="name" v-model="add_special_student_vars.name" required :error="add_special_student_vars.errors.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-form-label text-white"> البريد الالكتروني</label>
+                                <input type="email" class="form-control" id="email" v-model="add_special_student_vars.email" required :error="add_special_student_vars.errors.email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-form-label text-white"> كلمة السر</label>
+                                <input type="password" class="form-control" id="password" v-model="add_special_student_vars.password" required :error="add_special_student_vars.errors.password">
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-form-label text-white">المستوى الدراسي</label>
+                                <select
+                                    id="etudient_levelspacial"
+                                    class="mt-1 block w-full input"
+                                    v-model="add_special_student_vars.student_level"
+                                    required
+                                >
+                                        <option value="جميع الصفوف">جميع الصفوف</option>
+                                        <option value="الصف 1">الصف 1</option>
+                                        <option value="الصف 2">الصف 2</option>
+                                        <option value="الصف 3">الصف 3</option>
+                                        <option value="الصف 4">الصف 4</option>
+                                        <option value="الصف 5">الصف 5</option>
+                                        <option value="الصف 6">الصف 6</option>
+                                        <option value="الصف 7">الصف 7</option>
+                                        <option value="الصف 8">الصف 8</option>
+                                        <option value="الصف 9">الصف 9</option>
+                                        <option value="الصف 10">الصف 10</option>
+                                        <option value="الصف 11">الصف 11</option>
+                                        <option value="الصف 12">الصف 12</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="save">
+                            <button type="submit">
+                                save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <!-- add master -->
             <div class="limit_frame" v-if="add_master_frame">
                 <div class="limit_panel">
@@ -301,26 +375,49 @@
                     </form>
                 </div>
             </div>
-            <!-- change password -->
-            <div class="limit_frame" v-if="change_password_frame">
+            <!-- edite special student -->
+            <div class="limit_frame" v-if="edite_special_student_frame">
                 <div class="limit_panel">
                     <div class="header">
                         <div class="logo"></div>
-                        <div class="exite" id="exit_popup" @click="change_password_frame_fun()"><i class="fa-sharp fa-solid fa-circle-xmark"></i></div>
+                        <div class="exite" id="exit_popup" @click="edite_special_student_frame_fun"><i class="fa-sharp fa-solid fa-circle-xmark"></i></div>
                     </div>
-                    <form @submit.prevent="change_password_db" class="body_fram">
+                    <form @submit.prevent="edite_special_student_db" class="body_fram">
                         <div class="small_panel">
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white">الاسم</label>
-                                <input type="text" class="form-control" id="name" v-model="change_password_vars.name" :error="change_password_vars.errors.name">
+                                <input type="text" class="form-control" id="name" v-model="edite_special_student_vars.name" required :error="edite_special_student_vars.errors.name">
                             </div>
                             <div class="form-group">
-                                <label for="name" class="col-form-label text-white"> البريد الالكتروني</label>
-                                <input type="email" class="form-control" id="name" v-model="change_password_vars.email" :error="change_password_vars.errors.email">
+                                <label for="email" class="col-form-label text-white"> البريد الالكتروني</label>
+                                <input type="email" class="form-control" id="email" v-model="edite_special_student_vars.email" required :error="edite_special_student_vars.errors.email">
                             </div>
                             <div class="form-group">
-                                <label for="name" class="col-form-label text-white"> كلمة السر</label>
-                                <input type="password" class="form-control" id="name" v-model="change_password_vars.password" :error="change_password_vars.errors.password">
+                                <label for="password" class="col-form-label text-white"> كلمة السر</label>
+                                <input type="password" class="form-control" id="password" v-model="edite_special_student_vars.password" required :error="edite_special_student_vars.errors.password">
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="col-form-label text-white">المستوى الدراسي</label>
+                                <select
+                                    id="etudient_levelspacial"
+                                    class="mt-1 block w-full input"
+                                    v-model="edite_special_student_vars.student_level"
+                                    required
+                                >
+                                        <option value="جميع الصفوف">جميع الصفوف</option>
+                                        <option value="الصف 1">الصف 1</option>
+                                        <option value="الصف 2">الصف 2</option>
+                                        <option value="الصف 3">الصف 3</option>
+                                        <option value="الصف 4">الصف 4</option>
+                                        <option value="الصف 5">الصف 5</option>
+                                        <option value="الصف 6">الصف 6</option>
+                                        <option value="الصف 7">الصف 7</option>
+                                        <option value="الصف 8">الصف 8</option>
+                                        <option value="الصف 9">الصف 9</option>
+                                        <option value="الصف 10">الصف 10</option>
+                                        <option value="الصف 11">الصف 11</option>
+                                        <option value="الصف 12">الصف 12</option>
+                                    </select>
                             </div>
                         </div>
                         <div class="save">
@@ -409,6 +506,21 @@ export default {
     },
     data() {
         return {
+            add_special_student_frame:false,
+            add_special_student_vars: this.$inertia.form({
+                name: null,
+                email: null,
+                password: null,
+                student_level: null,
+            }),
+            edite_special_student_frame:false,
+            edite_special_student_vars: this.$inertia.form({
+                id_student: null,
+                name: null,
+                email: null,
+                password: null,
+                student_level: null,
+            }),
             add_master_frame:false,
             add_master_vars: this.$inertia.form({
                 name_master: null,
@@ -477,6 +589,22 @@ export default {
                     this.add_chanel_frame=true,
                 ]
         },
+        add_special_student_frame_fun(){
+            this.add_special_student_frame?
+                this.add_special_student_frame=false:
+                this.add_special_student_frame=true
+        },
+        edite_special_student_frame_fun(id_student,name,email,student_level){
+            this.edite_special_student_frame?
+                this.edite_special_student_frame=false:
+                [
+                    this.edite_special_student_frame=true,
+                    this.edite_special_student_vars.id_student=id_student,
+                    this.edite_special_student_vars.name=name,
+                    this.edite_special_student_vars.email=email, 
+                    this.edite_special_student_vars.student_level=student_level,  
+                ]
+        },
         add_master_frame_fun(){
             this.add_master_frame?
                 this.add_master_frame=false:
@@ -511,8 +639,24 @@ export default {
                 },
             });
         },
+        save_special_student_db() {
+            this.add_special_student_vars.get(`/admin_taleb/users/add_special_student`, {
+                onSuccess: () => {
+                this.add_special_student_frame = false;
+                this.add_special_student_vars.reset();
+                },
+            });
+        },
+        edite_special_student_db() {
+            this.edite_special_student_vars.get(`/admin_taleb/users/edite_special_student`, {
+                onSuccess: () => {
+                this.edite_special_student_frame = false;
+                this.edite_special_student_vars.reset();
+                },
+            });
+        },
         save_master_db() {
-            this.add_master_vars.get(`/admin_taleb/users/${this.change_user_vars.id_user}/add_master`, {
+            this.add_master_vars.get(`/admin_taleb/users/add_master`, {
                 onSuccess: () => {
                 this.add_master_frame = false;
                 this.add_master_vars.reset();
@@ -520,7 +664,7 @@ export default {
             });
         },
         save_admin_db() {
-            this.add_admin_vars.get(`/admin_taleb/users/${this.change_user_vars.id_user}/add_admin`, {
+            this.add_admin_vars.get(`/admin_taleb/users/add_admin`, {
                 onSuccess: () => {
                 this.add_admin_frame = false;
                 this.add_admin_vars.reset();

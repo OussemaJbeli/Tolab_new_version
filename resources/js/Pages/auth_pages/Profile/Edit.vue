@@ -27,7 +27,7 @@ defineProps({
                             <p> المستويات الدّراسي: {{ $page.props.auth.user.etudient_level }}</p>
                             <div class="under_sub">
                                 <p v-if="$page.props.auth.user.payment" class="text-green-500"><i class="fa-solid fa-check"></i>مشترك</p>
-                                <button>                                    
+                                <button v-else>                                    
                                     <Link :href="route('pyment_AUTH')">
                                         اشتراك
                                     </Link> 

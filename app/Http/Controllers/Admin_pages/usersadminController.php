@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin_pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\PayTraker;
 use App\Models\Chanels;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -119,6 +120,60 @@ class usersadminController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    public function add_special_student(Request $request)
+    {
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $password = $request->get('password');
+        $student_level = $request->get('student_level');
+
+        $users = new User();
+
+        $users->name = $name;
+        $users->email = $email;
+        $users->password = Hash::make($password);
+        $users->etudient_level = $student_level;
+        $users->etudient = true;
+        $users->payment = true;
+
+        $users->save();
+
+        return Redirect::back()
+        ->with('success', 'تم الحفظ بنجاح');
+
+    }
+
+    public function edite_special_student(Request $request)
+    {
+        $id_student = $request->get('id_student');
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $password = $request->get('password');
+        $student_level = $request->get('student_level');
+
+        $users = User::find($id_student);
+
+        if ($users) {
+
+            if($name){
+                $users->name = $name;
+            }
+            if($email){
+                $users->email = $email;
+            }
+            if($password){
+                $users->password = $password;
+            }
+            if($student_level){
+                $users->etudient_level = $student_level;
+            }
+
+            $users->save();
+        }
+        return Redirect::back()
+        ->with('success', 'تم التعديل بنجاح');
+    }
+
     public function add_master(Request $request)
     {
         $name = $request->get('name_master');
@@ -152,19 +207,6 @@ class usersadminController extends Controller
         $users->email = $email;
         $users->password = Hash::make($password);
         $users->super_user = true;
-
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|string|lowercase|email|max:255|unique',
-        //     'password' => ['required'],
-        // ]);
-
-        // $users = new User();
-
-        // $users->name = $request->name;
-        // $users->email = $request->email;
-        // $user->password = Hash::make($request->password);
-        // $users->super_user = true;
 
         $users->save();
 
@@ -281,6 +323,30 @@ class usersadminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function addsubscribe(string $id)
+    {
+        $userTrak = User::where('id',$id)->first();
+        $userTrak->payment = 1;
+        $userTrak->save();
+
+        return Redirect::back()
+        ->with('success', 'تم الحذف بنجاح');
+    }
+
+    public function dessubscribe(string $id)
+    {
+        $PaymentTrak = PayTraker::where('id_user',$id)->first();
+        if($PaymentTrak)
+            $PaymentTrak->delete();
+
+        $userTrak = User::where('id',$id)->first();
+        $userTrak->payment = 0;
+        $userTrak->save();
+
+        return Redirect::back()
+        ->with('success', 'تم الحذف بنجاح');
+    }
+
     public function destroy(string $id)
     {
         User::where('id', $id)

@@ -120,8 +120,28 @@
                                         <i class="fas fa-headset mr-2 purple"></i>الدعم الفني
                                     </Link> 
                                     <Link v-if="$page.props.auth.user.etudient" class="list-group-item list-group-item-action" :href="route('pyment_AUTH')">
-                                        <i class="fa-solid fa-coinss mr-2 purple"></i>خطط الدفع
+                                        <i class="fa-solid fa-coins mr-2 purple"></i>خطط الدفع
                                     </Link> 
+                                    <!--  -->
+                                        <Link v-if="$page.props.auth.user.super_user" class="list-group-item list-group-item-action" :href="route('admin_taleb.dashboard')">
+                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
+                                        </Link> 
+                                        <Link v-else-if="$page.props.auth.user.videos_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.videos')">
+                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
+                                        </Link> 
+                                        <Link v-else-if="$page.props.auth.user.comments_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.comments')">
+                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
+                                        </Link> 
+                                        <Link v-else-if="$page.props.auth.user.support_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.rapports')">
+                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
+                                        </Link> 
+                                        <Link v-else-if="$page.props.auth.user.chanels_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.chanels')">
+                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
+                                        </Link> 
+                                        <Link v-else-if="$page.props.auth.user.dashboard_control" class="list-group-item list-group-item-action" :href="route('admin_taleb.dashboard')">
+                                            <i class="fa-solid fa-chart-line purple mr-2"></i>لوحة التحكم
+                                        </Link> 
+                                    <!--  -->
                                     <Link class="list-group-item list-group-item-action" :href="route('logout')" method="post">
                                         <i class="fa-solid fa-right-from-bracket purple mr-2"></i>تسجيل الخروج  
                                     </Link> 
