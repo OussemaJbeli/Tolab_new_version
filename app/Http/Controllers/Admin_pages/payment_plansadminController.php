@@ -42,7 +42,7 @@ class payment_plansadminController extends Controller
         $Payment->Price = $price;
         $Payment->education_level = $etudient_level;
         $Payment->frame = $frame;
-        $Payment->status = $activation;
+        $Payment->frequency = $frequency;
         $Payment->status = $activation;
 
         $Payment->save();

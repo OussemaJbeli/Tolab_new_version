@@ -18,9 +18,12 @@ class paymentController extends Controller
      */
     public function index()
     {
-        $pyment = Payment::all();
+        $payment = Payment::where('status','1') 
+        ->where('education_level',Auth::user()->etudient_level)
+        ->orWhere('education_level','جميع الصفوف')
+        ->get();
         return Inertia::render('auth_pages/payment_page/index',[
-            'pyment'=>$pyment,
+            'payments'=>$payment,
         ]);
     }
 

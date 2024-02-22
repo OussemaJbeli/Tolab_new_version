@@ -256,6 +256,7 @@
                                         v-model="add_payment_vars.etudient_level"
                                         required
                                     >
+                                        <option value="جميع الصفوف">جميع الصفوف</option>
                                         <option value="الصف 1">الصف 1</option>
                                         <option value="الصف 2">الصف 2</option>
                                         <option value="الصف 3">الصف 3</option>
@@ -278,8 +279,8 @@
                                         v-model="add_payment_vars.frequency"
                                         required
                                     >
-                                        <option value="سنوي">سنوي</option>
-                                        <option value="شهري">شهري</option>
+                                        <option value="سنة">سنوي</option>
+                                        <option value="شهر">شهري</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -345,6 +346,7 @@
                                         v-model="change_payment_vars.etudient_level"
                                         required
                                     >
+                                        <option value="جميع الصفوف">جميع الصفوف</option>
                                         <option value="الصف 1">الصف 1</option>
                                         <option value="الصف 2">الصف 2</option>
                                         <option value="الصف 3">الصف 3</option>
@@ -367,8 +369,8 @@
                                         v-model="change_payment_vars.frequency"
                                         required
                                     >
-                                        <option value="سنوي">سنوي</option>
-                                        <option value="شهري">شهري</option>
+                                        <option value="سنة">سنوي</option>
+                                        <option value="شهر">شهري</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

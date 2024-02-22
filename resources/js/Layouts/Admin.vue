@@ -59,7 +59,7 @@
                                     <span :style="{ visibility: (sid_bar || test_side)? '' : 'hidden' }">الملف الشخصي</span>
                                 </NavLink>
                                 <NavLink :href="route('logout')" :active="route().current('logout')"  method="post" class="NavLink pl-2">
-                                    <i class="fa-solid fa-right-from-bracket purple ml-2 row-revers"  :style="{ right: (sid_bar || test_side)? '' : '15px' }"></i>
+                                    <i class="fa-solid fa-right-from-bracket row-revers"  :style="{ right: (sid_bar || test_side)? '' : '15px' }"></i>
                                     <span :style="{ visibility: (sid_bar || test_side)? '' : 'hidden' }">تسجيل الخروج </span>
                                 </NavLink>
                             </div>

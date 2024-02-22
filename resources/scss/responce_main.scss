@@ -102,6 +102,19 @@
 
 }
 
+@media (max-width:992px){
+    .pyment_frame_page{
+        flex-direction: column;
+        .left_part{
+            width: 100%;
+            min-width: auto;
+            height: 100%;
+        }
+        .second_part{
+            height: 0%;
+        }
+    }
+}
 @media (max-width:800px){
     .upload_videos_frame{
         .panel_chanel{
