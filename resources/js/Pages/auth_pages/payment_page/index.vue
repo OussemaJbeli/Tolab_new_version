@@ -179,13 +179,13 @@ export default {
     initiatePayment(paymentId) {
         axios.post(`/pyment_AUTH/${paymentId}/store`)
             .then(response => {
-            // Redirect to the external payment URL
+            
             if (response.data.redirect_url) {
                 window.location.href = response.data.redirect_url;
             }
             })
             .catch(error => {
-            console.error("Payment initiation failed:", error.response.data);
+            console.error("Payment initiation failed:", error.response ? error.response.data : 'Unknown error');
             // Handle error
             });
         }

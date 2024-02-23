@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
+        '/pyment_AUTH/*',
         'home_AUTH',
         'my_chanel_AUTH',
         'show_video/*',

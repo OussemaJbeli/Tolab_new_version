@@ -3,13 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta
-  name="description"
-  content="Mary's simple recipe for maple bacon donuts
-           makes a sticky, sweet treat with just a hint
-           of salt that you'll keep coming back for.">
-        {{-- ajax request for like --}}
+        <meta name="description" content="Mary's simple recipe for maple bacon donuts
+                                            makes a sticky, sweet treat with just a hint
+                                            of salt that you'll keep coming back for.">
+
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        
     
         <title>طلاب</title>
         

@@ -77,29 +77,38 @@ class paymentController extends Controller
 
 // payment
 
-    public function store(Request $request, $id)
+    public function store($id)
     {
         $paymentPlan = Payment::findOrFail($id);
-        
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . env('ZIINA_API_KEY'),
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-        ])->post('https://api-v2.ziina.com/api/payment_intent', [
-            'amount' => $paymentPlan->Price * 100, // Assuming Price is in AED, convert to fils
-            'currency_code' => 'AED',
-            'message' => $paymentPlan->description,
-            'success_url' => route('pyment_AUTH.success'), 
-            'cancel_url' => route('pyment_AUTH.faild'),
-            'test' => true, // or false in production
-        ]);
-
-        if ($response->successful()) {
-            $body = $response->json();
-            return response()->json(['redirect_url' => $body['redirect_url']]);
-        } else {
-            return response()->json(['error' => 'Failed to create payment intent'], 500);
+        try {
+            
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . env('ZIINA_API_KEY'),
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+            ])->post('https://api-v2.ziina.com/api/payment_intent', [
+                'amount' => $paymentPlan->Price * 100, 
+                'currency_code' => 'AED',
+                'message' => $paymentPlan->description,
+                'success_url' => route('pyment_AUTH.success', ['id' => $paymentPlan->id]), 
+                'cancel_url' => route('pyment_AUTH.faild'),
+                'test' => false,
+            ]);
+    
+            if ($response->successful()) {
+                $body = $response->json();
+                return response()->json(['redirect_url' => $body['redirect_url']]);
+            } else {
+                \Log::error('Failed', [
+                    'response' => $response->body() // or ->json() if you expect a JSON response
+                ]);
+                return response()->json(['error' => 'Failed to create payment intent'], 500);
+            }
+        } catch (\Exception $e) {
+            \Log::info('Payment Initiation Request', ['error' => $e]);
+            return response()->json(['error' => $e], 500);
         }
+
     }
 
 
@@ -111,14 +120,15 @@ class paymentController extends Controller
         return Inertia::render('auth_pages/payment_page/faild');
     }
 
-    public function handleSuccess()
+    public function handleSuccess(string $id)
     {
         //other code
         $user = Auth::user();
         $user->payment = 1;
         $user->save();
         
-                switch ($date) {
+        $paymentPlan = Payment::findOrFail($id);
+                switch ($paymentPlan->frequency) {
                     case 'شهر':$newDate = Carbon::now()->addMonth();break;
                     case 'شهرين':$newDate = Carbon::now()->addMonths(2);break;
                     case '3 اشهر':$newDate = Carbon::now()->addMonths(3);break;
