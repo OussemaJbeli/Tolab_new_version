@@ -5,17 +5,18 @@
         <div class="content pyment_frame_page">
             <div class="left_part p-4">
                 <h4>خطط الدفع</h4>
+                {{ data }}
                 <div class="card_plane" v-if="payments_plan">
                     <div class="plan" v-for="payment in payments_plan">
                         <div class="inner1" v-if="payment.frame == 'المثال الاول'">
-                                    <span class="pricing">
+                                <span class="pricing">
                                     <span>
                                         {{payment.Price}} AED <small>/{{payment.frequency}}</small>
                                     </span>
-                                    </span>
-                                    <p class="title">{{payment.name}}</p>
-                                    <p class="info">{{payment.description}}</p>
-                                    <ul class="features">
+                                </span>
+                                <p class="title">{{payment.name}}</p>
+                                <p class="info">{{payment.description}}</p>
+                                <ul class="features">
                                         <li>
                                             <span class="icon">
                                             <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -43,12 +44,12 @@
                                             </span>
                                             <span>قوائم التشغيل والاتعليقات</span>
                                         </li>
-                                    </ul>
-                                    <div class="action">
-                                        <Link :href="`/pyment_AUTH/${payment.id}/${payment.frequency}/store`" class="button" href="#">
+                                </ul>
+                                <div class="action">
+                                    <div  @click="initiatePayment(payment.id)" class="button cursor-pointer">
                                         اشترك الآن
-                                        </Link>
                                     </div>
+                                </div>
                         </div>
                         <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
                             <span class="pricing">
@@ -88,9 +89,9 @@
                                         </li>
                                     </ul>
                                     <div class="action">
-                                        <Link :href="`pyment_AUTH/${payment.id}/${payment.frequency}/store`" class="button" href="#">
+                                        <div  @click="initiatePayment(payment.id)" class="button cursor-pointer">
                                         اشترك الآن
-                                        </Link>
+                                        </div>
                                     </div>
                         </div>
                         <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -131,9 +132,9 @@
                                         </li>
                                     </ul>
                                     <div class="action">
-                                        <Link :href="`pyment_AUTH/${payment.id}/${payment.frequency}/store`" class="button" href="#">
+                                        <div  @click="initiatePayment(payment.id)" class="button cursor-pointer">
                                         اشترك الآن
-                                        </Link>
+                                        </div>
                                     </div>
                         </div>
                     </div>
@@ -148,10 +149,6 @@
                 <div class="card_plane" v-else>
                     <h3>لا يوجد خطط دفع لهذا المستوى الدراسي</h3>
                 </div>
-                
-                <!-- <p>{{ special_stident }}</p>
-                <p>{{ date_end }}</p> -->
-                <!-- <p>{{ payments_plan }}</p> -->
             </div>
             <div class="second_part">
 
@@ -162,6 +159,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link} from '@inertiajs/vue3';
+import axios from 'axios';
 </script>
 
 <script>
@@ -171,18 +169,31 @@ export default {
         Link,
     },
     props: {
+        data:Object,
         payments_plan:Object,
         date_end:Object,
         special_stident:Object,
     },
-
+    props: ['payments_plan'],
+    methods: {
+    initiatePayment(paymentId) {
+        axios.post(`/pyment_AUTH/${paymentId}/store`)
+            .then(response => {
+            // Redirect to the external payment URL
+            if (response.data.redirect_url) {
+                window.location.href = response.data.redirect_url;
+            }
+            })
+            .catch(error => {
+            console.error("Payment initiation failed:", error.response.data);
+            // Handle error
+            });
+        }
+    },
     data() {
         return {
             
         }
-    },
-    methods: {
-        
     },
 }
 </script>

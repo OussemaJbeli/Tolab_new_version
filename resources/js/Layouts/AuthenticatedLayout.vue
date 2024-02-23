@@ -11,7 +11,7 @@
                 <div class="container-fluid overflow-visible">
                     <nav class="navbar-expand-lg navbar-light bg-light p-2 flex justify-between ">
                         <div class="">
-                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar">X</i>
+                            <i class="fa-solid fa-bars fa-xl" @click="open_side_bar"></i>
                                 <Link class="navbar-brand" v-if="$page.props.auth.user.etudient" :href="route('home_AUTH')">
                                     طلاب
                                     <span class="tolab-icon"><i class="fa-solid fa-graduation-cap fa-lg"></i></span>

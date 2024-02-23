@@ -253,8 +253,16 @@ Route::get('pyment_AUTH', [paymentController::class, 'index'])
     ->name('pyment_AUTH')
     ->middleware('auth');
 
-Route::get('pyment_AUTH/{id}/{date}/store', [paymentController::class, 'store'])
+Route::post('pyment_AUTH/{id}/store', [paymentController::class, 'store'])
     ->name('pyment_AUTH.store')
+    ->middleware('auth');
+
+    Route::get('pyment_AUTH/success', [paymentController::class, 'handleSuccess'])
+    ->name('pyment_AUTH.success')
+    ->middleware('auth');
+
+    Route::get('pyment_AUTH/faild', [paymentController::class, 'handleCancel'])
+    ->name('pyment_AUTH.faild')
     ->middleware('auth');
 
 

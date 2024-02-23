@@ -12,6 +12,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
 
 class paymentController extends Controller
@@ -73,37 +74,76 @@ class paymentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(string $id,string $date)
+
+// payment
+
+    public function store(Request $request, $id)
     {
-
-        $user = Auth::user();
-        $user->payment = 1;
-        $user->save();
-
-        if($date == 'شهر')
-            $newDate = Carbon::now()->addMonth();
-        else if($date == 'سنة')
-            $newDate = Carbon::now()->addYear();
-
-        $PaymentTrak = new PayTraker();
-
-        $PaymentTrak->id_user = Auth::user()->id;
-        $PaymentTrak->id_plan = $id;
-        $PaymentTrak->date_end = $newDate;
-
-        $PaymentTrak->save();
+        $paymentPlan = Payment::findOrFail($id);
         
-        return Redirect::back()
-        ->with('success', 'تم الاشتراك بنجاح  ');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . env('ZIINA_API_KEY'),
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+        ])->post('https://api-v2.ziina.com/api/payment_intent', [
+            'amount' => $paymentPlan->Price * 100, // Assuming Price is in AED, convert to fils
+            'currency_code' => 'AED',
+            'message' => $paymentPlan->description,
+            'success_url' => route('pyment_AUTH.success'), 
+            'cancel_url' => route('pyment_AUTH.faild'),
+            'test' => true, // or false in production
+        ]);
+
+        if ($response->successful()) {
+            $body = $response->json();
+            return response()->json(['redirect_url' => $body['redirect_url']]);
+        } else {
+            return response()->json(['error' => 'Failed to create payment intent'], 500);
+        }
     }
 
-    private function storeTicket(User $user)
-    {
 
-    }
     /**
      * Display the specified resource.
      */
+    public function handleCancel()
+    {
+        return Inertia::render('auth_pages/payment_page/faild');
+    }
+
+    public function handleSuccess()
+    {
+        //other code
+        $user = Auth::user();
+        $user->payment = 1;
+        $user->save();
+        
+                switch ($date) {
+                    case 'شهر':$newDate = Carbon::now()->addMonth();break;
+                    case 'شهرين':$newDate = Carbon::now()->addMonths(2);break;
+                    case '3 اشهر':$newDate = Carbon::now()->addMonths(3);break;
+                    case '4 اشهر':$newDate = Carbon::now()->addMonths(4);break;
+                    case '5 اشهر':$newDate = Carbon::now()->addMonths(5);break;
+                    case '6 اشهر':$newDate = Carbon::now()->addMonths(6);break;
+                    case '7 اشهر':$newDate = Carbon::now()->addMonths(7);break;
+                    case '8 اشهر':$newDate = Carbon::now()->addMonths(8);break;
+                    case '9 اشهر':$newDate = Carbon::now()->addMonths(9);break;
+                    case '10 اشهر':$newDate = Carbon::now()->addMonths(10);break;
+                    case '11 اشهر':$newDate = Carbon::now()->addMonths(11);break;
+                    case '12 اشهر':$newDate = Carbon::now()->addYear();break;
+                }
+        
+        $PaymentTrak = new PayTraker();
+    
+        $PaymentTrak->id_user = Auth::user()->id;
+        $PaymentTrak->id_plan = $id;
+        $PaymentTrak->date_end = $newDate;
+    
+        $PaymentTrak->save();
+
+        return Inertia::render('auth_pages/payment_page/success');
+    }
+
     public function show(string $id)
     {
         //

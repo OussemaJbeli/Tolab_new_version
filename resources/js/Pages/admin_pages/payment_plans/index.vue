@@ -279,8 +279,18 @@
                                         v-model="add_payment_vars.frequency"
                                         required
                                     >
-                                        <option value="سنة">سنوي</option>
-                                        <option value="شهر">شهري</option>
+                                        <option value="شهر">شهر</option>
+                                        <option value="شهرين">شهرين</option>
+                                        <option value="اشهر 3">3 اشهر</option>
+                                        <option value="اشهر 4">4 اشهر</option>
+                                        <option value="اشهر 5">5 اشهر</option>
+                                        <option value="اشهر 6">6 اشهر</option>
+                                        <option value="اشهر 7">7 اشهر</option>
+                                        <option value="اشهر 8">8 اشهر</option>
+                                        <option value="اشهر 9">9 اشهر</option>
+                                        <option value="اشهر 10">10 اشهر</option>
+                                        <option value="اشهر 11">11 اشهر</option>
+                                        <option value="اشهر 12">12 اشهر</option>                                        
                                     </select>
                                 </div>
                                 <div class="form-group">
