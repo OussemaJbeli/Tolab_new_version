@@ -92,7 +92,7 @@ class paymentController extends Controller
                 'message' => $paymentPlan->description,
                 'success_url' => route('pyment_AUTH.success', ['id' => $paymentPlan->id]), 
                 'cancel_url' => route('pyment_AUTH.faild'),
-                'test' => false,
+                'test' => true,
             ]);
     
             if ($response->successful()) {
