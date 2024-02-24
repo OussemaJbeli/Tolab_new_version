@@ -51,7 +51,7 @@
    
            <div class="buttons">
              <button class="btn btn-secondary" @click="open_login_frame_fun()">تسجيل الدخول</button>
-             <button class="btn btn-secondary2" @click="open_register_frame_fun()">انضم الينا</button>
+             <Link class="btn btn-secondary2" :href="route('register_student')">انضم الينا</Link>
            </div>
    
          </nav>
@@ -80,8 +80,8 @@
                  تمتع الآن بدروس دعم عبر الإنترنت في جميع المواد وعلى مختلف المستويات (الابتدائي والأساسي والثانوي)، ابتداءً من السنة الاولى إلى الثانية عشر
                </p>
    
-               <button class="btn btn-primary" @click="open_register_frame_fun()">ابدأ الآن</button>
-   
+               <Link class="btn btn-primary w-36" :href="route('register_student')">ابدأ الآن</Link>
+               
              </div>
    
            </div>
@@ -110,7 +110,7 @@
                  طلاب هي أوّل منصّة تعليميّة عبر الإنترنت في دولة الامارات موجّهة لطلاب الابتدائي والأساسي والثّانوي، نقدّم دروس دعم على شكل فيديوهات مسجّلة لشرح كلّ دروس البرنامج الدّراسي تحت إشراف مجموعة من الأساتذة والمربّين من ذوي الخبرة من كامل أنحاء الدولة.
                </p>
                
-               <button class="btn btn-primary" @click="open_register_frame_fun()">ابدأ الآن</button>
+               <Link class="btn btn-primary  w-36" :href="route('register_student')">ابدأ الآن</Link>
    
              </div>
    
@@ -174,7 +174,7 @@
    
              </ul>
    
-             <button class="btn btn-primary" @click="open_register_frame_fun()">ابدأ الآن</button>
+             <Link class="btn btn-primary w-36" :href="route('register_student')">ابدأ الآن</Link>
    
            </div>
          </section>
@@ -188,7 +188,7 @@
              <div class="title-wrapper">
                <h2 class="h3 instructor-title">من يمكنه الاستفادة من منصّة طلاب</h2>
    
-               <button class="btn btn-primary" @click="open_register_frame_fun()">ابدأ الآن</button>
+               <Link class="btn btn-primary w-36" :href="route('register_student')">ابدأ الآن</Link>
    
              </div>
    
@@ -245,7 +245,7 @@
                  <img src="/img/home_images/cta-vector.svg" alt="Vector arrow art" class="vector-line">
                </h2>
    
-               <button class="btn btn-primary" @click="open_register_frame_fun()">ابدأ الآن</button>
+               <Link class="btn btn-primary w-36" :href="route('register_student')">ابدأ الآن</Link>
    
              </div>
    
@@ -266,23 +266,26 @@
             <div class="payment_plan_frame">
               <div class="payment_plan_panel">
                 <ul class="list_nav">
-                  <li class="list1" @click="allclasses_fun">جميع الصفوف</li>
-                  <li class="list1" @click="class1_fun">الاول</li>
-                  <li class="list1" @click="class2_fun">الثاني</li>
-                  <li class="list1" @click="class3_fun">الثالث</li>
-                  <li class="list1" @click="class4_fun">الرابع</li>
-                  <li class="list1" @click="class5_fun">الخامس</li>
-                  <li class="list1" @click="class6_fun">السادس</li>
-                  <li class="list1" @click="class7_fun">السابع</li>
-                  <li class="list1" @click="class8_fun">الثامن</li>
-                  <li class="list1" @click="class9_fun">التاسع</li>
-                  <li class="list1" @click="class10_fun">العاشر</li>
-                  <li class="list1" @click="class11_fun">الحادي عشر</li>
-                  <li class="list1" @click="class12_fun">الثاني عشر</li>
+                  <li class="list1" @click="allclasses_fun" v-if="payments_plan_all[0]">جميع الصفوف</li>
+                  <li class="list1" @click="class1_fun" v-if="payments_plan_class1[0]">الاول</li>
+                  <li class="list1" @click="class2_fun" v-if="payments_plan_class2[0]">الثاني</li>
+                  <li class="list1" @click="class3_fun" v-if="payments_plan_class3[0]">الثالث</li>
+                  <li class="list1" @click="class4_fun" v-if="payments_plan_class4[0]">الرابع</li>
+                  <li class="list1" @click="class5_fun" v-if="payments_plan_class5[0]">الخامس</li>
+                  <li class="list1" @click="class6_fun" v-if="payments_plan_class6[0]">السادس</li>
+                  <li class="list1" @click="class7_fun" v-if="payments_plan_class7[0]">السابع</li>
+                  <li class="list1" @click="class8_fun" v-if="payments_plan_class8[0]">الثامن</li>
+                  <li class="list1" @click="class9_fun" v-if="payments_plan_class9[0]">التاسع</li>
+                  <li class="list1" @click="class10_fun" v-if="payments_plan_class10[0]">العاشر</li>
+                  <li class="list1" @click="class11_fun" v-if="payments_plan_class11[0]">الحادي عشر</li>
+                  <li class="list1" @click="class12_fun" v-if="payments_plan_class12[0]">الثاني عشر</li>
                 </ul>
                 <body>
                   <div class="payment_plans">
-                    <div class="card_plane" v-if="allclasses">
+                        <div class="dont_plane" v-if="dont_have_plans">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع</div>
+                        </div>
+                        <div class="card_plane" v-if="allclasses">
                           <div class="plan" v-for="payment in payments_plan_all">
                               <div class="inner1" v-if="payment.frame == 'المثال الاول'">
                                       <span class="pricing">
@@ -404,9 +407,6 @@
                                               </div>
                                           </div>
                               </div>
-                          </div>
-                          <div class="dont_plane" v-if="payments_plan_all[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
                           </div>
                       </div>
                       <div class="card_plane" v-if="class1">
@@ -532,9 +532,6 @@
                                           </div>
                               </div>
                           </div>
-                          <div class="dont_plane" v-if="payments_plan_class1[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
-                          </div>
                       </div>
                       <div class="card_plane" v-if="class2">
                           <div class="plan"  v-for="payment in payments_plan_class2" >
@@ -658,9 +655,6 @@
                                               </div>
                                           </div>
                               </div>
-                          </div>
-                          <div class="dont_plane" v-if="payments_plan_class2[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
                           </div>
                       </div>
                       <div class="card_plane" v-if="class3">
@@ -786,9 +780,6 @@
                                           </div>
                               </div>
                           </div>
-                          <div class="dont_plane" v-if="payments_plan_class3[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
-                          </div>
                       </div>
                       <div class="card_plane" v-if="class4">
                           <div class="plan" v-for="payment in payments_plan_class4">
@@ -912,9 +903,6 @@
                                               </div>
                                           </div>
                               </div>
-                          </div>
-                          <div class="dont_plane" v-if="payments_plan_class4[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
                           </div>
                       </div>
                       <div class="card_plane" v-if="class5">
@@ -1040,9 +1028,6 @@
                                           </div>
                               </div>
                           </div>
-                          <div class="dont_plane" v-if="payments_plan_class5[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
-                          </div>
                       </div>
                       <div class="card_plane" v-if="class6">
                           <div class="plan" v-for="payment in payments_plan_class6">
@@ -1166,9 +1151,6 @@
                                               </div>
                                           </div>
                               </div>
-                          </div>
-                          <div class="dont_plane" v-if="payments_plan_class6[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
                           </div>
                       </div>
                       <div class="card_plane" v-if="class7">
@@ -1294,9 +1276,6 @@
                                           </div>
                               </div>
                           </div>
-                          <div class="dont_plane" v-if="payments_plan_class7[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
-                          </div>
                       </div>
                       <div class="card_plane" v-if="class8">
                           <div class="plan" v-for="payment in payments_plan_class8">
@@ -1420,9 +1399,6 @@
                                               </div>
                                           </div>
                               </div>
-                          </div>
-                          <div class="dont_plane" v-if="payments_plan_class8[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
                           </div>
                       </div>
                       <div class="card_plane" v-if="class9">
@@ -1548,9 +1524,6 @@
                                           </div>
                               </div>
                           </div>
-                          <div class="dont_plane" v-if="payments_plan_class9[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
-                          </div>
                       </div>
                       <div class="card_plane" v-if="class10">
                           <div class="plan"  v-for="payment in payments_plan_class10">
@@ -1674,9 +1647,6 @@
                                               </div>
                                           </div>
                               </div>
-                          </div>
-                          <div class="dont_plane" v-if="payments_plan_class10[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
                           </div>
                       </div>
                       <div class="card_plane" v-if="class11">
@@ -1802,9 +1772,6 @@
                                           </div>
                               </div>
                           </div>
-                          <div class="dont_plane" v-if="payments_plan_class11[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
-                          </div>
                       </div>
                       <div class="card_plane" v-if="class12">
                           <div class="plan"  v-for="payment in payments_plan_class12">
@@ -1929,16 +1896,13 @@
                                           </div>
                               </div>
                           </div>
-                          <div class="dont_plane" v-if="payments_plan_class12[0] == null">
-                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
-                          </div>
                       </div>
                   </div>
                 </body>
               </div>
             </div>
 
-             <button class="btn btn-primary" @click="open_register_frame_fun()">ابدأ الآن</button>
+             <Link class="btn btn-primary" :href="route('register_student')">ابدأ الآن</Link>
    
            </div>
          </section>
@@ -2091,53 +2055,6 @@
                 الرجوع إلى الصفحة الرئيسية
             </div>
         </div>
-
-        <div class="bluer_bg" v-if="open_register_frame">
-            <div class="logo"></div>
-            <div class="h2 desc1">انشاء حساب جديد</div>
-            <div class="h3 desc2">يُمكنك التسجيل في الموقع عن طريق إنشاء حساب طالب</div>
-            <div class="cards">
-                <Link class="card" :href="route('register_student')">
-                    <div class="content">
-                        <div class="back">
-                        <div class="back-content">
-                            <svg data-name="Layer 1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M450.08 247.82A70.14 70.14 0 0 0 418.49 115h-1.33V96.71A24.76 24.76 0 0 0 392.42 72H29.23A24.76 24.76 0 0 0 4.49 96.71v237.94a24.76 24.76 0 0 0 24.74 24.73H158v70.44h-42.21a5.1 5.1 0 0 0 0 10.2H348.3a32.47 32.47 0 0 0 32.44-32.44v-81.2a5.1 5.1 0 1 0-10.2 0v81.2a22.26 22.26 0 0 1-22.24 22.24H244.4a35.56 35.56 0 0 1 35.13-30.4h52.2a5.1 5.1 0 0 0 5.1-5.1v-38.77a5.32 5.32 0 0 0 .16-1.27 5.24 5.24 0 0 0-.16-1.26v-30.31a67.42 67.42 0 0 1 67.34-67.34H430a67.42 67.42 0 0 1 67.34 67.34v112.21a5.1 5.1 0 1 0 10.2 0V322.71a77.68 77.68 0 0 0-57.46-74.89Zm28.37-62.61a60 60 0 1 1-60-60 60 60 0 0 1 60 60ZM14.69 334.65v-11.53h311.94v26.06H29.23a14.54 14.54 0 0 1-14.54-14.53Zm101.1-117.21a27.76 27.76 0 1 1 27.75-27.76 27.79 27.79 0 0 1-27.75 27.76Zm9.52 10.2c15.24 0 28.8 5.54 38.33 15.76l26.2 25.92a5 5 0 0 0 3.84 1.47 5.09 5.09 0 0 0 3.67-1.84l28.53-34.5a7 7 0 0 1 9.58-1.06 6.93 6.93 0 0 1 1.34 10l-38.42 47.57a7.29 7.29 0 0 1-10.72.69l-26.29-25.16a5.09 5.09 0 0 0-8.62 3.68v42.77h-80.5v-52.7a32.64 32.64 0 0 1 32.61-32.6Zm42.87 202.18v-70.44h68.33v59a5.38 5.38 0 0 0 .09.9 45.19 45.19 0 0 0-2.47 10.55Zm111.35-40.6a45.57 45.57 0 0 0-32.82 13.95v-43.79h79.92v29.84Zm47.72-76.3H163V282.1l17.6 16.9a17.37 17.37 0 0 0 13.21 4.81 17.54 17.54 0 0 0 12.5-6.46l38.43-47.57a17.09 17.09 0 0 0-2.08-23.65L267.22 172a5.1 5.1 0 1 0-9.28-4.21l-24.56 54.11A17.14 17.14 0 0 0 218 228l-25 30.2-22-21.91A59.14 59.14 0 0 0 139.89 219a38 38 0 1 0-47.72.38 42.87 42.87 0 0 0-30.12 40.88v52.68H14.69V96.71a14.55 14.55 0 0 1 14.54-14.53h363.19A14.55 14.55 0 0 1 407 96.71V116a70.13 70.13 0 0 0-21 131.33 77.73 77.73 0 0 0-58.75 65.59Z" fill="#ffffff" class="fill-000000"></path><path d="M336.64 110.35H201a5.1 5.1 0 0 0 0 10.2h135.64a5.1 5.1 0 1 0 0-10.2ZM336.64 138.46H317a5.1 5.1 0 0 0 0 10.2h19.6a5.1 5.1 0 1 0 0-10.2ZM286 143.56a5.1 5.1 0 0 0-5.1-5.1H201a5.1 5.1 0 0 0 0 10.2h79.9a5.1 5.1 0 0 0 5.1-5.1ZM336.64 166.57h-49.73a5.1 5.1 0 0 0 0 10.2h49.73a5.1 5.1 0 1 0 0-10.2ZM238.93 166.57H201a5.1 5.1 0 1 0 0 10.2h37.94a5.1 5.1 0 0 0 0-10.2Z" fill="#ffffff" class="fill-000000"></path></svg>
-                            <strong>طالب</strong>
-                        </div>
-                        </div>
-                        <div class="front">
-                        
-                        <div class="img">
-                            <div class="circle">
-                            </div>
-                            <div class="circle" id="right">
-                            </div>
-                            <div class="circle" id="bottom">
-                            </div>
-                        </div>
-
-                        <div class="front-content">
-                            <small class="badge">طالب</small>
-                            <div class="description">
-                              <div class="title">
-                                  <p class="title">
-                                  <strong>حساب الطالب</strong>
-                                  </p>
-                                  <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
-                              </div>
-                              <p class="card-footer">
-                                  يمكّن حساب الطالب التلاميذ من متابعة الدروس اليوميّة مثل فيديوهات تفسير الدروس والحصص المباشرة.
-                              </p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-            <div class="reteurn" @click="open_register_frame_fun()">
-                الرجوع إلى الصفحة الرئيسية
-            </div>
-        </div>
     </GestLayoutuser>
 </template>
 <script setup>
@@ -2169,8 +2086,7 @@
        data() {
            return {
                 open_login_frame: false,
-                open_register_frame: false,
-                allclasses: true,
+                allclasses: false,
                 class1: false,
                 class2: false,
                 class3: false,
@@ -2183,6 +2099,7 @@
                 class10: false,
                 class11: false,
                 class12: false,
+                dont_have_plans: false,
            }
        },
        methods: {
@@ -2191,12 +2108,6 @@
                    this.open_login_frame=false : 
                    this.open_login_frame=true;
             },
-            open_register_frame_fun(){
-               this.open_register_frame ? 
-                   this.open_register_frame=false : 
-                   this.open_register_frame=true;
-            },
-
             allclasses_fun(){
                     this.allclasses=true;
                     this.class1=false ;
@@ -2400,6 +2311,35 @@
            }
        },
        mounted() {
+            if(this.payments_plan_all[0])
+                this.allclasses=true;
+            else if(this.payments_plan_class1[0])
+                this.class1=true;
+            else if(this.payments_plan_class2[0])
+                this.class2=true;
+            else if(this.payments_plan_class3[0])
+                this.class3=true;
+            else if(this.payments_plan_class4[0])
+                this.class4=true;
+            else if(this.payments_plan_class5[0])
+                this.class5=true;
+            else if(this.payments_plan_class6[0])
+                this.class6=true;
+            else if(this.payments_plan_class7[0])
+                this.class7=true;
+            else if(this.payments_plan_class8[0])
+                this.class8=true;
+            else if(this.payments_plan_class9[0])
+                this.class9=true;
+            else if(this.payments_plan_class10[0])
+                this.class10=true;
+            else if(this.payments_plan_class11[0])
+                this.class11=true;
+            else if(this.payments_plan_class12[0])
+                this.class12=true;
+            else
+                this.dont_have_plans=true;
+
             // Your JavaScript code goes here
             const navOpenBtn = document.querySelector("[data-menu-open-btn]");
             const navCloseBtn = document.querySelector("[data-menu-close-btn]");

@@ -38,12 +38,14 @@ class paymentController extends Controller
             }
             else if($PaymentTrak){
                 return Inertia::render('auth_pages/payment_page/index',[
-                    'date_end'=>$PaymentTrak->date_end
+                    'date_end'=>$PaymentTrak->date_end,
+                    'payments_plan'=>[]
                 ]);
             }
             else{
                 return Inertia::render('auth_pages/payment_page/index',[
                     'special_stident'=>'special_stident',
+                    'payments_plan'=>[]
                 ]);
             }
         }

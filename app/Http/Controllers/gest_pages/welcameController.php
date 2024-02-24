@@ -22,39 +22,51 @@ class welcameController extends Controller
         ->get();
         $payments_plan_class1 = Payment::where('status','1') 
         ->where('class1','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class2 = Payment::where('status','1') 
         ->where('class2','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class3 = Payment::where('status','1') 
         ->where('class3','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class4 = Payment::where('status','1') 
         ->where('class4','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class5 = Payment::where('status','1') 
         ->where('class5','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class6 = Payment::where('status','1') 
         ->where('class6','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class7 = Payment::where('status','1') 
         ->where('class7','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class8 = Payment::where('status','1') 
         ->where('class8','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class9 = Payment::where('status','1') 
         ->where('class9','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class10 = Payment::where('status','1') 
         ->where('class10','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class11 = Payment::where('status','1') 
         ->where('class11','1') 
+        ->where('Allclasses','0')
         ->get();
         $payments_plan_class12 = Payment::where('status','1') 
         ->where('class12','1') 
+        ->where('Allclasses','0')
         ->get();
 
         return Inertia::render('gest_pages/home',[

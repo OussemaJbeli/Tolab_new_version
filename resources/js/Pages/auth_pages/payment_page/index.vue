@@ -5,7 +5,7 @@
         <div class="content pyment_frame_page">
             <div class="left_part p-4">
                 <h4>خطط الدفع</h4>
-                <div class="card_plane" v-if="payments_plan">
+                <div class="card_plane" v-if="payments_plan[0]">
                     <div class="plan" v-for="payment in payments_plan">
                         <div class="inner1" v-if="payment.frame == 'المثال الاول'">
                                 <span class="pricing">
