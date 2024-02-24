@@ -53,6 +53,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        $user = Auth::user();
+
+        $user->active_account = true;
+        $user->save();
+
         return redirect(RouteServiceProvider::HOME);
     }
 }

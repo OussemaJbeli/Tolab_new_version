@@ -29,6 +29,7 @@ return new class extends Migration
             $table->boolean('chanels_control')->default(false);
             $table->boolean('dashboard_control')->default(false);
             $table->boolean('payment')->default(false);
+            $table->boolean('active_account')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
