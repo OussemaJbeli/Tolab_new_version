@@ -24,3 +24,12 @@ $(document).ready(function(){
         $(".search-input").slideToggle("slow");
     });
 });
+
+// let lastModified = document.lastModified;
+
+// setInterval(function() {
+//     if (document.lastModified != lastModified) {
+//         alert('Screenshot or screen recording may have been taken!');
+//     }
+//     lastModified = document.lastModified;
+// }, 1000);

@@ -36,8 +36,22 @@
                                 <td class="pb-4 pt-6 px-6 border-t text-start text-white">
                                     {{ pyment_plan.name }}
                                 </td>
-                                <td class="pb-4 pt-6 px-6 border-t text-start text-white">
-                                    {{ pyment_plan.education_level }}
+                                <td class="pb-4 pt-6 px-6 border-t text-start text-white w-56">
+                                    <span class="mr-2 text-yellow-500" v-if="pyment_plan.Allclasses">جميع الصفوف</span>
+                                    <p v-else>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class1">الصف 1</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class2">الصف 2</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class3">الصف 3</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class4">الصف 4</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class5">الصف 5</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class6">الصف 6</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class7">الصف 7</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class8">الصف 8</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class9">الصف 9</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class10">الصف 10</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class11">الصف 11</span>
+                                        <span class="mr-2 text-yellow-500" v-if="pyment_plan.class12">الصف 12</span>
+                                    </p>
                                 </td>
                                 <td class="pb-4 pt-6 px-6 border-t text-start text-white">
                                     {{ pyment_plan.Price }} (AED)
@@ -58,7 +72,7 @@
                                     {{ pyment_plan.frame }}
                                 </td>
                                 <td class="pb-4 pt-6 px-6 border-t text-start text-white">
-                                    <button @click="change_payment_frame_fun(pyment_plan.id,pyment_plan.name,pyment_plan.description,pyment_plan.Price,pyment_plan.education_level,pyment_plan.frequency,pyment_plan.status,pyment_plan.frame)">
+                                    <button @click="change_payment_frame_fun(pyment_plan.id,pyment_plan.name,pyment_plan.description,pyment_plan.Price,pyment_plan.frequency,pyment_plan.status,pyment_plan.frame,pyment_plan.Allclasses,pyment_plan.class1,pyment_plan.class2,pyment_plan.class3,pyment_plan.class4,pyment_plan.class5,pyment_plan.class6,pyment_plan.class7,pyment_plan.class8,pyment_plan.class9,pyment_plan.class10,pyment_plan.class11,pyment_plan.class12)">
                                         <i class="fa-solid fa-pen-to-square text-green-500"></i> تعديل
                                     </button>
                                 </td>
@@ -249,29 +263,6 @@
                                     <input type="number" class="form-control" id="price" v-model="add_payment_vars.price" required :error="add_payment_vars.errors.price">
                                 </div>
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label text-white">المستوى الدراسي</label>
-                                    <select
-                                        id="etudient_level"
-                                        class="mt-1 block w-full input"
-                                        v-model="add_payment_vars.etudient_level"
-                                        required
-                                    >
-                                        <option value="جميع الصفوف">جميع الصفوف</option>
-                                        <option value="الصف 1">الصف 1</option>
-                                        <option value="الصف 2">الصف 2</option>
-                                        <option value="الصف 3">الصف 3</option>
-                                        <option value="الصف 4">الصف 4</option>
-                                        <option value="الصف 5">الصف 5</option>
-                                        <option value="الصف 6">الصف 6</option>
-                                        <option value="الصف 7">الصف 7</option>
-                                        <option value="الصف 8">الصف 8</option>
-                                        <option value="الصف 9">الصف 9</option>
-                                        <option value="الصف 10">الصف 10</option>
-                                        <option value="الصف 11">الصف 11</option>
-                                        <option value="الصف 12">الصف 12</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <label for="name" class="col-form-label text-white"> التكرار</label>
                                     <select
                                         id="etudient_level"
@@ -316,6 +307,117 @@
                                 />
                             </div>
                         </div>
+                        <label for="name" class="col-form-label text-yellow-500">المستوى الدراسي</label>
+                        <div class="classes_checkbox">
+                            <div class="part">
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'جميع الصفوف'"
+                                        :isChecked="add_payment_vars.Allclasses"
+                                        @toggle="payment_Allclasses_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 1'"
+                                        :isChecked="add_payment_vars.class1"
+                                        @toggle="payment_class1_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 2'"
+                                        :isChecked="add_payment_vars.class2"
+                                        @toggle="payment_class2_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 3'"
+                                        :isChecked="add_payment_vars.class3"
+                                        @toggle="payment_class3_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 4'"
+                                        :isChecked="add_payment_vars.class4"
+                                        @toggle="payment_class4_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 5'"
+                                        :isChecked="add_payment_vars.class5"
+                                        @toggle="payment_class5_togle"
+                                    />
+                            </div>
+                            <div class="part">
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 6'"
+                                        :isChecked="add_payment_vars.class6"
+                                        @toggle="payment_class6_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 7'"
+                                        :isChecked="add_payment_vars.class7"
+                                        @toggle="payment_class7_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 8'"
+                                        :isChecked="add_payment_vars.class8"
+                                        @toggle="payment_class8_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 9'"
+                                        :isChecked="add_payment_vars.class9"
+                                        @toggle="payment_class9_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 10'"
+                                        :isChecked="add_payment_vars.class10"
+                                        @toggle="payment_class10_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 11'"
+                                        :isChecked="add_payment_vars.class11"
+                                        @toggle="payment_class11_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 12'"
+                                        :isChecked="add_payment_vars.class12"
+                                        @toggle="payment_class12_togle"
+                                    />
+                            </div>
+                        </div>
                         <div class="save">
                             <button type="submit">
                                 save
@@ -349,29 +451,6 @@
                                     <input type="number" class="form-control" id="price" v-model="change_payment_vars.price" required :error="change_payment_vars.errors.price">
                                 </div>
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label text-white">المستوى الدراسي</label>
-                                    <select
-                                        id="etudient_level"
-                                        class="mt-1 block w-full input"
-                                        v-model="change_payment_vars.etudient_level"
-                                        required
-                                    >
-                                        <option value="جميع الصفوف">جميع الصفوف</option>
-                                        <option value="الصف 1">الصف 1</option>
-                                        <option value="الصف 2">الصف 2</option>
-                                        <option value="الصف 3">الصف 3</option>
-                                        <option value="الصف 4">الصف 4</option>
-                                        <option value="الصف 5">الصف 5</option>
-                                        <option value="الصف 6">الصف 6</option>
-                                        <option value="الصف 7">الصف 7</option>
-                                        <option value="الصف 8">الصف 8</option>
-                                        <option value="الصف 9">الصف 9</option>
-                                        <option value="الصف 10">الصف 10</option>
-                                        <option value="الصف 11">الصف 11</option>
-                                        <option value="الصف 12">الصف 12</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <label for="name" class="col-form-label text-white">التكرار</label>
                                     <select
                                         id="etudient_level"
@@ -379,8 +458,18 @@
                                         v-model="change_payment_vars.frequency"
                                         required
                                     >
-                                        <option value="سنة">سنوي</option>
-                                        <option value="شهر">شهري</option>
+                                        <option value="شهر">شهر</option>
+                                        <option value="شهرين">شهرين</option>
+                                        <option value="اشهر 3">3 اشهر</option>
+                                        <option value="اشهر 4">4 اشهر</option>
+                                        <option value="اشهر 5">5 اشهر</option>
+                                        <option value="اشهر 6">6 اشهر</option>
+                                        <option value="اشهر 7">7 اشهر</option>
+                                        <option value="اشهر 8">8 اشهر</option>
+                                        <option value="اشهر 9">9 اشهر</option>
+                                        <option value="اشهر 10">10 اشهر</option>
+                                        <option value="اشهر 11">11 اشهر</option>
+                                        <option value="اشهر 12">12 اشهر</option>  
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -404,6 +493,117 @@
                                     :isChecked="change_payment_vars.activation"
                                     @toggle="change_payment_active_togle"
                                 />
+                            </div>
+                        </div>
+                        <label for="name" class="col-form-label text-yellow-500">المستوى الدراسي</label>
+                        <div class="classes_checkbox">
+                            <div class="part">
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'جميع الصفوف'"
+                                        :isChecked="change_payment_vars.Allclasses"
+                                        @toggle="payment_change_Allclasses_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 1'"
+                                        :isChecked="change_payment_vars.class1"
+                                        @toggle="payment_change_class1_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 2'"
+                                        :isChecked="change_payment_vars.class2"
+                                        @toggle="payment_change_class2_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 3'"
+                                        :isChecked="change_payment_vars.class3"
+                                        @toggle="payment_change_class3_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 4'"
+                                        :isChecked="change_payment_vars.class4"
+                                        @toggle="payment_change_class4_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 5'"
+                                        :isChecked="change_payment_vars.class5"
+                                        @toggle="payment_change_class5_togle"
+                                    />
+                            </div>
+                            <div class="part">                                  
+                                <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 6'"
+                                        :isChecked="change_payment_vars.class6"
+                                        @toggle="payment_change_class6_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 7'"
+                                        :isChecked="change_payment_vars.class7"
+                                        @toggle="payment_change_class7_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 8'"
+                                        :isChecked="change_payment_vars.class8"
+                                        @toggle="payment_change_class8_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 9'"
+                                        :isChecked="change_payment_vars.class9"
+                                        @toggle="payment_change_class9_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 10'"
+                                        :isChecked="change_payment_vars.class10"
+                                        @toggle="payment_change_class10_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 11'"
+                                        :isChecked="change_payment_vars.class11"
+                                        @toggle="payment_change_class11_togle"
+                                    />
+                                    <ToggleCheckbox
+                                        :id="'ventilation'"
+                                        :active_value="'مفعل'"
+                                        :inactive_value="'غير مفعل'"
+                                        :label="'الصف 12'"
+                                        :isChecked="change_payment_vars.class12"
+                                        @toggle="payment_change_class12_togle"
+                                    />
                             </div>
                         </div>
                         <div class="save">
@@ -447,10 +647,22 @@ export default {
                 name: null,
                 description: null,
                 price: null,
-                etudient_level: null,
                 frequency: null,
                 activation: true,
                 frame: true,
+                Allclasses: false,
+                class1: false,
+                class2: false,
+                class3: false,
+                class4: false,
+                class5: false,
+                class6: false,
+                class7: false,
+                class8: false,
+                class9: false,
+                class10: false,
+                class11: false,
+                class12: false,
             }),
             change_payment_frame: false,
             change_payment_vars: this.$inertia.form({
@@ -458,10 +670,22 @@ export default {
                 name: null,
                 description: null,
                 price: null,
-                etudient_level: null,
                 frequency: null,
                 activation: null,
                 frame: true,
+                Allclasses: false,
+                class1: false,
+                class2: false,
+                class3: false,
+                class4: false,
+                class5: false,
+                class6: false,
+                class7: false,
+                class8: false,
+                class9: false,
+                class10: false,
+                class11: false,
+                class12: false,
             }),
         }
     },
@@ -471,7 +695,7 @@ export default {
                 this.add_payment_frame=false:
                 this.add_payment_frame=true
         },
-        change_payment_frame_fun(id_plan,name,description,price,etudient_level,frequency,activation,frame){
+        change_payment_frame_fun(id_plan,name,description,price,frequency,activation,frame,Allclasses,class1,class2,class3,class4,class5,class6,class7,class8,class9,class10,class11,class12){
             this.change_payment_frame?
                 this.change_payment_frame=false:
                 [
@@ -480,15 +704,216 @@ export default {
                     this.change_payment_vars.name=name,
                     this.change_payment_vars.description=description,
                     this.change_payment_vars.price=price,  
-                    this.change_payment_vars.etudient_level=etudient_level,
                     this.change_payment_vars.frequency=frequency,
                     this.change_payment_vars.activation=activation, 
                     this.change_payment_vars.frame=frame,  
+                    this.change_payment_vars.Allclasses = Allclasses,
+                    this.change_payment_vars.class1 = class1,
+                    this.change_payment_vars.class2 = class2,
+                    this.change_payment_vars.class3 = class3,
+                    this.change_payment_vars.class4 = class4,
+                    this.change_payment_vars.class5 = class5,
+                    this.change_payment_vars.class6 = class6,
+                    this.change_payment_vars.class7 = class7,
+                    this.change_payment_vars.class8 = class8,
+                    this.change_payment_vars.class9 = class9,
+                    this.change_payment_vars.class10 = class10,
+                    this.change_payment_vars.class11 = class11,
+                    this.change_payment_vars.class12 = class12,
                 ]
         },
+        // 
         payment_active_togle() {
         this.add_payment_vars.activation = !this.add_payment_vars.activation;
         },
+        //
+        payment_Allclasses_togle() {
+        this.add_payment_vars.Allclasses = !this.add_payment_vars.Allclasses;
+            if(this.add_payment_vars.Allclasses){
+                this.add_payment_vars.class1 = true;
+                this.add_payment_vars.class2 = true;
+                this.add_payment_vars.class3 = true;
+                this.add_payment_vars.class4 = true;
+                this.add_payment_vars.class5 = true;
+                this.add_payment_vars.class6 = true;
+                this.add_payment_vars.class7 = true;
+                this.add_payment_vars.class8 = true;
+                this.add_payment_vars.class9 = true;
+                this.add_payment_vars.class10 = true;
+                this.add_payment_vars.class11 = true;
+                this.add_payment_vars.class12 = true;
+            }
+            else{
+                this.add_payment_vars.class1 = false;
+                this.add_payment_vars.class2 = false;
+                this.add_payment_vars.class3 = false;
+                this.add_payment_vars.class4 = false;
+                this.add_payment_vars.class5 = false;
+                this.add_payment_vars.class6 = false;
+                this.add_payment_vars.class7 = false;
+                this.add_payment_vars.class8 = false;
+                this.add_payment_vars.class9 = false;
+                this.add_payment_vars.class10 = false;
+                this.add_payment_vars.class11 = false;
+                this.add_payment_vars.class12 = false;
+            }
+        }, 
+        payment_class1_togle() {
+        this.add_payment_vars.class1 = !this.add_payment_vars.class1;
+        if(this.add_payment_vars.class1 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class2_togle() {
+        this.add_payment_vars.class2 = !this.add_payment_vars.class2;
+        if(this.add_payment_vars.class2 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class3_togle() {
+        this.add_payment_vars.class3 = !this.add_payment_vars.class3;
+        if(this.add_payment_vars.class3 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class4_togle() {
+        this.add_payment_vars.class4 = !this.add_payment_vars.class4;
+        if(this.add_payment_vars.class4 == false)
+            this.add_payment_vars.Allclasses = false;
+        },  
+        payment_class5_togle() {
+        this.add_payment_vars.class5 = !this.add_payment_vars.class5;
+        if(this.add_payment_vars.class5 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class6_togle() {
+        this.add_payment_vars.class6 = !this.add_payment_vars.class6;
+        if(this.add_payment_vars.class6 == false)
+            this.add_payment_vars.Allclasses = false;
+        },  
+        payment_class7_togle() {
+        this.add_payment_vars.class7 = !this.add_payment_vars.class7;
+        if(this.add_payment_vars.class7 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class8_togle() {
+        this.add_payment_vars.class8 = !this.add_payment_vars.class8;
+        if(this.add_payment_vars.class8 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class9_togle() {
+        this.add_payment_vars.class9 = !this.add_payment_vars.class9;
+        if(this.add_payment_vars.class9 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class10_togle() {
+        this.add_payment_vars.class10 = !this.add_payment_vars.class10;
+        if(this.add_payment_vars.class10 == false)
+            this.add_payment_vars.Allclasses = false;
+        },  
+        payment_class11_togle() {
+        this.add_payment_vars.class11 = !this.add_payment_vars.class11;
+        if(this.add_payment_vars.class11 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_class12_togle() {
+        this.add_payment_vars.class12 = !this.add_payment_vars.class12;
+        if(this.add_payment_vars.class12 == false)
+            this.add_payment_vars.Allclasses = false;
+        }, 
+        payment_active_togle() {
+        this.change_payment_vars.activation = !this.change_payment_vars.activation;
+        },
+        // 
+
+        payment_change_Allclasses_togle() {
+        this.change_payment_vars.Allclasses = !this.change_payment_vars.Allclasses;
+            if(this.change_payment_vars.Allclasses){
+                this.change_payment_vars.class1 = true;
+                this.change_payment_vars.class2 = true;
+                this.change_payment_vars.class3 = true;
+                this.change_payment_vars.class4 = true;
+                this.change_payment_vars.class5 = true;
+                this.change_payment_vars.class6 = true;
+                this.change_payment_vars.class7 = true;
+                this.change_payment_vars.class8 = true;
+                this.change_payment_vars.class9 = true;
+                this.change_payment_vars.class10 = true;
+                this.change_payment_vars.class11 = true;
+                this.change_payment_vars.class12 = true;
+            }
+            else{
+                this.change_payment_vars.class1 = false;
+                this.change_payment_vars.class2 = false;
+                this.change_payment_vars.class3 = false;
+                this.change_payment_vars.class4 = false;
+                this.change_payment_vars.class5 = false;
+                this.change_payment_vars.class6 = false;
+                this.change_payment_vars.class7 = false;
+                this.change_payment_vars.class8 = false;
+                this.change_payment_vars.class9 = false;
+                this.change_payment_vars.class10 = false;
+                this.change_payment_vars.class11 = false;
+                this.change_payment_vars.class12 = false;
+            }
+        }, 
+        payment_change_class1_togle() {
+        this.change_payment_vars.class1 = !this.change_payment_vars.class1;
+        if(this.change_payment_vars.class1 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
+        payment_change_class2_togle() {
+        this.change_payment_vars.class2 = !this.change_payment_vars.class2;
+        if(this.change_payment_vars.class2 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
+        payment_change_class3_togle() {
+        this.change_payment_vars.class3 = !this.change_payment_vars.class3;
+        if(this.change_payment_vars.class3 == false)
+            this.change_payment_vars.Allclasses = false;
+        },  
+        payment_change_class4_togle() {
+        this.change_payment_vars.class4 = !this.change_payment_vars.class4;
+        if(this.change_payment_vars.class4 == false)
+            this.change_payment_vars.Allclasses = false;
+        },  
+        payment_change_class5_togle() {
+        this.change_payment_vars.class5 = !this.change_payment_vars.class5;
+        if(this.change_payment_vars.class5 == false)
+            this.change_payment_vars.Allclasses = false;
+        },  
+        payment_change_class6_togle() {
+        this.change_payment_vars.class6 = !this.change_payment_vars.class6;
+        if(this.change_payment_vars.class6 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
+        payment_change_class7_togle() {
+        this.change_payment_vars.class7 = !this.change_payment_vars.class7;
+        if(this.change_payment_vars.class7 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
+        payment_change_class8_togle() {
+        this.change_payment_vars.class8 = !this.change_payment_vars.class8;
+        if(this.change_payment_vars.class8 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
+        payment_change_class9_togle() {
+        this.change_payment_vars.class9 = !this.change_payment_vars.class9;
+        if(this.change_payment_vars.class9 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
+        payment_change_class10_togle() {
+        this.change_payment_vars.class10 = !this.change_payment_vars.class10;
+        if(this.change_payment_vars.class10 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
+        payment_change_class11_togle() {
+        this.change_payment_vars.class11 = !this.change_payment_vars.class11;
+        if(this.change_payment_vars.class11 == false)
+            this.change_payment_vars.Allclasses = false;
+        },  
+        payment_change_class12_togle() {
+        this.change_payment_vars.class12 = !this.change_payment_vars.class12;
+        if(this.change_payment_vars.class12 == false)
+            this.change_payment_vars.Allclasses = false;
+        }, 
         change_payment_active_togle() {
         this.change_payment_vars.activation = !this.change_payment_vars.activation;
         },

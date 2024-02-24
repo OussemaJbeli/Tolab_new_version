@@ -20,6 +20,7 @@
         background-color: var(--bg1);
         overflow: hidden;
         color: #fff;
+        height: 650px;
         .header{
             position: relative;
             width: 100%;
@@ -49,12 +50,15 @@
             flex-direction: column;
             align-items: center;
             padding: 10px;
+            height: 600px;
+            overflow-y: auto;
             .small_panel{
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
                 .part{
                     width: 300px;
-                    height: 100%;
                     margin: 10px;
                     textarea{
                         height: 180px;
@@ -64,6 +68,24 @@
                         color: black;
                         border: 0 solid transparent;
                         border-radius: 4px;
+                    }
+                }
+            }
+            .classes_checkbox{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                .part{
+                    width: 300px;
+                    margin: 10px;
+                    #ventilation{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .form-label{
+                            width: 200px;
+                        }
                     }
                 }
             }

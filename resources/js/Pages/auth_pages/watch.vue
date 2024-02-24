@@ -394,7 +394,19 @@ export default {
 
         }
     },
+    mounted() {
+        window.addEventListener('keydown', this.handleKeydown);
+    },
+    beforeDestroy() {
+        window.removeEventListener('keydown', this.handleKeydown);
+    },
     methods: {
+        handleKeydown(e) {
+            if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 's')) {
+                e.preventDefault();
+                alert('Taking screenshots is disabled.');
+            }
+        },
         add_coments_db(){
             this.add_coment_values.get(`/Coments_AUTH/${this.target_video.id}/create`, {
                 onSuccess: () => {

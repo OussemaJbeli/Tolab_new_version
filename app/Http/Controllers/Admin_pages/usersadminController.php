@@ -122,21 +122,23 @@ class usersadminController extends Controller
      */
     public function add_special_student(Request $request)
     {
-        $name = $request->get('name');
-        $email = $request->get('email');
-        $password = $request->get('password');
-        $student_level = $request->get('student_level');
-
-        $users = new User();
-
-        $users->name = $name;
-        $users->email = $email;
-        $users->password = Hash::make($password);
-        $users->etudient_level = $student_level;
-        $users->etudient = true;
-        $users->payment = true;
-
-        $users->save();
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+            'password' => 'required', 'confirmed',
+            'student_level' => 'required|string|max:255',
+        ]);
+    
+        $user = new User();
+    
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->etudient = true;
+        $user->payment = true;
+        $user->etudient_level = $request->student_level;
+    
+        $user->save();
 
         return Redirect::back()
         ->with('success', 'تم الحفظ بنجاح');
@@ -145,46 +147,48 @@ class usersadminController extends Controller
 
     public function edite_special_student(Request $request)
     {
-        $id_student = $request->get('id_student');
-        $name = $request->get('name');
-        $email = $request->get('email');
-        $password = $request->get('password');
-        $student_level = $request->get('student_level');
+        $id_user = $request->get('id_student');
 
-        $users = User::find($id_student);
-
-        if ($users) {
-
-            if($name){
-                $users->name = $name;
-            }
-            if($email){
-                $users->email = $email;
-            }
-            if($password){
-                $users->password = $password;
-            }
-            if($student_level){
-                $users->etudient_level = $student_level;
-            }
-
-            $users->save();
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $id_user,
+            'password' => 'nullable|confirmed',
+            'student_level' => 'required|string|max:255',
+        ]);
+    
+        // Fetch the admin user record from the database
+        $user = User::findOrFail($id_user);
+    
+        // Update the admin user's attributes
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->etudient_level = $request->student_level;
+    
+        // Update the password if a new one is provided
+        if ($request->password) {
+            $user->password = Hash::make($request->password);
         }
+    
+        // Save the updated user record
+        $user->save();
+
         return Redirect::back()
         ->with('success', 'تم التعديل بنجاح');
     }
 
     public function add_master(Request $request)
     {
-        $name = $request->get('name_master');
-        $email = $request->get('email_master');
-        $password = $request->get('password_master');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+            'password' => 'required', 'confirmed',
+        ]);
 
         $users = new User();
 
-        $users->name = $name;
-        $users->email = $email;
-        $users->password = Hash::make($password);
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->password = Hash::make($request->password);
         $users->master = true;
 
         $users->save();
@@ -197,15 +201,17 @@ class usersadminController extends Controller
     
     public function add_admin(Request $request)
     {
-        $name = $request->get('name_admin');
-        $email = $request->get('email_admin');
-        $password = $request->get('password_admin');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+            'password' => 'required', 'confirmed',
+        ]);
 
         $users = new User();
 
-        $users->name = $name;
-        $users->email = $email;
-        $users->password = Hash::make($password);
+        $users->name = $request->name;
+        $users->email = $request->email;
+        $users->password = Hash::make($request->password);
         $users->super_user = true;
 
         $users->save();
@@ -269,27 +275,29 @@ class usersadminController extends Controller
     }
      public function chaneg_details_users(Request $request)
      {
-         $id_user = $request->get('id_user');
-         $name = $request->get('name');
-         $email = $request->get('email');
-         $password = $request->get('password');
- 
-         $users = User::find($id_user);
- 
-         if ($users) {
- 
-             if($name){
-                 $users->name = $name;
-             }
-             if($email){
-                 $users->email = $email;
-             }
-             if($password){
-                 $users->password = $password;
-             }
- 
-             $users->save();
-         }
+        $id_user = $request->get('id_user');
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $id_user,
+            'password' => 'nullable|confirmed',
+        ]);
+    
+        // Fetch the admin user record from the database
+        $user = User::findOrFail($id_user);
+    
+        // Update the admin user's attributes
+        $user->name = $request->name;
+        $user->email = $request->email;
+    
+        // Update the password if a new one is provided
+        if ($request->password) {
+            $user->password = Hash::make($request->password);
+        }
+    
+        // Save the updated user record
+        $user->save();
+
          return Redirect::back()
          ->with('success', 'تم التعديل بنجاح');
      }

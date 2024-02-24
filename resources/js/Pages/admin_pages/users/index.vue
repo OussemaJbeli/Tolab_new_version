@@ -293,15 +293,15 @@
                         <div class="small_panel">
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white">الاسم</label>
-                                <input type="text" class="form-control" id="name" v-model="add_master_vars.name_master" required :error="add_master_vars.errors.name_master">
+                                <input type="text" class="form-control" id="name" v-model="add_master_vars.name" required :error="add_master_vars.errors.name">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="col-form-label text-white"> البريد الالكتروني</label>
-                                <input type="email" class="form-control" id="email" v-model="add_master_vars.email_master" required :error="add_master_vars.errors.email_master">
+                                <input type="email" class="form-control" id="email" v-model="add_master_vars.email" required :error="add_master_vars.errors.email">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="col-form-label text-white"> كلمة السر</label>
-                                <input type="password" class="form-control" id="password" v-model="add_master_vars.password_master" required :error="add_master_vars.errors.password_master">
+                                <input type="password" class="form-control" id="password" v-model="add_master_vars.password" required :error="add_master_vars.errors.password">
                             </div>
                         </div>
                         <div class="save">
@@ -323,18 +323,18 @@
                         <div class="small_panel">
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white">الاسم</label>
-                                <input type="text" class="form-control" id="name" v-model="add_admin_vars.name_admin" required>
-                                <InputError class="mt-2" :message="add_admin_vars.errors.name_admin" />
+                                <input type="text" class="form-control" id="name" v-model="add_admin_vars.name" required>
+                                <InputError class="mt-2" :message="add_admin_vars.errors.name" />
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white"> البريد الالكتروني</label>
-                                <input type="email" class="form-control" id="name" v-model="add_admin_vars.email_admin" required>
-                                <InputError class="mt-2" :message="add_admin_vars.errors.email_admin" />
+                                <input type="email" class="form-control" id="name" v-model="add_admin_vars.email" required>
+                                <InputError class="mt-2" :message="add_admin_vars.errors.email" />
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white"> كلمة السر</label>
-                                <input type="password" class="form-control" id="name" v-model="add_admin_vars.password_admin" required>
-                                <InputError class="mt-2" :message="add_admin_vars.errors.password_admin" />
+                                <input type="password" class="form-control" id="name" v-model="add_admin_vars.password" required>
+                                <InputError class="mt-2" :message="add_admin_vars.errors.password" />
                             </div>
                         </div>
                         <div class="save">
@@ -360,11 +360,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white"> البريد الالكتروني</label>
-                                <input type="email" class="form-control" id="name" v-model="change_password_vars.email" required :error="change_password_vars.errors.email">
+                                <input type="email" class="form-control" id="name" v-model="change_password_vars.email" required>
+                                <InputError class="mt-2 text-red-500" :message="change_password_vars.errors.email" />
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white"> كلمة السر</label>
-                                <input type="password" class="form-control" id="name" v-model="change_password_vars.password" required :error="change_password_vars.errors.password">
+                                <input type="password" class="form-control" id="name" v-model="change_password_vars.password" :error="change_password_vars.errors.password">
                             </div>
                         </div>
                         <div class="save">
@@ -390,11 +391,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="email" class="col-form-label text-white"> البريد الالكتروني</label>
-                                <input type="email" class="form-control" id="email" v-model="edite_special_student_vars.email" required :error="edite_special_student_vars.errors.email">
+                                <input type="email" class="form-control" id="email" v-model="edite_special_student_vars.email" required>
+                                <InputError class="mt-2 text-red-500" :message="edite_special_student_vars.errors.email" />
                             </div>
                             <div class="form-group">
                                 <label for="password" class="col-form-label text-white"> كلمة السر</label>
-                                <input type="password" class="form-control" id="password" v-model="edite_special_student_vars.password" required :error="edite_special_student_vars.errors.password">
+                                <input type="password" class="form-control" id="password" v-model="edite_special_student_vars.password" :error="edite_special_student_vars.errors.password">
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-white">المستوى الدراسي</label>
@@ -523,9 +525,9 @@ export default {
             }),
             add_master_frame:false,
             add_master_vars: this.$inertia.form({
-                name_master: null,
-                email_master: null,
-                password_master: null,
+                name: null,
+                email: null,
+                password: null,
             }),
             change_password_frame:false,
             change_password_vars: this.$inertia.form({
@@ -542,9 +544,9 @@ export default {
             }),
             add_admin_frame:false,
             add_admin_vars: this.$inertia.form({
-                name_admin: null,
-                email_admin: null,
-                password_admin: null,
+                name: null,
+                email: null,
+                password: null,
             }),
             change_user_frame: false,
             change_user_vars: this.$inertia.form({

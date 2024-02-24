@@ -5,7 +5,6 @@
         <div class="content pyment_frame_page">
             <div class="left_part p-4">
                 <h4>خطط الدفع</h4>
-                {{ data }}
                 <div class="card_plane" v-if="payments_plan">
                     <div class="plan" v-for="payment in payments_plan">
                         <div class="inner1" v-if="payment.frame == 'المثال الاول'">
@@ -140,8 +139,8 @@
                     </div>
                 </div>
                 <div class="card_plane flex column" v-else-if="date_end">
-                    <h3>انت مشترك! والوقت المتبقي لنفاذ الإشتراك</h3>
-                    <h2>{{ date_end }}</h2>
+                    <h3>انت مشترك!تاريخ نفاذ الإشتراك</h3>
+                    <h2 class="text-yellow-500 ml-4">{{ date_end }}</h2>
                 </div>
                 <div class="card_plane flex column" v-else-if="special_stident">
                     <h3> مرحبا <span class="text-yellow-500"> {{ $page.props.auth.user.name }} </span>! انت مشترك مميز</h3>
@@ -169,25 +168,23 @@ export default {
         Link,
     },
     props: {
-        data:Object,
         payments_plan:Object,
         date_end:Object,
         special_stident:Object,
     },
-    props: ['payments_plan'],
     methods: {
-    initiatePayment(paymentId) {
-        axios.post(`/pyment_AUTH/${paymentId}/store`)
-            .then(response => {
-            
-            if (response.data.redirect_url) {
-                window.location.href = response.data.redirect_url;
-            }
-            })
-            .catch(error => {
-            console.error("Payment initiation failed:", error.response ? error.response.data : 'Unknown error');
-            // Handle error
-            });
+        initiatePayment(paymentId) {
+            axios.post(`/pyment_AUTH/${paymentId}/store`)
+                .then(response => {
+                
+                if (response.data.redirect_url) {
+                    window.location.href = response.data.redirect_url;
+                }
+                })
+                .catch(error => {
+                console.error("Payment initiation failed:", error.response ? error.response.data : 'Unknown error');
+                // Handle error
+                });
         }
     },
     data() {

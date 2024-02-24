@@ -262,155 +262,1682 @@
              <img src="/img/home_images/departmets-vector.svg" alt="Vector line art" class="vector-line">
    
              <h2 class="h3 departments-title">تمتّع بأفضل محتوى تعليمي وبدعم متواصل طيلة السّنة الدراسية من خلال مختلف عروضنا.</h2>
-   
-             <ul class="departments-list">
-   
-               <li>
-                 <div class="plan">
-                   <div class="inner">
-                     <span class="pricing">
-                       <span>
-                         $49 <small>/ m</small>
-                       </span>
-                     </span>
-                     <p class="title">Professional</p>
-                     <p class="info">This plan is for those who have a team already and running a large business.</p>
-                     <ul class="features">
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span><strong>20</strong> team members</span>
-                       </li>
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span>Plan <strong>team meetings</strong></span>
-                       </li>
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span>File sharing</span>
-                       </li>
-                     </ul>
-                     <div class="action">
-                     <a class="button" href="#">
-                       Choose plan
-                     </a>
-                     </div>
-                   </div>
-                 </div>
-               </li>
-   
-               <li>
-                 <div class="plan">
-                   <div class="inner">
-                     <span class="pricing">
-                       <span>
-                         $49 <small>/ m</small>
-                       </span>
-                     </span>
-                     <p class="title">Professional</p>
-                     <p class="info">This plan is for those who have a team already and running a large business.</p>
-                     <ul class="features">
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span><strong>20</strong> team members</span>
-                       </li>
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span>Plan <strong>team meetings</strong></span>
-                       </li>
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span>File sharing</span>
-                       </li>
-                     </ul>
-                     <div class="action">
-                     <a class="button" href="#">
-                       Choose plan
-                     </a>
-                     </div>
-                   </div>
-                 </div>
-               </li>
-   
-               <li>
-                 <div class="plan">
-                   <div class="inner">
-                     <span class="pricing">
-                       <span>
-                         $49 <small>/ m</small>
-                       </span>
-                     </span>
-                     <p class="title">Professional</p>
-                     <p class="info">This plan is for those who have a team already and running a large business.</p>
-                     <ul class="features">
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span><strong>20</strong> team members</span>
-                       </li>
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span>Plan <strong>team meetings</strong></span>
-                       </li>
-                       <li>
-                         <span class="icon">
-                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                             <path d="M0 0h24v24H0z" fill="none"></path>
-                             <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-                           </svg>
-                         </span>
-                         <span>File sharing</span>
-                       </li>
-                     </ul>
-                     <div class="action">
-                     <a class="button" href="#">
-                       Choose plan
-                     </a>
-                     </div>
-                   </div>
-                 </div>
-               </li>
-   
-             </ul>
-   
+
+            <div class="payment_plan_frame">
+              <div class="payment_plan_panel">
+                <ul class="list_nav">
+                  <li class="list1" @click="allclasses_fun">جميع الصفوف</li>
+                  <li class="list1" @click="class1_fun">الاول</li>
+                  <li class="list1" @click="class2_fun">الثاني</li>
+                  <li class="list1" @click="class3_fun">الثالث</li>
+                  <li class="list1" @click="class4_fun">الرابع</li>
+                  <li class="list1" @click="class5_fun">الخامس</li>
+                  <li class="list1" @click="class6_fun">السادس</li>
+                  <li class="list1" @click="class7_fun">السابع</li>
+                  <li class="list1" @click="class8_fun">الثامن</li>
+                  <li class="list1" @click="class9_fun">التاسع</li>
+                  <li class="list1" @click="class10_fun">العاشر</li>
+                  <li class="list1" @click="class11_fun">الحادي عشر</li>
+                  <li class="list1" @click="class12_fun">الثاني عشر</li>
+                </ul>
+                <body>
+                  <div class="payment_plans">
+                    <div class="card_plane" v-if="allclasses">
+                          <div class="plan" v-for="payment in payments_plan_all">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_all[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class1">
+                          <div class="plan" v-for="payment in payments_plan_class1" >
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class1[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class2">
+                          <div class="plan"  v-for="payment in payments_plan_class2" >
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class2[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class3">
+                          <div class="plan"  v-for="payment in payments_plan_class3" >
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class3[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class4">
+                          <div class="plan" v-for="payment in payments_plan_class4">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class4[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class5">
+                          <div class="plan"  v-for="payment in payments_plan_class5">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class5[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class6">
+                          <div class="plan" v-for="payment in payments_plan_class6">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class6[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class7">
+                          <div class="plan"  v-for="payment in payments_plan_class7">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class7[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class8">
+                          <div class="plan" v-for="payment in payments_plan_class8">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class8[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class9">
+                          <div class="plan"  v-for="payment in payments_plan_class9">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class9[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class10">
+                          <div class="plan"  v-for="payment in payments_plan_class10">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class10[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class11">
+                          <div class="plan"  v-for="payment in payments_plan_class11">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class11[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                      <div class="card_plane" v-if="class12">
+                          <div class="plan"  v-for="payment in payments_plan_class12">
+                              <div class="inner1" v-if="payment.frame == 'المثال الاول'">
+                                      <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                      </span>
+                                      <p class="title">{{payment.name}}</p>
+                                      <p class="info">{{payment.description}}</p>
+                                      <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                      </ul>
+                                      <div class="action">
+                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                              <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
+                                  <span class="pricing">
+                                          <span>
+                                              {{payment.Price}} AED <small>/{{payment.frequency}}</small>
+                                          </span>
+                                          </span>
+                                          <p class="title">{{payment.name}}</p>
+                                          <p class="info">{{payment.description}}</p>
+                                          <ul class="features">
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>{{payment.education_level}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>فتح كل الفيديوهات والقنوات</span>
+                                              </li>
+                                              <li>
+                                                  <span class="icon">
+                                                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M0 0h24v24H0z" fill="none"></path>
+                                                      <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                                                  </svg>
+                                                  </span>
+                                                  <span>قوائم التشغيل والاتعليقات</span>
+                                              </li>
+                                          </ul>
+                                          <div class="action">
+                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              اشترك الآن
+                                              </div>
+                                          </div>
+                              </div>
+                          </div>
+                          <div class="dont_plane" v-if="payments_plan_class12[0] == null">
+                            <div class="h4 text-yellow-500">لا يوجد خطط دفع لهذا المستوى الدراسي</div>
+                          </div>
+                      </div>
+                  </div>
+                </body>
+              </div>
+            </div>
+
              <button class="btn btn-primary" @click="open_register_frame_fun()">ابدأ الآن</button>
    
            </div>
@@ -625,12 +2152,37 @@
            Link,
        },
        props: {
-           items_list: Object,
+        payments_plan_all: Object,
+        payments_plan_class1 : Object,
+        payments_plan_class2 : Object,
+        payments_plan_class3 : Object,
+        payments_plan_class4 : Object,
+        payments_plan_class5 : Object,
+        payments_plan_class6 : Object,
+        payments_plan_class7 : Object,
+        payments_plan_class8 : Object,
+        payments_plan_class9 : Object,
+        payments_plan_class10 : Object,
+        payments_plan_class11 : Object,
+        payments_plan_class12 : Object,
        },
        data() {
            return {
                 open_login_frame: false,
                 open_register_frame: false,
+                allclasses: true,
+                class1: false,
+                class2: false,
+                class3: false,
+                class4: false,
+                class5: false,
+                class6: false,
+                class7: false,
+                class8: false,
+                class9: false,
+                class10: false,
+                class11: false,
+                class12: false,
            }
        },
        methods: {
@@ -643,6 +2195,202 @@
                this.open_register_frame ? 
                    this.open_register_frame=false : 
                    this.open_register_frame=true;
+            },
+
+            allclasses_fun(){
+                    this.allclasses=true;
+                    this.class1=false ;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class1_fun(){
+                    this.allclasses=false;
+                    this.class1=true;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class2_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=true ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class3_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=true ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class4_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=true ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class5_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=true ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class6_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=true ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class7_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=true ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class8_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=true ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class9_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=true ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class10_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=true ;
+                    this.class11=false ;
+                    this.class12=false ;
+            },
+            class11_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=true ;
+                    this.class12=false ;
+            },
+            class12_fun(){
+                    this.allclasses=false;
+                    this.class1=false;
+                    this.class2=false ;
+                    this.class3=false ;
+                    this.class4=false ;
+                    this.class5=false ;
+                    this.class6=false ;
+                    this.class7=false ;
+                    this.class8=false ;
+                    this.class9=false ;
+                    this.class10=false ;
+                    this.class11=false ;
+                    this.class12=true ;
             },
        },
        computed: {

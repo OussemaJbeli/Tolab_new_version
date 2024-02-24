@@ -38,11 +38,7 @@ class paymentController extends Controller
             }
             else if($PaymentTrak){
                 return Inertia::render('auth_pages/payment_page/index',[
-                    'date_end'=>
-                    [
-                        $current_date,
-                        $PaymentTrak->date_end
-                    ]
+                    'date_end'=>$PaymentTrak->date_end
                 ]);
             }
             else{
@@ -100,7 +96,7 @@ class paymentController extends Controller
                 return response()->json(['redirect_url' => $body['redirect_url']]);
             } else {
                 \Log::error('Failed', [
-                    'response' => $response->body() // or ->json() if you expect a JSON response
+                    'response' => $response->body() // 
                 ]);
                 return response()->json(['error' => 'Failed to create payment intent'], 500);
             }
@@ -126,21 +122,33 @@ class paymentController extends Controller
         $user = Auth::user();
         $user->payment = 1;
         $user->save();
-        
+    
         $paymentPlan = Payment::findOrFail($id);
                 switch ($paymentPlan->frequency) {
-                    case 'شهر':$newDate = Carbon::now()->addMonth();break;
-                    case 'شهرين':$newDate = Carbon::now()->addMonths(2);break;
-                    case '3 اشهر':$newDate = Carbon::now()->addMonths(3);break;
-                    case '4 اشهر':$newDate = Carbon::now()->addMonths(4);break;
-                    case '5 اشهر':$newDate = Carbon::now()->addMonths(5);break;
-                    case '6 اشهر':$newDate = Carbon::now()->addMonths(6);break;
-                    case '7 اشهر':$newDate = Carbon::now()->addMonths(7);break;
-                    case '8 اشهر':$newDate = Carbon::now()->addMonths(8);break;
-                    case '9 اشهر':$newDate = Carbon::now()->addMonths(9);break;
-                    case '10 اشهر':$newDate = Carbon::now()->addMonths(10);break;
-                    case '11 اشهر':$newDate = Carbon::now()->addMonths(11);break;
-                    case '12 اشهر':$newDate = Carbon::now()->addYear();break;
+                    case 'شهر':
+                        $newDate = Carbon::now()->addMonth();break;
+                    case 'شهرين':
+                        $newDate = Carbon::now()->addMonths(2);break;
+                    case '3 اشهر':
+                        $newDate = Carbon::now()->addMonths(3);break;
+                    case '4 اشهر':
+                        $newDate = Carbon::now()->addMonths(4);break;
+                    case '5 اشهر':
+                        $newDate = Carbon::now()->addMonths(5);break;
+                    case 'اشهر 6':
+                        $newDate = Carbon::now()->addMonths(6);break;
+                    case '7 اشهر':
+                        $newDate = Carbon::now()->addMonths(7);break;
+                    case '8 اشهر':
+                        $newDate = Carbon::now()->addMonths(8);break;
+                    case '9 اشهر':
+                        $newDate = Carbon::now()->addMonths(9);break;
+                    case '10 اشهر':
+                        $newDate = Carbon::now()->addMonths(10);break;
+                    case '11 اشهر':
+                        $newDate = Carbon::now()->addMonths(11);break;
+                    case '12 اشهر':
+                        $newDate = Carbon::now()->addYear();break;
                 }
         
         $PaymentTrak = new PayTraker();
