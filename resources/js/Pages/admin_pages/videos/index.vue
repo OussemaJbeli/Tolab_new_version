@@ -10,7 +10,7 @@
         <div class="contain_admin">
             <div class="historique_statistique frame_original">
                 <p class="title">
-                    <span>قائمة المستخدمين</span>
+                    <span>قائمة الفيديوهات</span>
                 </p>
                 <DataTable class="display">
                     <thead>

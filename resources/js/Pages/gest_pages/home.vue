@@ -1723,8 +1723,7 @@
                <span class="tolab-icon"><i class="fa-solid fa-graduation-cap fa-lg"></i></span>
              </a>
    
-             <p class="footer-text">
-               ابدأ طريقك نحو النجاح          </p>
+             <p class="footer-text">ابدأ طريقك نحو النجاح</p>
    
              <ul class="social-list">
    
