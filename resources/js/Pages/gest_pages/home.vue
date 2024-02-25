@@ -316,9 +316,8 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
-                                              اشترك الآن
-                                          </div>
+
+                                          <Link class="button cursor-pointer" :href="route('register_student')">اشترك الآن</Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -359,9 +358,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -402,9 +401,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -440,9 +439,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -474,9 +473,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -508,9 +507,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -546,9 +545,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -589,9 +588,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -632,9 +631,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -670,9 +669,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -704,9 +703,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -738,9 +737,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -776,9 +775,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -810,9 +809,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -844,9 +843,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -882,9 +881,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -916,9 +915,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -950,9 +949,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -988,9 +987,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -1022,9 +1021,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -1056,9 +1055,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -1094,9 +1093,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -1128,9 +1127,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -1162,9 +1161,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -1200,9 +1199,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -1234,9 +1233,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -1268,9 +1267,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -1306,9 +1305,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -1340,9 +1339,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -1374,9 +1373,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -1412,9 +1411,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -1446,9 +1445,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -1480,9 +1479,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -1518,9 +1517,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -1552,9 +1551,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -1586,9 +1585,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
@@ -1624,9 +1623,9 @@
                                               </li>
                                       </ul>
                                       <div class="action">
-                                          <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                          <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                          </div>
+                                          </Link>
                                       </div>
                               </div>
                               <div class="inner2" v-else-if="payment.frame == 'المثال الثاني'">
@@ -1658,9 +1657,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                               <div class="inner3" v-else-if="payment.frame == 'المثال الثالث'">
@@ -1692,9 +1691,9 @@
                                               </li>
                                           </ul>
                                           <div class="action">
-                                              <div  @click="open_register_frame_fun()" class="button cursor-pointer">
+                                              <Link class="button cursor-pointer" :href="route('register_student')">
                                               اشترك الآن
-                                              </div>
+                                              </Link>
                                           </div>
                               </div>
                           </div>
