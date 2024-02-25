@@ -14,7 +14,6 @@
                 <p>انت الان مشترك ! يمكنك الان الاتمتع بعروضنا</p>
                 <Link :href="route('home_AUTH')" class="button">الصفحة الرئيسية</Link>
             </div> 
-
         </div>
     </AuthenticatedLayout>
 </template>
@@ -22,7 +21,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link} from '@inertiajs/vue3';
 </script>
-
 <script>
 export default {
     components: {

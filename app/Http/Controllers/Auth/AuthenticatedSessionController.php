@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -30,13 +31,13 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $user = $request->authenticate_student();
+        $request->authenticate_student();
 
         $user = Auth::user(); // Retrieve the authenticated user after authentication
 
         $request->session()->regenerate();
-        
-        $user->active_account = true;
+
+        $user->session_id = Session::getId();
         $user->save();
 
         return redirect()->intended(RouteServiceProvider::HOME);
@@ -50,8 +51,7 @@ class AuthenticatedSessionController extends Controller
     {
 
         $user = Auth::user();
-
-        $user->active_account = false;
+        $user->session_id = null;
         $user->save();
 
         Auth::guard('web')->logout();

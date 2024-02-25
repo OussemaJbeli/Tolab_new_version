@@ -566,7 +566,7 @@
 }
 .after_pyment_frame_page{
     width: 100vw;
-    height: calc(100vh - 56px);
+    height: 100vh;
     display: flex;
     flex-direction: row;
     background-image: url(/public/img/after_pay1.webp);

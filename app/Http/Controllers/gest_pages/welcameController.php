@@ -85,6 +85,9 @@ class welcameController extends Controller
             'payments_plan_class12'=>$payments_plan_class12,
         ]);
     }
+    public function attempte_share(){
+        return Inertia::render('gest_pages/attempt_share');
+    }
     public function login_student()
     {
         return Inertia::render('gest_pages/Auth/Login');
