@@ -49,10 +49,26 @@ class paymentController extends Controller
                 ]);
             }
         }
+        $target_class="";
+        
+        switch (Auth::user()->etudient_level) {
+            case 'الصف 1':$target_class='class1' ;break;
+            case 'الصف 2':$target_class='class2' ;break;
+            case 'الصف 3':$target_class='class3' ;break;
+            case 'الصف 4':$target_class='class4' ;break;
+            case 'الصف 5':$target_class='class5' ;break;
+            case 'الصف 6':$target_class='class6' ;break;
+            case 'الصف 7':$target_class='class7' ;break;
+            case 'الصف 8':$target_class='class8' ;break;
+            case 'الصف 9':$target_class='class9' ;break;
+            case 'الصف 10':$target_class='class10' ;break;
+            case 'الصف 11':$target_class='class11' ;break;
+            case 'الصف 12':$target_class='class12' ;break;
+        }
 
         $payment = Payment::where('status','1') 
-        ->where('education_level',Auth::user()->etudient_level)
-        ->orWhere('education_level','جميع الصفوف')
+        ->where($target_class,true)
+        ->orWhere('Allclasses',true)
         ->get();
 
         return Inertia::render('auth_pages/payment_page/index',[

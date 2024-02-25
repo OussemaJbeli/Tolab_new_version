@@ -38,15 +38,16 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $videos_chanel_target = Videos::join('chanels','chanels.id','=','videos.id_chanel')
+        ->leftJoin('views', 'views.id_video', '=', 'videos.id') 
         ->select(
             'videos.*',
             'chanels.name_chanel as video_chanel_name',
+            'chanels.study_level as video_chanel_study_level',
             'chanels.id as chanel_id',
             'chanels.logo_path_chanel as video_chanel_logo_path',
             DB::raw('COALESCE(count(views.id), 0) as vuews_video')
         )
-        ->where('public','عامة')
-        ->leftJoin('views', 'views.id_video', '=', 'videos.id')  
+        ->where('public','عامة') 
         ->orderByRaw('RAND()')
         ->groupBy('chanel_id','videos.id', 'video_chanel_name' , 'video_chanel_logo_path')
         ->get();

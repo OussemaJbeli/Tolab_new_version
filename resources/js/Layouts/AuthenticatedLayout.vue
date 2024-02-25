@@ -159,31 +159,33 @@
                     <div class="content m-4 home_content_frame">
                     <h4 class="py-5">قائمة البحث</h4>
                         <div class="row">
-                            <div class="video_card col-sm-6 col-md-4 col-lg-3" v-for="video_serach in filteredItems">
-                                <div class="card p-1 mp-4">
-                                    <div class="card-icon">
-                                        <Link class="image_video" :href="`/show_video/${video_serach.id}`">
-                                            <img :src="'/'+video_serach.img_path" class="card-img-top" alt="card image">
-                                            <time>9:30</time>
-                                            <i class="fas fa-play fa-2x"></i>
-                                        </Link>
-                                    </div>
-                                    <Link :href="`show_video/${video_serach.id}`">
-                                        <div class="card-body p-0">
-                                            <p class="card-title">{{video_serach.name}}</p>
+                            <div v-for="video_serach in filteredItems" class="bg-red-500 contents">
+                                <div class="video_card col-sm-6 col-md-4 col-lg-3" v-if="video_serach.video_chanel_study_level == $page.props.auth.user.etudient_level">
+                                    <div class="card p-1 mp-4">
+                                        <div class="card-icon">
+                                            <Link class="image_video" :href="`/show_video/${video_serach.id}`">
+                                                <img :src="'/'+video_serach.img_path" class="card-img-top" alt="card image">
+                                                <time>9:30</time>
+                                                <i class="fas fa-play fa-2x"></i>
+                                            </Link>
                                         </div>
-                                    </Link>
-                                    <div class="card-footer">
-                                        <small class="text-muted">
-                                            <span class="d-block"><i class="fa-solid fa-eye"></i> <span>{{video_serach.vuews_video}} مشاهدة</span></span>
-                                            <i class="fa-solid fa-calendar-days"></i> <span>منذ {{ video_serach.date_count }} </span>
-                                        </small>
-                                    </div>
-                                    <div>
-                                        <Link :href="`/chanel_AUTH/${video_serach.chanel_id}`" class="channel-img flex items-center flex-row">
-                                            <img :src="'/'+video_serach.video_chanel_logo_path" class="rounded-circle my-2 ml-3 h-8 w-8">
-                                            <span class="card-text  pl-2">{{video_serach.video_chanel_name}}</span>
+                                        <Link :href="`show_video/${video_serach.id}`">
+                                            <div class="card-body p-0">
+                                                <p class="card-title">{{video_serach.name}}</p>
+                                            </div>
                                         </Link>
+                                        <div class="card-footer">
+                                            <small class="text-muted">
+                                                <span class="d-block"><i class="fa-solid fa-eye"></i> <span>{{video_serach.vuews_video}} مشاهدة</span></span>
+                                                <i class="fa-solid fa-calendar-days"></i> <span>منذ {{ video_serach.date_count }} </span>
+                                            </small>
+                                        </div>
+                                        <div>
+                                            <Link :href="`/chanel_AUTH/${video_serach.chanel_id}`" class="channel-img flex items-center flex-row">
+                                                <img :src="'/'+video_serach.video_chanel_logo_path" class="rounded-circle my-2 ml-3 h-8 w-8">
+                                                <span class="card-text  pl-2">{{video_serach.video_chanel_name}}</span>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -23,7 +23,19 @@
                                                 <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                             </svg>
                                             </span>
-                                            <span>{{payment.education_level}}</span>
+                                            <span v-if="payment.Allclasses">جميع الصفوف</span>
+                                            <span v-else-if="payment.class1">الصف 1</span>
+                                            <span v-else-if="payment.class2">الصف 2</span>
+                                            <span v-else-if="payment.class3">الصف 3</span>
+                                            <span v-else-if="payment.class4">الصف 4</span>
+                                            <span v-else-if="payment.class5">الصف 5</span>
+                                            <span v-else-if="payment.class6">الصف 6</span>
+                                            <span v-else-if="payment.class7">الصف 7</span>
+                                            <span v-else-if="payment.class8">الصف 8</span>
+                                            <span v-else-if="payment.class9">الصف 9</span>
+                                            <span v-else-if="payment.class10">الصف 10</span>
+                                            <span v-else-if="payment.class11">الصف 11</span>
+                                            <span v-else-if="payment.class12">الصف 12</span>
                                         </li>
                                         <li>
                                             <span class="icon">
@@ -66,7 +78,19 @@
                                                 <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                             </svg>
                                             </span>
-                                            <span>{{payment.education_level}}</span>
+                                            <span v-if="payment.Allclasses">جميع الصفوف</span>
+                                            <span v-else-if="payment.class1">الصف 1</span>
+                                            <span v-else-if="payment.class2">الصف 2</span>
+                                            <span v-else-if="payment.class3">الصف 3</span>
+                                            <span v-else-if="payment.class4">الصف 4</span>
+                                            <span v-else-if="payment.class5">الصف 5</span>
+                                            <span v-else-if="payment.class6">الصف 6</span>
+                                            <span v-else-if="payment.class7">الصف 7</span>
+                                            <span v-else-if="payment.class8">الصف 8</span>
+                                            <span v-else-if="payment.class9">الصف 9</span>
+                                            <span v-else-if="payment.class10">الصف 10</span>
+                                            <span v-else-if="payment.class11">الصف 11</span>
+                                            <span v-else-if="payment.class12">الصف 12</span>
                                         </li>
                                         <li>
                                             <span class="icon">
@@ -109,7 +133,19 @@
                                                 <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                                             </svg>
                                             </span>
-                                            <span>{{payment.education_level}}</span>
+                                            <span v-if="payment.Allclasses">جميع الصفوف</span>
+                                            <span v-else-if="payment.class1">الصف 1</span>
+                                            <span v-else-if="payment.class2">الصف 2</span>
+                                            <span v-else-if="payment.class3">الصف 3</span>
+                                            <span v-else-if="payment.class4">الصف 4</span>
+                                            <span v-else-if="payment.class5">الصف 5</span>
+                                            <span v-else-if="payment.class6">الصف 6</span>
+                                            <span v-else-if="payment.class7">الصف 7</span>
+                                            <span v-else-if="payment.class8">الصف 8</span>
+                                            <span v-else-if="payment.class9">الصف 9</span>
+                                            <span v-else-if="payment.class10">الصف 10</span>
+                                            <span v-else-if="payment.class11">الصف 11</span>
+                                            <span v-else-if="payment.class12">الصف 12</span>
                                         </li>
                                         <li>
                                             <span class="icon">
