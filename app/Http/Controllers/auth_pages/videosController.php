@@ -41,6 +41,7 @@ class videosController extends Controller
                     //save uploade
             $video_path->move($newPath, $filename_logo);
             $fullVideoPath = $newPath . $filename_logo;
+
             $duration = $this->getVideoDuration($fullVideoPath);
         }
         if($img_path){
@@ -93,6 +94,7 @@ class videosController extends Controller
                     //save uploade
             $video_path->move($newPath, $filename_logo);
             $fullVideoPath = $newPath . $filename_logo;
+
             $duration = $this->getVideoDuration($fullVideoPath);
         }
         if($img_path){
@@ -123,6 +125,7 @@ class videosController extends Controller
         return Redirect::back();
     }
 
+    // cout time
     private function getVideoDuration($videoPath)
     {
         try {
@@ -142,6 +145,7 @@ class videosController extends Controller
         }
 
     }
+
     /**
      * Store a newly created resource in storage.
      */

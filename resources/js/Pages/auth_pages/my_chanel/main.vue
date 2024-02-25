@@ -90,7 +90,7 @@
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
                                             <Link class="button" 
-                                                :href="`my_videos_AUTH/${video.id}/delete`">
+                                                :href="`/my_videos_AUTH/${video.id}/delete`">
                                                 <i class="fa-solid fa-trash"></i>
                                             </Link>
                                             <div class="video_visibility mr-28">

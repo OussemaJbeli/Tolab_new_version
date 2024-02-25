@@ -25,11 +25,14 @@ $(document).ready(function(){
     });
 });
 
-// let lastModified = document.lastModified;
+// Disable right-click
+document.addEventListener('contextmenu', event => event.preventDefault());
 
-// setInterval(function() {
-//     if (document.lastModified != lastModified) {
-//         alert('Screenshot or screen recording may have been taken!');
-//     }
-//     lastModified = document.lastModified;
-// }, 1000);
+// Disable certain keypress events (e.g., Print Screen, Ctrl+Shift+I)
+document.addEventListener('keydown', event => {
+  if ((event.key === 'PrintScreen') ||
+      (event.ctrlKey && event.shiftKey && event.key === 'I')) { // Example: DevTools
+    event.preventDefault();
+    alert('This action is not allowed.');
+  }
+});

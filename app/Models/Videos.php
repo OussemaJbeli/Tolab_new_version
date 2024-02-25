@@ -16,6 +16,18 @@ class Videos extends Model
      *
      * @var array<int, string>
      */
+    protected $fillable = [
+        'id_user',
+        'id_user',
+        'id_chanel',
+        'name',
+        'discription',
+        'main_video',
+        'video_path',
+        'img_path',
+        'duration',
+        'public',
+    ];
     public function historiques()
     {
         return $this->hasMany(Historiques::class);
