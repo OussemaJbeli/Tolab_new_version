@@ -10,6 +10,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
@@ -54,8 +55,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         $user = Auth::user();
-
-        $user->active_account = true;
+        $user->session_id = Session::getId();
         $user->save();
 
         return redirect(RouteServiceProvider::HOME);

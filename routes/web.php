@@ -73,6 +73,114 @@ Route::get('/register_master', [welcameController::class, 'register_master'])
 Route::get('/news_GEST', [newsGESTController::class, 'index'])
     ->name('news.gest');
 
+////////////////admin controller
+
+Route::get('admin_taleb/dashboard', [homeadminController::class, 'dashboard'])
+->name('admin_taleb.dashboard')
+->middleware('auth');
+
+Route::get('admin_taleb/videos', [videosadminController::class, 'videos'])
+->name('admin_taleb.videos')
+->middleware('auth');
+
+//chanels
+Route::get('admin_taleb/chanels', [chanelsadminController::class, 'chanels'])
+->name('admin_taleb.chanels')
+->middleware('auth');
+
+Route::get('admin_taleb/chanels/{id_chanel}/chanels_delete', [chanelsadminController::class, 'chanels_delete'])
+->name('admin_taleb.chanels_delete')
+->middleware('auth');
+
+//COMMENTS
+Route::get('admin_taleb/comments', [commentsadminController::class, 'comments'])
+->name('admin_taleb.comments')
+->middleware('auth');
+Route::get('admin_taleb/comments/{id_chanel}/comments_delete', [commentsadminController::class, 'destroy'])
+->name('admin_taleb.comments_delete')
+->middleware('auth');
+
+//rapport
+Route::get('admin_taleb/rapports', [rapportsadminController::class, 'index'])
+->name('admin_taleb.rapports')
+->middleware('auth');
+
+Route::get('admin_taleb/rapports/{id_user}/message', [rapportsadminController::class, 'rapports'])
+->name('admin_taleb.message')
+->middleware('auth');
+
+Route::get('admin_taleb/rapports/{id_user}/delete', [rapportsadminController::class, 'destroy'])
+->name('admin_taleb.rapports_message_delete')
+->middleware('auth');
+
+Route::get('admin_taleb/rapports/{id_user}/create', [rapportsadminController::class, 'create'])
+->name('admin_taleb.rapports_message_create')
+->middleware('auth');
+
+//users
+Route::get('admin_taleb/users', [usersadminController::class, 'index'])
+->name('admin_taleb.users')
+->middleware('auth');
+
+Route::get('admin_taleb/users/{id_user}/chaneg_state_users', [usersadminController::class, 'chaneg_state_users'])
+->name('admin_taleb.chaneg_state_users')
+->middleware('auth');
+
+Route::post('admin_taleb/users/{id_user}/chaneg_details_users', [usersadminController::class, 'chaneg_details_users'])
+->name('admin_taleb.chaneg_details_users')
+->middleware('auth');
+
+Route::get('admin_taleb/users/{id_user}/add_chanel_users', [usersadminController::class, 'add_chanel_users'])
+->name('admin_taleb.add_chanel_users')
+->middleware('auth');
+
+Route::get('admin_taleb/users/add_special_student', [usersadminController::class, 'add_special_student'])
+->name('admin_taleb.add_special_student')
+->middleware('auth');
+
+Route::get('admin_taleb/users/edite_special_student', [usersadminController::class, 'edite_special_student'])
+->name('admin_taleb.edite_special_student')
+->middleware('auth');
+
+Route::get('admin_taleb/users/add_master', [usersadminController::class, 'add_master'])
+->name('admin_taleb.add_master')
+->middleware('auth');
+
+Route::get('admin_taleb/users/add_admin', [usersadminController::class, 'add_admin'])
+->name('admin_taleb.add_admin')
+->middleware('auth');
+
+Route::get('admin_taleb/users/{id_user}/dessubscribe', [usersadminController::class, 'dessubscribe'])
+->name('admin_taleb.dessubscribe')
+->middleware('auth');
+
+Route::get('admin_taleb/users/{id_user}/addsubscribe', [usersadminController::class, 'addsubscribe'])
+->name('admin_taleb.addsubscribe')
+->middleware('auth');
+
+Route::get('admin_taleb/users/{id_user}/destroy', [usersadminController::class, 'destroy'])
+->name('admin_taleb.destroy')
+->middleware('auth');
+
+//users
+Route::get('admin_taleb/payment_plans', [payment_plansadminController::class, 'index'])
+->name('admin_taleb.payment_plans')
+->middleware('auth');
+
+Route::get('admin_taleb/payment_plans/add', [payment_plansadminController::class, 'store'])
+->name('admin_taleb.payment_plans_add')
+->middleware('auth');
+
+Route::get('admin_taleb/payment_plans/{id_plan}/edite', [payment_plansadminController::class, 'edit'])
+->name('admin_taleb.payment_plans_edite')
+->middleware('auth');
+
+Route::get('admin_taleb/payment_plans/{id_plan}/remove', [payment_plansadminController::class, 'destroy'])
+->name('admin_taleb.payment_plans_remove')
+->middleware('auth');
+
+////////////////////////// master
+
     Route::middleware(['auth', 'check_session'])->group(function () {
         
         ////////////////Auth pages
@@ -271,110 +379,6 @@ Route::get('/news_GEST', [newsGESTController::class, 'index'])
         ->middleware('auth');
 
 
-        ////////////////admin controller
-
-        Route::get('admin_taleb/dashboard', [homeadminController::class, 'dashboard'])
-        ->name('admin_taleb.dashboard')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/videos', [videosadminController::class, 'videos'])
-        ->name('admin_taleb.videos')
-        ->middleware('auth');
-
-        //chanels
-        Route::get('admin_taleb/chanels', [chanelsadminController::class, 'chanels'])
-        ->name('admin_taleb.chanels')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/chanels/{id_chanel}/chanels_delete', [chanelsadminController::class, 'chanels_delete'])
-        ->name('admin_taleb.chanels_delete')
-        ->middleware('auth');
-
-        //COMMENTS
-        Route::get('admin_taleb/comments', [commentsadminController::class, 'comments'])
-        ->name('admin_taleb.comments')
-        ->middleware('auth');
-        Route::get('admin_taleb/comments/{id_chanel}/comments_delete', [commentsadminController::class, 'destroy'])
-        ->name('admin_taleb.comments_delete')
-        ->middleware('auth');
-
-        //rapport
-        Route::get('admin_taleb/rapports', [rapportsadminController::class, 'index'])
-        ->name('admin_taleb.rapports')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/rapports/{id_user}/message', [rapportsadminController::class, 'rapports'])
-        ->name('admin_taleb.message')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/rapports/{id_user}/delete', [rapportsadminController::class, 'destroy'])
-        ->name('admin_taleb.rapports_message_delete')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/rapports/{id_user}/create', [rapportsadminController::class, 'create'])
-        ->name('admin_taleb.rapports_message_create')
-        ->middleware('auth');
-
-        //users
-        Route::get('admin_taleb/users', [usersadminController::class, 'index'])
-        ->name('admin_taleb.users')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/{id_user}/chaneg_state_users', [usersadminController::class, 'chaneg_state_users'])
-        ->name('admin_taleb.chaneg_state_users')
-        ->middleware('auth');
-
-        Route::post('admin_taleb/users/{id_user}/chaneg_details_users', [usersadminController::class, 'chaneg_details_users'])
-        ->name('admin_taleb.chaneg_details_users')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/{id_user}/add_chanel_users', [usersadminController::class, 'add_chanel_users'])
-        ->name('admin_taleb.add_chanel_users')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/add_special_student', [usersadminController::class, 'add_special_student'])
-        ->name('admin_taleb.add_special_student')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/edite_special_student', [usersadminController::class, 'edite_special_student'])
-        ->name('admin_taleb.edite_special_student')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/add_master', [usersadminController::class, 'add_master'])
-        ->name('admin_taleb.add_master')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/add_admin', [usersadminController::class, 'add_admin'])
-        ->name('admin_taleb.add_admin')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/{id_user}/dessubscribe', [usersadminController::class, 'dessubscribe'])
-        ->name('admin_taleb.dessubscribe')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/{id_user}/addsubscribe', [usersadminController::class, 'addsubscribe'])
-        ->name('admin_taleb.addsubscribe')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/users/{id_user}/destroy', [usersadminController::class, 'destroy'])
-        ->name('admin_taleb.destroy')
-        ->middleware('auth');
-
-        //users
-        Route::get('admin_taleb/payment_plans', [payment_plansadminController::class, 'index'])
-        ->name('admin_taleb.payment_plans')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/payment_plans/add', [payment_plansadminController::class, 'store'])
-        ->name('admin_taleb.payment_plans_add')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/payment_plans/{id_plan}/edite', [payment_plansadminController::class, 'edit'])
-        ->name('admin_taleb.payment_plans_edite')
-        ->middleware('auth');
-
-        Route::get('admin_taleb/payment_plans/{id_plan}/remove', [payment_plansadminController::class, 'destroy'])
-        ->name('admin_taleb.payment_plans_remove')
-        ->middleware('auth');
+        
     });
 require __DIR__.'/auth.php';

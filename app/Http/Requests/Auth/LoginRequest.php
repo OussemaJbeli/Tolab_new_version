@@ -81,14 +81,6 @@ class LoginRequest extends FormRequest
                     'email' => 'هذا ليس حساب طالب',
                 ]);
             }
-            if ($user->active_account) {
-                RateLimiter::hit($this->throttleKey());
-    
-                throw ValidationException::withMessages([
-                    'email' => 'هذا الحساب بالفعل متصل',
-                ]);
-            }
-    
             // User is a master or super user, so proceed with login
             Auth::login($user, $this->boolean('remember'));
     
