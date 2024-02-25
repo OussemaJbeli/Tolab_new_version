@@ -86,7 +86,7 @@
                                                         <a class="subcomments_button float-right btn text-white btn-warning mt-4 mr-2" @click="open_repender_function(coment.id)"> <i class="fa fa-reply"></i> رد</a>
                                                         <button @click="likeComment(coment.id,index)" class="subcomments_button float-right btn text-white btn-warning mt-4 mr-2">
                                                                 <i class="fa fa-heart"></i>
-                                                                اعجبني {{coment.count}}
+                                                                اعجبني {{coment.count_likes}}
                                                         </button> 
                                                     </div>
                                                     <div class="mt-2 Sub_coment_frame">
@@ -102,7 +102,7 @@
                                                                     <div  v-if="parseInt(Subcoment.id_coment, 10) == coment.id" class="accordion-body">
                                                                         <div class="row_comment subrow_comment">
                                                                             <div class="image_user_logo">
-                                                                                <img :src="'/'+Subcoment.coments_chanels_logo_path" class="img img-rounded rounded-full h-20 w-20" v-if="coment.coments_chanels_logo_path"/>
+                                                                                <img :src="'/'+Subcoment.coments_chanels_logo_path" class="img img-rounded rounded-full h-20 w-20" v-if="Subcoment.coments_chanels_logo_path"/>
                                                                                 <img src="/img/chanels/base_logo.png" class="img img-rounded rounded-full h-20 w-20" v-else/>
                                                                                 <p class="text-secondary reply-time">منذ {{ Subcoment.date_count }} </p>
                                                                             </div>
@@ -110,24 +110,24 @@
                                                                                 <p>
                                                                                     <div v-if="$page.props.auth.chanel[0]">
                                                                                         <div class="flex flex-column" v-if="$page.props.auth.chanel[0].id == Subcoment.coments_chanels_id">
-                                                                                            <Link class="float-right mt-3 mt-md-4" :href="route('my_chanel_AUTH')" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                                                            <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
+                                                                                            <Link class="float-right mt-3 mt-md-4" :href="route('my_chanel_AUTH')" v-if="Subcoment.coments_chanels_name"><strong>{{ Subcoment.coments_chanels_name }}</strong></Link>
+                                                                                            <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ Subcoment.coments_user_name }}</strong></p>
                                                                                         </div>
                                                                                         <div class="flex flex-column" v-else>
-                                                                                            <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                                                            <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
+                                                                                            <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="Subcoment.coments_chanels_name"><strong>{{ Subcoment.coments_chanels_name }}</strong></Link>
+                                                                                            <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ Subcoment.coments_user_name }}</strong></p>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="flex flex-column" v-else>
-                                                                                        <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                                                        <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
+                                                                                        <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="Subcoment.coments_chanels_name"><strong>{{ Subcoment.coments_chanels_name }}</strong></Link>
+                                                                                        <p  @click="dont_have_chanel_function(Subcoment.coments_user_name)" class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ Subcoment.coments_user_name }}</strong></p>
                                                                                     </div>
                                                                                 </p>
                                                                                 <p>{{ Subcoment.the_sub_coment }}</p>
                                                                                 <p class="subcomments_buttons">
                                                                                     <button @click="likeSUBComment(Subcoment.id,index1)" class="subcomments_button float-right btn text-white btn-warning mt-4">
                                                                                             <i class="fa fa-heart"></i>
-                                                                                            اعجبني {{Subcoment.count}}
+                                                                                            اعجبني {{Subcoment.count_likes}}
                                                                                     </button> 
                                                                                 </p>
                                                                             </div>
@@ -181,7 +181,6 @@
 </template>
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import FileInput from "@/Components/FileInput.vue";
 import { Head, Link} from '@inertiajs/vue3';
 import axios from 'axios';
 </script>
@@ -219,6 +218,7 @@ export default {
             //like fill
             like_fill: true,
             likesCount: 0,
+            likesCount1: 0,
             table_comment_count: this.comentsNewst,
             table_Subcomment_count: this.Subcoments,
             table_target_video_count: this.target_video,
@@ -300,7 +300,7 @@ export default {
             axios.get(`Coments_AUTH/${coment_id}/add_like`)
                 .then(response => {
                 if (response.data.success) {
-                    this.table_comment_count[index].count = response.data.likesCount;
+                    this.table_comment_count[index].count_likes = response.data.likesCount;
                 }
                 })
                 .catch(error => {
@@ -311,31 +311,7 @@ export default {
             axios.get(`Coments_AUTH/${Subcoment_id}/add_Sublike`)
                 .then(response => {
                 if (response.data.success) {
-                    this.table_Subcomment_count[index1].count = response.data.likesCount1;
-                }
-                })
-                .catch(error => {
-                console.error('Error liking comment:', error);
-            });
-        },
-        //like video
-        likeVideos(video_id) {
-            axios.get(`my_videos_AUTH/${video_id}/add_like`)
-                .then(response => {
-                if (response.data.success) {
-                    this.table_target_video_count.count = response.data.likesCount;
-                }
-                })
-                .catch(error => {
-                console.error('Error liking comment:', error);
-            });
-        },
-        //subscribe
-        Sunscribe_count(chanel_id) {
-            axios.get(`my_videos_AUTH/${chanel_id}/add_subscribe`)
-                .then(response => {
-                if (response.data.success) {
-                    this.chanel_subscribe_table.count_subscribe = response.data.likesCount;
+                    this.table_Subcomment_count[index1].count_likes = response.data.likesCount1;
                 }
                 })
                 .catch(error => {
@@ -359,31 +335,7 @@ export default {
                     this.table_comment_count = this.comentsNewst;break;
             }
         },
-        edite_videos_function(id,name,disc,public_state,video_path,img_path){
-            this.edite_videos?
-                this.edite_videos=false:
-                [
-                    this.edite_videos=true,
-                    this.edite_videos_values.id = id,
-                    this.edite_videos_values.name =name,
-                    this.edite_videos_values.discription =disc,
-                    this.edite_videos_values.public_states =public_state,
-                    this.edite_videos_values.TEMPvideo_path =video_path,
-                    this.edite_videos_values.TEMPimg_path = img_path,
-                ];
-        },
-        //edite
 
-        handleFileChange(event) {
-            const file = event.target.files[0];
-            const maxSize = 100 * 1024 * 1024;
-
-            if (file && file.size > maxSize) {
-                this.fileSizeError = false;
-            } else {
-                this.fileSizeError = true;
-            }
-        },
 
     },
 }

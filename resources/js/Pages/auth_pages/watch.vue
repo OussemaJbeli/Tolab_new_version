@@ -107,7 +107,7 @@
                                                         <a class="subcomments_button float-right btn text-white btn-warning mt-4 mr-2" @click="open_repender_function(coment.id)"> <i class="fa fa-reply"></i> رد</a>
                                                         <button @click="likeComment(coment.id,index)" class="subcomments_button float-right btn text-white btn-warning mt-4 mr-2">
                                                                 <i class="fa fa-heart"></i>
-                                                                اعجبني {{coment.count}}
+                                                                اعجبني {{coment.count_likes}}
                                                         </button> 
                                                     </div>
                                                     <div class="mt-2 Sub_coment_frame">
@@ -123,22 +123,22 @@
                                                                     <div  v-if="parseInt(Subcoment.id_coment, 10) == coment.id" class="accordion-body">
                                                                         <div class="row_comment subrow_comment">
                                                                             <div class="image_user_logo">
-                                                                                <img :src="'/'+Subcoment.coments_chanels_logo_path" class="img img-rounded rounded-full h-20 w-20" v-if="coment.coments_chanels_logo_path"/>
+                                                                                <img :src="'/'+Subcoment.coments_chanels_logo_path" class="img img-rounded rounded-full h-20 w-20" v-if="Subcoment.coments_chanels_logo_path"/>
                                                                                 <img src="/img/chanels/base_logo.png" class="img img-rounded rounded-full h-20 w-20" v-else/>
                                                                                 <p class="text-secondary reply-time">منذ {{ Subcoment.date_count }} </p>
                                                                             </div>
                                                                             <div class="dis_comment_part">
                                                                                 <p>
                                                                                     <div class="flex flex-column">
-                                                                                        <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="coment.coments_chanels_name"><strong>{{ coment.coments_chanels_name }}</strong></Link>
-                                                                                        <p class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ coment.coments_user_name }}</strong></p>
+                                                                                        <Link class="float-right mt-3 mt-md-4" :href="`/chanel_AUTH/${Subcoment.coments_chanels_id}`" v-if="Subcoment.coments_chanels_name"><strong>{{ Subcoment.coments_chanels_name }}</strong></Link>
+                                                                                        <p class="float-right mt-3 mt-md-4 cursor-pointer" v-else><strong>{{ Subcoment.coments_user_name }}</strong></p>
                                                                                     </div>
                                                                                 </p>
                                                                                 <p>{{ Subcoment.the_sub_coment }}</p>
                                                                                 <p class="subcomments_buttons">
                                                                                     <button @click="likeSUBComment(Subcoment.id,index1)" class="subcomments_button float-right btn text-white btn-warning mt-4">
                                                                                             <i class="fa fa-heart"></i>
-                                                                                            اعجبني {{Subcoment.count}}
+                                                                                            اعجبني {{Subcoment.count_likes}}
                                                                                     </button> 
                                                                                 </p>
                                                                             </div>
@@ -383,6 +383,7 @@ export default {
             //like fill
             like_fill: true,
             likesCount: 0,
+            likesCount1: 0,
             table_comment_count: this.comentsNewst,
             table_Subcomment_count: this.Subcoments,
             table_target_video_count: this.target_video,
@@ -449,7 +450,7 @@ export default {
             axios.get(`Coments_AUTH/${coment_id}/add_like`)
                 .then(response => {
                 if (response.data.success) {
-                    this.table_comment_count[index].count = response.data.likesCount;
+                    this.table_comment_count[index].count_likes = response.data.likesCount;
                 }
                 })
                 .catch(error => {
@@ -460,7 +461,7 @@ export default {
             axios.get(`Coments_AUTH/${Subcoment_id}/add_Sublike`)
                 .then(response => {
                 if (response.data.success) {
-                    this.table_Subcomment_count[index1].count = response.data.likesCount1;
+                    this.table_Subcomment_count[index1].count_likes = response.data.likesCount1;
                 }
                 })
                 .catch(error => {

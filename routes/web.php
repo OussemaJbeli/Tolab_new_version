@@ -38,6 +38,10 @@ use Inertia\Inertia;
 ///////////like coment
 Route::get('/show_video/Coments_AUTH/{id_videos}/add_like', [CommentsController::class, 'Like_coment']);
 Route::get('/show_video/Coments_AUTH/{id_videos}/add_Sublike', [CommentsController::class, 'SUBLike_coment']);
+
+Route::get('/show_video_master/Coments_AUTH/{id_videos}/add_like', [CommentsController::class, 'Like_coment']);
+Route::get('/show_video_master/Coments_AUTH/{id_videos}/add_Sublike', [CommentsController::class, 'SUBLike_coment']);
+
 ///////////like video
 Route::get('/show_video/my_videos_AUTH/{id_videos}/add_like', [videosController::class, 'Like_video']);
 ///////////subscribe
