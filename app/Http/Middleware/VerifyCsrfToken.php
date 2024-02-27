@@ -25,6 +25,9 @@ class VerifyCsrfToken extends Middleware
         'playlist_AUTH/*',
         'my_videos_AUTH/*',
         'profile',
-        'admin_taleb/*'
+        'admin_taleb/*',
+        
+        'password',
+        'admin_taleb/users/*',
     ];
 }

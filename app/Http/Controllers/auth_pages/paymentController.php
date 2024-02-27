@@ -106,7 +106,7 @@ class paymentController extends Controller
                 'message' => $paymentPlan->description,
                 'success_url' => route('pyment_AUTH.success', ['id' => $paymentPlan->id]), 
                 'cancel_url' => route('pyment_AUTH.faild'),
-                'test' => false,
+                'test' => true,
             ]);
     
             if ($response->successful()) {
@@ -140,42 +140,41 @@ class paymentController extends Controller
         $user = Auth::user();
         $user->payment = 1;
         $user->save();
-    
+
         $paymentPlan = Payment::findOrFail($id);
-                switch ($paymentPlan->frequency) {
-                    case 'شهر':
-                        $newDate = Carbon::now()->addMonth();break;
-                    case 'شهرين':
-                        $newDate = Carbon::now()->addMonths(2);break;
-                    case '3 اشهر':
-                        $newDate = Carbon::now()->addMonths(3);break;
-                    case '4 اشهر':
-                        $newDate = Carbon::now()->addMonths(4);break;
-                    case '5 اشهر':
-                        $newDate = Carbon::now()->addMonths(5);break;
-                    case 'اشهر 6':
-                        $newDate = Carbon::now()->addMonths(6);break;
-                    case '7 اشهر':
-                        $newDate = Carbon::now()->addMonths(7);break;
-                    case '8 اشهر':
-                        $newDate = Carbon::now()->addMonths(8);break;
-                    case '9 اشهر':
-                        $newDate = Carbon::now()->addMonths(9);break;
-                    case '10 اشهر':
-                        $newDate = Carbon::now()->addMonths(10);break;
-                    case '11 اشهر':
-                        $newDate = Carbon::now()->addMonths(11);break;
-                    case '12 اشهر':
-                        $newDate = Carbon::now()->addYear();break;
+
+        if($paymentPlan){
+
+            if($paymentPlan->frequency == 'شهر')
+                $newDate = now()->addDay();
+            else if($paymentPlan->frequency == 'شهرين')
+                $newDate =  now()->addMonths(2);
+            else{
+                $normalizedFrequency = str_replace(' ', '', $paymentPlan->frequency);
+                $normalizedFrequency = preg_replace('/[^\d]/', '', $normalizedFrequency);
+
+                $monthCount = (int)$normalizedFrequency;
+            
+                if ($monthCount >= 3 && $monthCount <= 11) {
+                    $newDate = now()->addMonths($monthCount);
+                } else if ($monthCount == 12) {
+                    $newDate = now()->addYear();
+                } else {
+                    \Log::warning("Unexpected payment plan frequency: " . $paymentPlan->frequency);
+                    // Optionally, handle unexpected frequency value more specifically
                 }
         
-        $PaymentTrak = new PayTraker();
-    
-        $PaymentTrak->id_user = Auth::user()->id;
-        $PaymentTrak->id_plan = $id;
-        $PaymentTrak->date_end = $newDate;
-    
-        $PaymentTrak->save();
+            }
+
+            $PaymentTrak = new PayTraker();
+        
+            $PaymentTrak->id_user = $user->id;
+            $PaymentTrak->id_plan = $id;
+            $PaymentTrak->date_end = $newDate;
+        
+            $PaymentTrak->save();
+
+        }
 
         return Inertia::render('auth_pages/payment_page/success');
     }

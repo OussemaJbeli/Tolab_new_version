@@ -152,7 +152,7 @@ class usersadminController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id_user,
-            'password' => 'nullable|confirmed',
+            'password' => 'nullable',
             'student_level' => 'required|string|max:255',
         ]);
     
