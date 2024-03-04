@@ -43,19 +43,19 @@
                                 <div class="card mb-3">
                                     <div class="card-horizontal d-md-flex d-block">
                                         <div class="img-square-wrapper card-icon">
-                                            <Link class="image_video" :href="`show_video/${history_video.id}`">
+                                            <Link class="image_video" :href="`/show_video/${history_video.id}`">
                                                 <img :src="'/'+history_video.img_path" class="card-img-top" alt="card image">
                                                 <time>{{history_video.video_duration}}</time>
                                                 <i class="fas fa-play fa-2x"></i>
                                             </Link>
-                                            <Link :href="`historique_AUTH/${history_video.id}/delete`">
+                                            <Link :href="`/historique_AUTH/${history_video.id}/delete`">
                                                 <i class="fa-solid fa-delete-left text-red-500"></i>
                                             </Link>
                                         </div>
                                         <div class="card-body p-2">
-                                            <a href="watch.html">
+                                            <Link :href="`/show_video/${history_video.id}`">
                                                 <h4 class="card-title">{{ history_video.name }}</h4>
-                                            </a>
+                                            </Link>
                                             <p class="card-text">{{ history_video.discription }}</p>
                                             <small class="text-muted">
                                                 <i class="fa-solid fa-eye mr-2"></i> <span> {{history_video.vuews_video}} مشاهدة</span>
@@ -80,19 +80,19 @@
                                 <div class="card mb-3">
                                     <div class="card-horizontal d-md-flex d-block">
                                         <div class="img-square-wrapper card-icon">
-                                            <Link class="image_video" :href="`show_video/${history_video.id}`">
+                                            <Link class="image_video" :href="`/show_video/${history_video.id}`">
                                                 <img :src="'/'+history_video.img_path" class="card-img-top" alt="card image">
                                                 <time>{{history_video.video_duration}}</time>
                                                 <i class="fas fa-play fa-2x"></i>
                                             </Link>
-                                            <Link :href="`historique_AUTH/${history_video.id}/delete`" class="remove_from_historique">
+                                            <Link :href="`/historique_AUTH/${history_video.id}/delete`" class="remove_from_historique">
                                                 <i class="fa-solid fa-delete-left text-red-500"></i>
                                             </Link>
                                         </div>
                                         <div class="card-body p-2">
-                                            <a href="watch.html">
+                                            <Link :href="`/show_video/${history_video.id}`">
                                                 <h4 class="card-title">{{ history_video.name }}</h4>
-                                            </a>
+                                            </Link>
                                             <p class="card-text">{{ history_video.discription }}</p>
                                             <small class="text-muted">
                                                 <i class="fa-solid fa-eye mr-2"></i> <span> {{history_video.vuews_video}} مشاهدة</span>

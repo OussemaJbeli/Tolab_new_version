@@ -86,7 +86,67 @@ body{
 .DataTable3{
     min-width: 500px
 }
-
+//***************************
+time{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    z-index: 9;
+}
+.card-icon{
+    .play_list_img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.image_logo_videos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+.fa-delete-left{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 9;
+}
+.img_panel_video{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    p{
+        width: 100px;
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        background-color: #000000;
+        color: #fff;
+    }
+}
+//******************************
 // searsh
 .label_for_search{
     transition: 0.4s ease;

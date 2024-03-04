@@ -48,7 +48,7 @@
                                         <div v-for="video_serach in videos_with_playlist">
                                             <div class="ml-2 card p-1 mt-2 w-40" v-if="parseInt(video_serach.id_playlist, 10)  == videos_playlist_values.id_playlist">
                                                     <div class="card-icon">
-                                                        <Link class="" :href="`/show_video/${video_serach.video_id_playlist}`">
+                                                        <Link class="play_list_img" :href="`/show_video/${video_serach.video_id_playlist}`">
                                                             <img :src="'/'+video_serach.img_path" class="card-img-top h-24" alt="card image">
                                                             <time>{{video_serach.video_duration}}</time>
                                                             <i class="fas fa-play fa-2x"></i>
